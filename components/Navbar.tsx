@@ -5,6 +5,14 @@ import Image from "next/image";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+});
+
 interface NavLink {
   name: string;
   href: string;
@@ -62,7 +70,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 font-cabinet">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
 
@@ -86,7 +94,7 @@ const Navbar: React.FC = () => {
                     </button>
 
                     {isServicesOpen && (
-                      <div className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg z-50">
+                      <div className="absolute top-full left-0 w-[300px] bg-white shadow-lg rounded-lg z-50 border border-gray-100">
                         {services.map((service) => (
                           <button
                             key={service.title}
@@ -96,8 +104,8 @@ const Navbar: React.FC = () => {
                             }}
                             className="w-full text-left px-4 py-2 hover:bg-gray-200 cursor-pointer transition-colors duration-200 rounded-md"
                           >
-                            <p className="font-semibold text-black">{service.title}</p>
-                            <p className="text-sm text-gray-500">{service.description}</p>
+                            <p className={`font-medium text-[#111111] ${inter.className}`}>{service.title}</p>
+                            <p className={`text-[12px] text-[#6A6A6A] font-medium ${inter.className}`}>{service.description}</p>
                           </button>
                         ))}
                       </div>

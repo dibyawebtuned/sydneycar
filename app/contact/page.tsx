@@ -2,10 +2,17 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+    weight: ["400", "500", "600", "700"],
+});
 
 const PRIMARY_BLUE = "#044E9E";
 const HEADING_COLOR = "#1e1e1e";
-
 
 const About: React.FC = () => {
     // Form state
@@ -71,69 +78,80 @@ const About: React.FC = () => {
                 <div className="flex flex-col lg:flex-row items-start gap-10">
                     {/* LEFT COLUMN: Contact Information */}
                     <motion.div
-                        className="w-full lg:w-2/3 flex flex-col items-center lg:items-start"
+                        className="w-full lg:w-1/2 flex flex-col items-start"
                         initial={{ opacity: 0, x: -200 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 1 }}
                     >
-                        <h3
-                            className="text-md font-semibold uppercase tracking-widest mb-8 relative pb-2 inline-block"
-                            style={{ color: PRIMARY_BLUE }}
-                        >
-                            CONTACT US
-                            <span
-                                className="absolute left-0 bottom-0 w-16 h-0.5 z-10"
-                                style={{ backgroundColor: PRIMARY_BLUE }}
-                            ></span>
-                            <span className="absolute left-0 bottom-0 w-full h-0.5 bg-gray-200 z-0"></span>
-                        </h3>
+                        <div className="flex items-center gap-2.5 w-full">
+                            <h3
+                                className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-widest relative pb-2 inline-block whitespace-nowrap font-cabinet"
+                                style={{ color: PRIMARY_BLUE }}
+                            >
+                                CONTACT US
+                            </h3>
+                            <span className="w-full h-px bg-[#044E9E] mb-1.5"></span>
+                        </div>
 
                         <h1
-                            className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight text-left mb-6"
+                            className="text-3xl sm:text-4xl lg:text-5xl leading-tight text-left font-cabinet font-extrabold"
                             style={{ color: HEADING_COLOR }}
                         >
                             GET IN{" "}
                             <span className="relative z-10 text-primary-blue" style={{ color: PRIMARY_BLUE }}>
                                 TOUCH
-                                <span
-                                    className="absolute left-0 right-0 -z-10"
-                                ></span>
+                                <span className="absolute left-0 right-0 -z-10"></span>
                             </span>{" "}
                             WITH US
                         </h1>
 
-                        <p className="text-gray-600 text-lg mb-6 text-left">
+                        <p className={`text-[#6A6A6A] text-[14px] sm:text-[16px] mb-5 mt-5 text-justify w-full ${inter.className}`}>
                             We’re here to answer any questions you may have about our towing and vehicle removal
                             services. Reach out via the form or through the contact details below, and we’ll get
                             back to you as soon as possible.
                         </p>
 
-                        <div className="flex flex-col gap-4 text-gray-800 text-lg">
-                            <p>
-                                <span className="font-semibold">Phone:</span> +61 123 456 789
-                            </p>
-                            <p>
-                                <span className="font-semibold">Email:</span> info@towingservices.com
-                            </p>
-                            <p>
-                                <span className="font-semibold">Address:</span> 123 Main Street, Sydney, NSW
-                            </p>
-                            <p>
-                                <span className="font-semibold">Business Hours:</span> Mon - Sun, 24/7 Service
-                            </p>
+                        <div className={`flex flex-col gap-4 text-gray-800 text-lg ${inter.className}`}>
+                            <div className="flex items-center gap-2">
+                                <Phone size={18} className="text-[#044E9E]" />
+                                <span>
+                                    <span className="font-medium text-base" >+0402887766, +0450747474</span>
+                                </span>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                                <Mail size={18} className="text-[#044E9E]" />
+                                <span>
+                                    <span className="font-medium text-base">sydneycarremoval@gmail.com</span>
+                                </span>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                                <MapPin size={18} className="text-[#044E9E]" />
+                                <span>
+                                    <span className="font-medium text-base">Sydney, Australia</span>
+                                </span>
+                            </div>
+
+                            <div className="flex items-center gap-2">
+                                <Clock size={18} className="text-[#044E9E]" />
+                                <span>
+                                    <span className="font-medium text-base">24/7 Service</span>
+                                </span>
+                            </div>
                         </div>
                     </motion.div>
 
                     {/* RIGHT COLUMN: Inline Request Form */}
                     <motion.div
-                        className="w-full lg:w-1/3 bg-white p-6 sm:p-8 rounded-3xl shadow-lg border border-gray-100 flex flex-col justify-between h-full"
+                        className="w-full lg:w-1/2 bg-white p-6 sm:p-8 rounded-3xl shadow-lg border border-gray-100 flex flex-col justify-between h-full"
                         initial={{ opacity: 0, x: 200 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 1 }}
                     >
-                        <h3 className="text-2xl font-bold mb-6 text-center" style={{ color: PRIMARY_BLUE }}>
+                        <h3 className="text-2xl font-bold mb-6 sm:text-center" style={{ color: PRIMARY_BLUE }}>
                             REQUEST A QUOTE
                         </h3>
 
@@ -191,7 +209,7 @@ const About: React.FC = () => {
                                 <button
                                     type="submit"
                                     disabled={isLoading}
-                                    className={`w-[50%] px-6 py-3 text-white font-medium rounded-4xl transition transform hover:scale-[1.01] active:scale-[0.99] ${isLoading ? "opacity-60 cursor-not-allowed" : ""
+                                    className={`w-full px-6 py-3 text-white font-medium rounded-lg transition transform hover:scale-[1.01] active:scale-[0.99] cursor-pointer ${isLoading ? "opacity-60 cursor-not-allowed" : ""
                                         }`}
                                     style={{ backgroundColor: PRIMARY_BLUE }}
                                 >

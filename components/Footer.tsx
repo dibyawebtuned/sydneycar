@@ -1,6 +1,13 @@
 import React from 'react';
 import { Mail, MapPin, Phone, Clock } from 'lucide-react';
 import Image from 'next/image';
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+});
 
 // --- Assets ---
 import logoImg from '../public/logo.png';
@@ -10,11 +17,7 @@ import instagram from '../public/footer/instagram.svg';
 import twitter from '../public/footer/twitter.svg';
 
 // --- Design Constants ---
-const PRIMARY_BLUE = '#0c55a6';
-const DARK_FOOTER_BG = '#101d2d';
 const ACCENT_YELLOW = '#fdb813';
-const TEXT_COLOR = '#f0f4f8';
-const LIGHT_BLUE = '#5eead4';
 
 // --- Data ---
 const supportLinks = [
@@ -56,37 +59,34 @@ const SocialIcon: React.FC<SocialIconProps> = ({ src, alt, href }) => (
 
 // --- Main Footer Component ---
 const Footer: React.FC = () => {
-  const backgroundImageUrl =
-    '/aboutImg.png';
-
   return (
-    <footer className="relative w-full">
-      {/* Top Section */}
-      <div className="relative py-16 md:py-20">
+    <footer className="relative w-full overflow-hidden">
+      {/* Background Layer */}
+      <div className="absolute inset-0 -z-10">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage: `url('/aboutImg.png')`,
-            opacity: 0.3,
+            opacity: 0.3, // Image transparency
           }}
         ></div>
 
-        {/* Semi-transparent Overlay */}
-        <div className="absolute inset-0 bg-[#101d2d] bg-opacity-80"></div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-[#101d2d]/50 mix-blend-multiply"></div>
+      </div>
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Top Section */}
+      <div className="relative py-15 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
             {/* Logo & Description */}
             <div className="col-span-2 lg:col-span-1">
               <div className="flex items-center mb-6">
-                <Image src={logoImg} alt="Sydney Car Removal Logo" className="h-10 w-auto" />
+                <Image src={logoImg} alt="Sydney Car Removal Logo" className="h-[42px] w-[220px]" />
               </div>
-
-              <p className="text-sm leading-relaxed mb-8 text-[#f0f4f8] max-w-xs">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                dolor. Aenean massa.
+              <p className={`text-base leading-relaxed mb-8 text-[#f0f4f8] ${inter.className}`}>
+                Old, junk, written-off, unregistered or not running—we’ll take it. We buy cars, SUVs, 4×4s, utes, vans and light trucks, plus offer cash for trucks and responsible car wrecking for end-of-life vehicles.
               </p>
 
               {/* Social Icons */}
@@ -99,15 +99,14 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Support Links */}
-            <div className="lg:col-span-1">
-              <h4 className="text-lg font-bold mb-6 text-[#fdb813]">Support</h4>
+            <div>
+              <h4 className="text-[25px] font-extrabold mb-6 text-[#fdb813] font-cabinet">Support</h4>
               <ul className="space-y-3">
                 {supportLinks.map((link) => (
                   <li key={link.name} className="group relative w-fit">
                     <a
                       href={link.href}
-                      className="text-sm transition-colors duration-200 hover:text-white"
-                      style={{ color: '#f0f4f8' }}
+                      className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}
                     >
                       {link.name}
                     </a>
@@ -118,15 +117,14 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Service Links */}
-            <div className="lg:col-span-1">
-              <h4 className="text-lg font-bold mb-6 text-[#fdb813]">Our Services</h4>
+            <div>
+              <h4 className="text-[25px] font-extrabold mb-6 text-[#fdb813] font-cabinet">Our Services</h4>
               <ul className="space-y-3">
                 {serviceLinks.map((link) => (
                   <li key={link.name} className="group relative w-fit">
                     <a
                       href={link.href}
-                      className="text-sm transition-colors duration-200 hover:text-white"
-                      style={{ color: '#f0f4f8' }}
+                      className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}
                     >
                       {link.name}
                     </a>
@@ -137,20 +135,28 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Contact */}
-            <div className="lg:col-span-1">
-              <h4 className="text-lg font-bold mb-6 text-[#fdb813]">Contact</h4>
+            <div>
+              <h4 className="text-[25px] font-extrabold mb-6 text-[#fdb813] font-cabinet">Contact</h4>
               <ul className="space-y-4 mb-8 text-sm text-[#f0f4f8]">
                 <li className="flex items-start">
-                  <Clock size={18} className="mr-3 mt-1 text-[#fdb813]" /> 24 Hours
+                  <Clock size={18} className="mr-3 mt-1 text-[#fdb813]" />
+                  <span className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}>
+                    24 Hours
+                  </span>
                 </li>
                 <li className="flex items-start">
-                  <Phone size={18} className="mr-3 mt-1 text-[#fdb813]" /> +0402887766, +0450747474
+                  <Phone size={18} className="mr-3 mt-1 text-[#fdb813]" />
+                  <span className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}>
+                    +0402887766, +0450747474
+                  </span>
                 </li>
                 <li className="flex items-start">
-                  <Mail size={18} className="mr-3 mt-1 text-[#fdb813]" /> sydneycarremoval@gmail.com
+                  <Mail size={18} className="mr-3 mt-1 text-[#fdb813]" />
+                  <span className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}>sydneycarremoval@gmail.com </span>
                 </li>
                 <li className="flex items-start">
-                  <MapPin size={18} className="mr-3 mt-1 text-[#fdb813]" /> Sydney, Australia
+                  <MapPin size={18} className="mr-3 mt-1 text-[#fdb813]" />
+                  <span className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}>Sydney, Australia </span>
                 </li>
               </ul>
 
@@ -192,12 +198,11 @@ const Footer: React.FC = () => {
       {/* Bottom Section */}
       <div className="py-4 text-center text-sm bg-[#0c55a6] text-[#f0f4f8]">
         &copy; 2025 Sydney Car Removal and Towing Services. All Rights Reserved. Crafted by
-        <a href="#" className="ml-1 transition-colors duration-200 underline text-[#5eead4]">
+        <a href="#" className="ml-1 underline text-[#5eead4] transition-colors duration-200 hover:text-white">
           Murphys Technology
         </a>
       </div>
     </footer>
-
   );
 };
 
