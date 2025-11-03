@@ -32,17 +32,15 @@ const OurCoreValuesSection: React.FC = () => {
             className="lg:col-span-6 lg:pr-8"
           >
             {/* Small Heading */}
-            <h3
-              className="text-md font-semibold uppercase tracking-widest mb-3 relative pb-2 inline-block"
-              style={{ color: PRIMARY_BLUE }}
-            >
-              OUR CORE VALUES
-              <span
-                className="absolute left-0 bottom-0 w-16 h-0.5 z-10"
-                style={{ backgroundColor: PRIMARY_BLUE }}
-              ></span>
-              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-gray-200 z-0"></span>
-            </h3>
+            <div>
+              <h3
+                className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-widest relative pb-2 inline-block whitespace-nowrap font-cabinet"
+                style={{ color: PRIMARY_BLUE }}
+              >
+                OUR CORE VALUES
+              </h3>
+              <span className="w-full h-px bg-[#0c55a6] mb-1.5"></span>
+            </div>
 
             {/* Main Heading */}
             <h2
@@ -55,7 +53,7 @@ const OurCoreValuesSection: React.FC = () => {
                 VEHICLE REMOVAL
                 <span
                   className="absolute left-0 right-0 -z-10"
-                  
+
                 ></span>
               </span>{" "}
               & TOWING

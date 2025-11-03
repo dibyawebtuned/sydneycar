@@ -110,28 +110,6 @@ const AboutUsSection: React.FC = () => {
                 responsibly.
               </p>
 
-              {/* Service Cards */}
-              {/* <div className="grid grid-cols-3  md:grid-cols-3 sm:grid-cols-1 gap-5 w-full">
-                <ServiceCard
-                  title="24/7 Towing Service"
-                  icon={Truck}
-                  bgColorClass="bg-[#ffffff]"
-                  iconColorClass="text-[#d88907]"
-                />
-                <ServiceCard
-                  title="24/7 Assistance"
-                  icon={Truck}
-                  bgColorClass="bg-[#fdb813]"
-                  iconColorClass="text-[#0c55a6]"
-                />
-                <ServiceCard
-                  title="24/7 Towing Service"
-                  icon={Truck}
-                  bgColorClass="bg-[#ffffff]"
-                  iconColorClass="text-[#d88907]"
-                />
-              </div> */}
-
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
                 {/* Card 1 */}
@@ -194,8 +172,6 @@ const AboutUsSection: React.FC = () => {
                   </span>
                 </div>
               </div>
-
-
             </div>
           </motion.div>
 

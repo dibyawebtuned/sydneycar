@@ -1,117 +1,143 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from 'react';
-import { Quote } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { Quote, Star } from "lucide-react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-// --- Design Constants ---
-const PRIMARY_BG = '#F0EFEE'; // light background
-const TEXT_COLOR = '#0A1931'; // dark text
-const SUBTLE_GRAY = '#333333cc'; // dark gray with slight transparency
-const CARD_BG = 'rgba(255,255,255,0.8)'; // slightly transparent card over light bg
-const ACCENT_YELLOW = "#fdb813";
+const PRIMARY_BG = "#F9FAFB";
+const CARD_BG = "#FFFFFF";
+const TEXT_COLOR = "#1A202C";
+const SUBTLE_GRAY = "#718096";
+const ACCENT_YELLOW = "#FDB813";
 const SECONDARY_BLUE = "#044E9E";
 
-// --- Testimonials Data ---
 const testimonials = [
-  { id: 1, quote: "Lorem ipsum dolor sit amet...orem ipsum dolor sit amet...orem ipsum dolor sit amet...", name: "Sophie Moore", title: "DESIGNER AT BRIX TEMPLATES" },
-  { id: 2, quote: "orem ipsum dolor sit amet...orem ipsum dolor sit amet...orem ipsum dolor sit amet... commodo ligula eget dolor...", name: "John Carter", title: "MARKETING LEAD AT BRIX TEMPLATES" },
-  { id: 3, quote: "Donec quam orem ipsum dolor sit amet...orem ipsum dolor sit amet...orem ipsum dolor sit amet..., ultricies nec...", name: "Michael Chen", title: "VP OF DESIGN AT BRIX TEMPLATES" },
-  { id: 4, quote: "Nullam orem ipsum dolor sit amet...orem ipsum dolor sit amet...orem ipsum dolor sit amet... felis eu pede mollis...", name: "Jane Smith", title: "SENIOR DEVELOPER" },
-  { id: 5, quote: "Nullam orem ipsum dolor sit amet...orem ipsum dolor sit amet...orem ipsum dolor sit amet... felis eu pede mollis...", name: "Jane Smith", title: "SENIOR DEVELOPER" },
-  { id: 6, quote: "Nullam orem ipsum dolor sit amet...orem ipsum dolor sit amet...orem ipsum dolor sit amet... felis eu pede mollis...", name: "Jane Smith", title: "SENIOR DEVELOPER" },
+  {
+    id: 1,
+    quote:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    name: "Sophie Moore",
+    title: "Designer at Brix Templates",
+    avatar: "/avatar_one.jpg",
+    rating: 5,
+  },
+  {
+    id: 2,
+    quote:
+      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    name: "John Carter",
+    title: "Marketing Lead",
+    avatar: "/avatar_two.jpg",
+    rating: 4,
+  },
+  {
+    id: 3,
+    quote:
+      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    name: "Michael Chen",
+    title: "VP of Design",
+    avatar: "/avatar_three.jpg",
+    rating: 5,
+  },
 ];
 
-// --- Testimonial Card ---
 interface TestimonialCardProps {
   quote: string;
   name: string;
   title: string;
-  isLeft: boolean;
+  avatar?: string;
+  rating?: number;
 }
-// --- Testimonial Card ---
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name, title, isLeft }) => (
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({
+  quote,
+  name,
+  title,
+  avatar,
+  rating = 5,
+}) => (
   <motion.div
-    initial={{ opacity: 0, x: isLeft ? -50 : 50, scale: 0.95 }}
-    whileInView={{ opacity: 1, x: 0, scale: 1 }}
-    whileHover={{ scale: 1.05, y: -5, boxShadow: "0px 20px 40px rgba(0,0,0,0.1)" }}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.3 }}
-    transition={{ duration: 0.7, type: "spring", stiffness: 80 }}
-    className="w-full lg:w-[calc(50%-2rem)] p-6 md:p-8 rounded-xl shadow-lg"
-    style={{ backgroundColor: CARD_BG }}
+    whileHover={{ scale: 1.03, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
+    transition={{ duration: 0.6 }}
+    className="bg-white rounded-2xl p-8 shadow-md flex flex-col gap-4 relative"
   >
-    <Quote size={24} style={{ color: ACCENT_YELLOW }} className="mb-4 opacity-80" />
-    <p className="text-base italic leading-relaxed" style={{ color: TEXT_COLOR }}>{quote}</p>
-    <div className="flex items-center space-x-4 mt-6 border-t pt-4" style={{ borderColor: 'rgba(0,0,0,0.1)' }}>
+    <Quote size={32} className="text-[#044E9E] absolute -top-5 left-6 opacity-80" />
+
+    {/* Star Rating */}
+    <div className="flex items-center gap-1">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star
+          key={i}
+          size={20}
+          className={i < rating ? "text-yellow-400" : "text-gray-300"}
+        />
+      ))}
+    </div>
+
+    <p className="text-gray-700 italic leading-relaxed">{quote}</p>
+    <div className="flex items-center gap-4 mt-4">
+      <Image
+        src={avatar || "/aboutImg.png"}
+        width={100}
+        height={10}
+        alt={name}
+        className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400"
+      />
       <div>
-        <p className="font-bold text-lg" style={{ color: TEXT_COLOR }}>{name}</p>
-        <p className="text-xs uppercase tracking-wider font-medium" style={{ color: TEXT_COLOR }}>{title}</p>
+        <p className="font-semibold text-gray-900">{name}</p>
+        <p className="text-sm text-gray-500 uppercase tracking-wide">{title}</p>
       </div>
     </div>
   </motion.div>
 );
 
-// --- Main Reviews Component ---
-const AlternatingReviewPage: React.FC = () => {
-  const timelineRef = useRef<HTMLDivElement>(null);
-  const [lineFillHeight, setLineFillHeight] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!timelineRef.current) return;
-      const { top, height } = timelineRef.current.getBoundingClientRect();
-      const progress = Math.min(1, Math.max(0, (window.innerHeight - top) / (height + window.innerHeight)));
-      setLineFillHeight(progress * 100);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+const TestimonialsPage: React.FC = () => {
   return (
-    <section className="py-16 md:py-24 relative" style={{ backgroundColor: PRIMARY_BG }}>
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-15 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col gap-[50px]">
+          {/* Header */}
+          <div className="sm:w-[50%]">
+            <div className="flex items-center gap-2.5">
+              <h3 className="text-[#044E9E] text-[18px] sm:text-[20px] font-semibold uppercase tracking-widest relative pb-2 inline-block whitespace-nowrap font-cabinet">
+                TESTIMONIALS
+              </h3>
+              <span className="w-full h-px bg-[#9F9F9F] mb-1.5"></span>
+            </div>
 
-        {/* Header */}
-        <header className="max-w-2xl mb-12 md:mb-16 text-center mx-auto relative z-10">
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl" style={{ color: TEXT_COLOR }}>
-            WHAT OUR <span className="inline-block relative z-10" style={{ color: SECONDARY_BLUE }}>
-              CLIENT
-              <span className="absolute left-0 right-0 -z-10" ></span>
-            </span> SAY
-          </h2>
-          <p className="mt-4 text-xl" style={{ color: SUBTLE_GRAY }}>
-            Hear from the professionals who trust our commitment to attention to detail and excellence.
-          </p>
-          <div className="w-24 h-1 mt-8 mx-auto rounded-full" style={{ backgroundColor: ACCENT_YELLOW, opacity: 0.8 }} />
-        </header>
+            <h2
+              className="text-[#0A1931] text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold"
+            >
+              WHAT OUR{" "}
+              <span
+                className="inline-block relative text-[32px] sm:text-[40px] lg:text-[48px] leading-none text-[#044E9E]"
+              >
+                CLIENT
+                <span className="absolute left-0 bottom-0.5 w-full h-3 sm:h-3.5 -z-10 bg-[#044E9E]"></span>
+              </span>{" "}
+              SAYS
+            </h2>
 
-        {/* Testimonials Timeline */}
-        <div className="relative z-10" ref={timelineRef}>
-          <div className="absolute hidden lg:block left-1/2 w-1 h-full -ml-0.5" style={{ backgroundColor: ACCENT_YELLOW, opacity: 0.2 }} />
-          <motion.div
-            className="absolute hidden lg:block left-1/2 w-1 -ml-0.5"
-            style={{ top: 0, backgroundColor: ACCENT_YELLOW }}
-            animate={{ height: `${lineFillHeight}%` }}
-            transition={{ type: "spring", stiffness: 50, damping: 15 }}
-          />
+            <p className="text-[#6A6A6A] text-lg">
+              Real experiences from people just like you who used our free car
+              removal and towing services.
+            </p>
+          </div>
 
-          <div className="space-y-6 lg:space-y-0">
-            {testimonials.map((testimonial, index) => {
-              const isLeft = index % 2 === 0;
-              const alignClass = isLeft ? 'justify-start' : 'justify-end';
-              return (
-                <div key={testimonial.id} className={`flex ${alignClass} w-full relative py-4 lg:py-0`}>
-                  <TestimonialCard {...testimonial} isLeft={isLeft} />
-                </div>
-              );
-            })}
+          {/* Testimonials Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((t) => (
+              <TestimonialCard key={t.id} {...t} />
+            ))}
           </div>
         </div>
-
       </div>
     </section>
   );
 };
 
-export default AlternatingReviewPage;
+export default TestimonialsPage;
