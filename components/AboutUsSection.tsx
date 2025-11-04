@@ -53,10 +53,10 @@ const AboutUsSection: React.FC = () => {
       {/* Absolute form for LG/XL - Animated from right when in viewport */}
       <motion.div
         className="w-[40%] absolute top-[-70px] right-6 lg:right-15 z-20 hidden lg:block"
-        initial={{ opacity: 0, x: 200 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 1 }}
+      // initial={{ opacity: 0, x: 200 }}
+      // whileInView={{ opacity: 1, x: 0 }}
+      // viewport={{ once: true, amount: 0.2 }}
+      // transition={{ duration: 1 }}
       >
         <RequestQuoteForm />
       </motion.div>
@@ -183,10 +183,10 @@ const AboutUsSection: React.FC = () => {
           {/* FORM COLUMN for SM/MD only - Animated from right when in viewport */}
           <motion.div
             className="flex-1 w-full flex justify-center mt-6 lg:hidden"
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 1 }}
+          // initial={{ opacity: 0, x: 200 }}
+          // whileInView={{ opacity: 1, x: 0 }}
+          // viewport={{ once: true, amount: 0.2 }}
+          // transition={{ duration: 1 }}
           >
             <div className="w-full md:w-full">
               <RequestQuoteForm />

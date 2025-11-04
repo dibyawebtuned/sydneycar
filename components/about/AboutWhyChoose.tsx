@@ -79,10 +79,7 @@ const AboutWhyChoose: React.FC = () => {
               </h2>
 
               <p className={`text-[#6A6A6A] text-[14px] sm:text-[16px] font-medium mb-5 mt-5 text-justify w-full ${inter.className}`}>
-                At Sydney Car Removal and Towing Services, we are all about making the process
-                simple, quick, and stress-free. Whether your vehicle is old, damaged, or
-                unwanted, our friendly local team ensures you get the best value, instant cash,
-                and free pickup anywhere in Sydney — all in one smooth experience.
+                We aim to make vehicle removal as straightforward as possible. No complicated processes, no hidden fees, no waiting games.
               </p>
             </div>
           </div>

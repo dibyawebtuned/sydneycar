@@ -107,10 +107,7 @@ const About: React.FC = () => {
 
               {/* Description */}
               <p className={`text-[#6A6A6A] text-[14px] sm:text-[16px] mb-5 mt-5 text-justify w-full ${inter.className}`}>
-                We’re a Sydney-based, family-run business dedicated to providing reliable,
-                eco-conscious, and fast car removal solutions. With years of experience, Sam and
-                Jay have helped thousands of Sydney residents clear space, earn cash, and recycle
-                responsibly.
+                We began our journey more than two decades ago, driven by one simple idea: helping homes and businesses reclaim their space from unwanted vehicles without the stress. Today, we operate 24 hours a day, 7 days a week, offering Sydney-wide coverage, free towing, and instant payouts (from $200 for cars in any condition). Whether you’re a homeowner, a business clearing a lot, or simply dealing with a vehicle that’s been sitting for too long — we’re here for you.
               </p>
 
 
