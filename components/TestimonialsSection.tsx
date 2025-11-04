@@ -144,9 +144,17 @@ const TestimonialsSection: React.FC = () => {
               style={{ backgroundColor: SECONDARY_BLUE }}
             >
               {/* Quotation background mark */}
-              <div className="absolute top-1/2 right-10 transform -translate-y-1/2 text-9xl font-extrabold opacity-10 select-none text-white/5 pointer-events-none">
-                &ldquo;
+              {/* Quotation background mark (SVG) */}
+              <div className="absolute top-1/2 right-10 transform -translate-y-1/2 scale-x-[-1] scale-y-[-1] select-none pointer-events-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"
+                  className="w-30 h-30 fill-[#013A77]"
+                >
+                  <path d="M464 32H336c-26.51 0-48 21.49-48 48v128c0 26.51 21.49 48 48 48h32v64c0 17.67-14.33 32-32 32h-16c-8.84 0-16 7.16-16 16v64c0 8.84 7.16 16 16 16h16c70.69 0 128-57.31 128-128V80c0-26.51-21.49-48-48-48zM176 32H48C21.49 32 0 53.49 0 80v128c0 26.51 21.49 48 48 48h32v64c0 17.67-14.33 32-32 32H32c-8.84 0-16 7.16-16 16v64c0 8.84 7.16 16 16 16h16c70.69 0 128-57.31 128-128V80c0-26.51-21.49-48-48-48z" />
+                </svg>
               </div>
+
 
               {/* Animated testimonial content */}
               <AnimatePresence mode="wait">

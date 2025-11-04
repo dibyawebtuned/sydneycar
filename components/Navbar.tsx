@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
+import QuoteModal from "./Quotemodal";
 
 import { Inter } from "next/font/google";
 
@@ -55,6 +56,10 @@ const Navbar: React.FC = () => {
   const mobileLinkClasses =
     "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#0c55a6] transition duration-150 cursor-pointer";
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-40">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,13 +139,15 @@ const Navbar: React.FC = () => {
           {/* Contact Button (Tablet/Desktop) */}
           <div className="hidden lg:inline-flex lg:inline-flex">
             <button
-              onClick={() => router.push("/contact")}
+              onClick={openModal}
               className={`inline-flex flex-wrap gap-2 items-center px-4 sm:px-6 md:px-5 py-2 md:py-3 border border-transparent text-sm md:text-base font-medium shadow-lg text-white bg-[#0c55a6] hover:bg-[#094182] transition duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${inter.className}`}
             >
               <span className="w-2 h-2 bg-white rounded-full"></span>
               Get A Quote
             </button>
           </div>
+
+
 
           {/* Mobile Menu Toggle */}
           <div className="lg:hidden">
@@ -161,6 +168,9 @@ const Navbar: React.FC = () => {
           </div>
         </div>
       </div>
+
+      {/* Reusable Quote Modal */}
+      <QuoteModal isOpen={isModalOpen} onClose={closeModal} />
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (

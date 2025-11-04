@@ -110,10 +110,7 @@ const AboutUsSection: React.FC = () => {
 
               {/* Description */}
               <p className={`text-[#6A6A6A] text-[14px] sm:text-[16px] mb-5 mt-5 text-justify w-full ${inter.className}`}>
-                We are a Sydney-based, family-run business dedicated to providing reliable,
-                eco-conscious, and fast car removal solutions. With years of experience, Sam and
-                Jay have helped thousands of Sydney residents clear space, earn cash, and recycle
-                responsibly.
+                Welcome to Sydney Car Removal and Towing Services — your trusted partner in freeing up space and turning unwanted vehicles into cash. With over 22 years of experience in the Sydney market, we’ve built a reputation for fast, fair, and reliable service across the entire region.
               </p>
 
               <div className="grid grid-cols-3 gap-5 w-full">
