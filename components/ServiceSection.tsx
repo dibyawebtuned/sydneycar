@@ -16,13 +16,6 @@ const inter = Inter({
 
 const PRIMARY_BLUE = '#0c55a6';
 
-// interface ServiceCardProps {
-//   title: string;
-//   description: string;
-//   icon: React.ReactNode;
-//   isHighlighted?: boolean;
-//   animationDirection?: "left" | "right";
-// }
 interface ServiceCardProps {
   title: string;
   description: string;
