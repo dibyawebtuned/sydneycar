@@ -39,11 +39,11 @@ const HEADING_COLOR = "#1e1e1e";
 //   </div>
 // );
 
-const cards = [
-  { id: 1, title: "We Tow", icon: Truck },
-  { id: 2, title: "You Get Paid, No Drama", icon: CircleDollarSign },
-  { id: 3, title: "Cash In Hand", icon: HandCoins },
-];
+// const cards = [
+//   { id: 1, title: "We Tow", icon: Truck },
+//   { id: 2, title: "You Get Paid, No Drama", icon: CircleDollarSign },
+//   { id: 3, title: "Cash In Hand", icon: HandCoins },
+// ];
 
 const AboutUsSection: React.FC = () => {
   const [hovered, setHovered] = useState<number | null>(null);
@@ -118,75 +118,50 @@ const AboutUsSection: React.FC = () => {
 
               <div className="grid grid-cols-3 gap-5 w-full">
                 {/* Card 1 */}
-                {/* <div
-                  onMouseEnter={() => setHovered(id)}  
+                <div
+                  onMouseEnter={() => setHovered(1)}
                   onMouseLeave={() => setHovered(null)}
-
-                  className={`flex flex-col items-center justify-center p-5 sm:p-6 h-[125px] rounded-2xl shadow-sm transition-all duration-300 cursor-pointer hover:shadow-xl ${hovered === 1 ? "bg-[#fdb813]" : "bg-white"
-                    }`}
+                  onClick={() => setHovered(hovered === 1 ? null : 1)}
+                  className={`flex flex-col items-center justify-center p-5 sm:p-6 min-h-[140px] sm:h-[125px] rounded-2xl shadow-sm transition-all duration-300 cursor-pointer hover:shadow-xl text-center ${hovered === 1 ? "bg-[#fdb813]" : "bg-white"}`}
                 >
                   <Truck
                     size={48}
-                    className={`mb-3 ${hovered === 1 ? "text-[#0c55a6]" : "text-[#fdb813]"
-                      }`}
+                    className={`mb-3 transition-colors duration-300 ${hovered === 1 ? "text-[#0c55a6]" : "text-[#fdb813]"}`}
                   />
                   <span
-                    className={`text-base sm:text-[16px] font-semibold ${hovered === 1 ? "text-[#0c55a6]" : "text-gray-900"
-                      }`}
+                    className={`text-base sm:text-[16px] font-semibold transition-colors duration-300 ${hovered === 1 ? "text-[#0c55a6]" : "text-gray-900"}`}
                   >
                     We Tow
                   </span>
-                </div> */}
-
-                {cards.map(({ id, title, icon: Icon }) => (
-                  <div
-                    key={id}
-                    onMouseEnter={() => setHovered(id)}
-                    onMouseLeave={() => setHovered(null)}
-                    className={`flex flex-col items-center justify-center p-5 sm:p-6 h-[125px] rounded-2xl shadow-sm transition-all duration-300 cursor-pointer hover:shadow-xl ${hovered === id ? "bg-[#fdb813]" : "bg-white"
-                      }`}
-                  >
-                    <Icon
-                      size={48}
-                      className={`mb-3 ${hovered === id ? "text-[#0c55a6]" : "text-[#fdb813]"}`}
-                    />
-                    <span
-                      className={`text-base sm:text-[16px] font-semibold ${hovered === id ? "text-[#0c55a6]" : "text-gray-900"
-                        }`}
-                    >
-                      {title}
-                    </span>
-                  </div>
-                ))}
+                </div>
 
 
                 {/* Card 2 (Initially Active) */}
-                {/* <div
+                <div
                   onMouseEnter={() => setHovered(2)}
                   onMouseLeave={() => setHovered(null)}
-
-                  className={`flex flex-col items-center justify-center p-5 sm:p-6 h-[125px] rounded-2xl  shadow-sm transition-all duration-300 cursor-pointer hover:shadow-xl ${hovered && hovered !== 2 ? "bg-white" : "bg-[#fdb813]"
-                    }`}
+                  onClick={() => setHovered(hovered === 1 ? null : 2)}
+                  className={`flex flex-col items-center justify-center p-5 sm:p-6 min-h-[140px] sm:h-[125px] rounded-2xl shadow-sm transition-all duration-300 cursor-pointer hover:shadow-xl ${hovered && hovered !== 2 ? "bg-white" : "bg-[#fdb813]"}`}
                 >
                   <CircleDollarSign
-                    size={48}
-                    className={`mb-3 ${hovered && hovered !== 2 ? "text-gray-900" : "text-[#0c55a6]"
+                    size={40}
+                    className={`mb-3 ${hovered && hovered !== 2 ? "text-[#fdb813]" : "text-[#0c55a6]"
                       }`}
                   />
                   <span
                     className={`text-base sm:text-[16px] font-semibold text-center leading-snug ${hovered && hovered !== 2 ? "text-gray-900" : "text-[#0c55a6]"
                       }`}
                   >
-                    You Get Paid, No Drama
+                    Get Paid, No Drama
                   </span>
-                </div> */}
+                </div>
 
                 {/* Card 3 */}
-                {/* <div
+                <div
                   onMouseEnter={() => setHovered(3)}
                   onMouseLeave={() => setHovered(null)}
-
-                  className={`flex flex-col items-center justify-center p-5 sm:p-6 h-[125px] rounded-2xl shadow-sm transition-all duration-300 cursor-pointer hover:shadow-xl ${hovered === 3 ? "bg-[#fdb813]" : "bg-white"
+                  onClick={() => setHovered(hovered === 1 ? null : 3)}
+                  className={`flex flex-col items-center justify-center p-5 sm:p-6 min-h-[140px] sm:h-[125px] rounded-2xl shadow-sm transition-all duration-300 cursor-pointer hover:shadow-xl ${hovered === 3 ? "bg-[#fdb813]" : "bg-white"
                     }`}
                 >
                   <HandCoins
@@ -200,7 +175,7 @@ const AboutUsSection: React.FC = () => {
                   >
                     Cash In Hand
                   </span>
-                </div> */}
+                </div>
               </div>
             </div>
           </motion.div>
