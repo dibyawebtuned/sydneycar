@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
 
 import { Inter } from "next/font/google";
 
@@ -60,13 +61,15 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="shrink-0 flex items-center">
-            <Image
-              src="/logo.png"
-              alt="Sydney Car Removal and Towing Services Logo"
-              width={220}
-              height={40}
-              priority
-            />
+            <Link href="/">
+              <Image
+                src="/logo.png"
+                alt="Sydney Car Removal and Towing Services Logo"
+                width={220}
+                height={40}
+                priority
+              />
+            </Link>
           </div>
 
           {/* Desktop Links */}

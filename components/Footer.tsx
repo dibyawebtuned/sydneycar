@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-black transform rotate-45"
+                    className="text-[#044E9E] transform rotate-45"
                   >
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>

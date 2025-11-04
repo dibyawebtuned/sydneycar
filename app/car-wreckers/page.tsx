@@ -98,8 +98,8 @@ const CarWreckersPage: React.FC = () => {
             <h1 className="mb-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight md:leading-[1.15] text-[#f0f4f8] font-cabinet">
               Sydney Car Removal Services
             </h1>
-            <p 
-            className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
+            <p
+              className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
             >
               We offer 100% free car removal across Sydney, no matter the make
               or condition. Quick, safe, and hassle-free.
