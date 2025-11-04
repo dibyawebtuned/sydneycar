@@ -8,6 +8,13 @@ import { useRouter } from "next/navigation";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+    subsets: ["latin"],
+    variable: "--font-inter",
+    weight: ["400", "500", "600", "700"],
+});
 
 
 const services = [
@@ -58,39 +65,60 @@ const CarRemovalPage: React.FC = () => {
     return (
         <div className="w-full bg-gray-50">
             {/* Hero Section */}
-            <section className="relative bg-[#002043] text-white overflow-hidden min-h-screen flex items-center">
+            <section className="relative bg-[#002043] text-white overflow-hidden min-h-[70vh] sm:min-h-[90vh] flex items-center">
+                {/* Background Layers */}
                 <div className="absolute inset-0">
                     <div className="absolute inset-0 bg-black/40 z-10"></div>
+
+                    {/* Background Image */}
                     <Image
                         src="/service/carRemoval.jpg"
                         alt="Car Removal"
                         fill
                         className="object-cover z-0"
+                        priority
+                    />
+
+                    {/* Gradient Overlay */}
+                    <div
+                        className="absolute inset-0 z-0"
+                        style={{
+                            background:
+                                "linear-gradient(90.44deg, rgba(4, 78, 158, 0.8) 0.4%, rgba(0, 0, 0, 0.4) 99.66%)",
+                        }}
                     />
                 </div>
 
-                <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-center w-full">
+                {/* Main Content */}
+                <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between w-full gap-10 md:gap-[50px]">
+
                     {/* Text Content */}
                     <motion.div
-                        className="md:w-1/2 space-y-6 flex flex-col justify-center items-center md:items-start"
+                        className="w-full md:w-1/2 space-y-6 flex flex-col justify-center items-start text-left"
                         initial={{ opacity: 0, y: -40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-white">
+                        {/* Title */}
+                        <h1 className="mb-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight md:leading-[1.15] text-[#f0f4f8] font-cabinet">
                             Sydney Car Removal Services
                         </h1>
-                        <p className="text-lg sm:text-xl text-gray-200 max-w-lg">
-                            We offer 100% free car removal across Sydney, no matter the make or condition.
+
+                        {/* Sub-Title */}
+                        <p
+                            className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
+                        >
+                            We offer 100% free car removal across Sydney, no matter the make or
+                            condition.
                         </p>
+
                         <motion.a
                             href="#contact"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="inline-flex items-center px-6 py-3 rounded-4xl bg-yellow-400 text-black font-medium hover:bg-yellow-300 transition"
+                            className={`inline-flex flex-wrap gap-2 items-center justify-center md:justify-start px-4 sm:px-6 py-2 border border-transparent text-sm sm:text-base font-medium shadow-lg text-[#121212] bg-[#FEC130] hover:bg-[#e6a200] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] rounded-md ${inter.className}`}
                         >
                             <motion.div
-                                className="mr-2"
                                 animate={{ x: [0, -1.5, 1.5, -1, 1, 0] }}
                                 transition={{ repeat: Infinity, repeatDelay: 2, duration: 0.3 }}
                             >
@@ -102,7 +130,7 @@ const CarRemovalPage: React.FC = () => {
 
                     {/* Hero Image */}
                     <motion.div
-                        className="md:w-1/2 relative h-80 md:h-96 mb-8 md:mb-0 overflow-hidden rounded-2xl shadow-xl"
+                        className="w-full md:w-1/2 relative h-64 sm:h-72 md:h-96 lg:h-[420px] overflow-hidden rounded-2xl shadow-xl"
                         initial={{ scale: 0.95, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 1.2 }}
@@ -118,41 +146,48 @@ const CarRemovalPage: React.FC = () => {
             </section>
 
 
+            {/* WhyChooseUsSection */}
             <WhyChooseUsSection />
+
+            {/* OurCoreValuesSection */}
             <OurCoreValuesSection />
 
+            {/* HowItWorksSection */}
             <HowItWorksSection />
 
             {/* Other Services Section with Sticky Left Column and Animations */}
-            <section className="py-24 bg-white">
-                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <section className="py-15 bg-white">
+                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 relative">
 
                     {/* Left Column (Sticky) */}
-                    <motion.div
-                        className="md:col-span-1"
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <div className="md:sticky md:top-28 flex flex-col justify-start space-y-6">
-                            <h2 className="text-4xl font-semibold text-black uppercase leading-relaxed">
+                    <div className="relative">
+                        <motion.div
+                            className="lg:sticky lg:top-28 flex flex-col justify-start space-y-6"
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <div className="flex items-center gap-2.5">
+                                <h3 className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-widest relative pb-2 inline-block whitespace-nowrap font-cabinet text-[#044E9E]">
+                                    Other services
+                                </h3>
+                                <span className="flex-1 h-px bg-[#9F9F9F] mb-1.5"></span>
+                            </div>
+
+                            <h2 className="uppercase text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight font-cabinet font-extrabold text-[#1e1e1e]">
                                 Explore Our<br />Other{" "}
                                 <span className="inline-block relative z-10 text-[#044E9E]">
                                     Services
-
-                                    <span
-                                        className="absolute left-0 right-0 -z-10"
-
-                                    ></span>
                                 </span>
                             </h2>
-                            <p className="text-gray-600 text-lg mb-8 max-w-prose text-justify">
+
+                            <p className={`text-[#6A6A6A] text-[14px] sm:text-[16px] mb-5 text-justify w-full font-medium ${inter.className}`}>
                                 We offer a range of professional and customizable car services
                                 designed to meet your unique needs and keep your vehicle in top condition.
                             </p>
 
-                            {/* New Section: Ready to Get Service */}
+                            {/* Animated CTA */}
                             <motion.div
                                 className="flex items-center text-[#0c55a6] font-semibold cursor-pointer space-x-2"
                                 animate={{ x: [0, -3, 3, -3, 3, 0] }}
@@ -161,12 +196,11 @@ const CarRemovalPage: React.FC = () => {
                                 <Phone size={20} />
                                 <span>Ready to get our service?</span>
                             </motion.div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    </div>
 
-
-                    {/* Right Column (Animated Scrollable Services) */}
-                    <div className="md:col-span-2 flex flex-col space-y-20">
+                    {/* Right Column (Services List) */}
+                    <div className="flex flex-col space-y-10">
                         {services.map((service, idx) => (
                             <motion.div
                                 key={idx}
@@ -174,19 +208,19 @@ const CarRemovalPage: React.FC = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.8, delay: idx * 0.15 }}
-                                className="flex flex-col md:flex-row items-start md:items-center gap-8 group"
+                                className="flex flex-col sm:flex-row items-start sm:items-center gap-6 group cursor-pointer"
                             >
                                 {/* Image */}
                                 <motion.div
                                     whileHover={{ scale: 1.05 }}
                                     transition={{ duration: 0.4 }}
-                                    className="relative w-full md:w-1/3 h-60 rounded-2xl overflow-hidden shadow-md"
+                                    className="relative w-full sm:w-1/2 h-56 sm:h-44 lg:h-52 rounded-2xl overflow-hidden shadow-md flex-shrink-0"
                                 >
                                     <Image
                                         src={service.img}
                                         alt={service.title}
                                         fill
-                                        className="object-cover transform transition-transform duration-500 hover:scale-110 cursor-pointer"
+                                        className="object-cover transition-transform duration-500 hover:scale-110"
                                         onClick={() => router.push(service.link)}
                                     />
                                 </motion.div>
@@ -197,20 +231,20 @@ const CarRemovalPage: React.FC = () => {
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ duration: 0.8, delay: 0.2 }}
-                                    className="flex-1 flex flex-col h-60 justify-between"
+                                    className="flex-1 flex flex-col justify-between"
                                 >
                                     <div>
-                                        <h3 className="text-2xl font-semibold text-black uppercase mb-2">
+                                        <h3 className="text-xl sm:text-2xl font-semibold text-black uppercase mb-2 font-cabinet group-hover:text-[#0c55a6]">
                                             {service.title}
                                         </h3>
-                                        <p className="text-gray-600 text-lg mb-8 max-w-prose text-justify">
+                                        <p className={`text-gray-600 text-sm sm:text-base font-medium text-justify ${inter.className}`}>
                                             {service.desc}
                                         </p>
                                     </div>
 
                                     <button
                                         onClick={() => router.push(service.link)}
-                                        className="text-[#0c55a6] text-sm uppercase font-semibold tracking-wide relative w-max after:content-[''] after:block after:h-0.5 after:bg-[#0c55a6] after:w-0 after:transition-all after:duration-300 group-hover:after:w-full"
+                                        className={`mt-3 text-[#0c55a6] text-sm uppercase font-semibold tracking-wide relative w-max after:content-[''] after:block after:h-0.5 after:bg-[#0c55a6] after:w-0 after:transition-all after:duration-300 group-hover:after:w-full ${inter.className}`}
                                     >
                                         View Details →
                                     </button>
@@ -218,9 +252,10 @@ const CarRemovalPage: React.FC = () => {
                             </motion.div>
                         ))}
                     </div>
-
                 </div>
             </section>
+
+
 
 
 

@@ -31,7 +31,7 @@ const Step: React.FC<StepProps> = ({ step, index }) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className="relative flex-1 flex flex-col items-center z-20 min-w-[160px] sm:min-w-[180px]"
+      className="relative flex-1 flex flex-col items-center z-20 min-w-40 sm:min-w-[180px]"
     >
       {/* Circle and Icon */}
       <div className="relative mb-4">

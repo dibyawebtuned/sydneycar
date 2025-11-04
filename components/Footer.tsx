@@ -198,7 +198,7 @@ const Footer: React.FC = () => {
       {/* Bottom Section */}
       <div className="py-4 text-center text-sm bg-[#0c55a6] text-[#f0f4f8]">
         &copy; 2025 Sydney Car Removal and Towing Services. All Rights Reserved. Crafted by
-        <a href="#" className="ml-1 underline text-[#5eead4] transition-colors duration-200 hover:text-white">
+        <a href="https://murphystechnology.com/" className="ml-1 underline text-[#5eead4] transition-colors duration-200 hover:text-[#fdb813]">
           Murphys Technology
         </a>
       </div>
