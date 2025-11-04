@@ -64,7 +64,7 @@ const AboutUsSection: React.FC = () => {
       {/* Main content container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         {/* Flex for SM/MD, Grid for LG/XL */}
-        <div className=" sm:w-[80%] flex flex-col md:flex-col lg:grid lg:grid-cols-12 items-start gap-0">
+        <div className=" lg:w-[80%] flex flex-col md:flex-col lg:grid lg:grid-cols-12 items-start gap-0">
 
           {/* LEFT COLUMN - Animated from left when in viewport */}
           <motion.div

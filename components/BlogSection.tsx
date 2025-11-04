@@ -126,7 +126,7 @@ const BlogSection: React.FC = () => {
         </div>
 
         {/* Blog Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {blogPosts.map((post, index) => (
             <BlogCard key={post.id} post={post} index={index} />
           ))}
