@@ -116,9 +116,10 @@ const CarRemovalPage: React.FC = () => {
                             href="#contact"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className={`inline-flex flex-wrap gap-2 items-center justify-center md:justify-start px-4 sm:px-6 py-2 border border-transparent text-sm sm:text-base font-medium shadow-lg text-[#121212] bg-[#FEC130] hover:bg-[#e6a200] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] rounded-md ${inter.className}`}
+                            className={`inline-flex flex-wrap gap-2 items-center justify-center md:justify-start px-4 sm:px-6 py-2 border border-transparent text-sm sm:text-base font-medium shadow-lg text-[#121212] bg-[#FEC130] hover:bg-[#e6a200] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] ${inter.className}`}
                         >
                             <motion.div
+                            className="mr-2"
                                 animate={{ x: [0, -1.5, 1.5, -1, 1, 0] }}
                                 transition={{ repeat: Infinity, repeatDelay: 2, duration: 0.3 }}
                             >
