@@ -11,7 +11,7 @@ const inter = Inter({
 
 const HeroSection: React.FC = () => {
     return (
-        <section className="relative w-full pt-0 pb-12 lg:py-32 flex items-center justify-start text-white overflow-hidden">
+        <section className="relative w-full pt-12 pb-12 lg:py-32 flex items-center justify-start text-white overflow-hidden">
             {/* Background Image */}
             <Image
                 src={heroImg}

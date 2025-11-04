@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
   const router = useRouter();
 
   const desktopLinkClasses =
-    "text-black hover:text-[#0c55a6] font-semibold text-base transition duration-150 relative group py-2 flex items-center cursor-pointer";
+    "text-black hover:text-[#0c55a6] font-semibold text-sm md:text-base lg:text-base transition duration-150 relative group py-2 flex items-center cursor-pointer";
   const mobileLinkClasses =
     "block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[#0c55a6] transition duration-150 cursor-pointer";
 
@@ -72,8 +72,8 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8 font-cabinet">
+          {/* Desktop + Tablet Links */}
+          <div className="hidden lg:flex items-center space-x-6 lg:space-x-4 xl:space-x-8 font-cabinet">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
 
@@ -86,8 +86,7 @@ const Navbar: React.FC = () => {
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
                     <button
-                      className={`${desktopLinkClasses} relative ${isActive ? "text-[#0c55a6]" : ""
-                        }`}
+                      className={`${desktopLinkClasses} relative ${isActive ? "text-[#0c55a6]" : ""}`}
                     >
                       {item.name}
                       <ChevronDown size={16} className="ml-1" />
@@ -97,7 +96,7 @@ const Navbar: React.FC = () => {
                     </button>
 
                     {isServicesOpen && (
-                      <div className="absolute top-full left-0 w-[300px] bg-white shadow-lg rounded-lg z-50 border border-gray-100">
+                      <div className="absolute top-full left-0 w-[260px] md:w-[280px] lg:w-[300px] bg-white shadow-lg rounded-lg z-50 border border-gray-100">
                         {services.map((service) => (
                           <button
                             key={service.title}
@@ -108,7 +107,7 @@ const Navbar: React.FC = () => {
                             className="w-full text-left px-4 py-2 hover:bg-gray-200 cursor-pointer transition-colors duration-200 rounded-md"
                           >
                             <p className={`font-medium text-[#111111] ${inter.className}`}>{service.title}</p>
-                            <p className={`text-[12px] text-[#6A6A6A] font-medium ${inter.className}`}>{service.description}</p>
+                            <p className={`text-[12px] md:text-[13px] text-[#6A6A6A] font-medium ${inter.className}`}>{service.description}</p>
                           </button>
                         ))}
                       </div>
@@ -121,8 +120,7 @@ const Navbar: React.FC = () => {
                 <button
                   key={item.name}
                   onClick={() => router.push(item.href)}
-                  className={`${desktopLinkClasses} relative ${isActive ? "text-[#0c55a6]" : ""
-                    }`}
+                  className={`${desktopLinkClasses} relative ${isActive ? "text-[#0c55a6]" : ""}`}
                 >
                   {item.name}
                   {isActive && (
@@ -133,19 +131,19 @@ const Navbar: React.FC = () => {
             })}
           </div>
 
-          {/* Contact Button (Desktop) */}
-          <div className="hidden md:block">
+          {/* Contact Button (Tablet/Desktop) */}
+          <div className="hidden lg:inline-flex lg:inline-flex">
             <button
               onClick={() => router.push("/contact")}
-              className="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium  shadow-sm text-white bg-[#0c55a6] hover:bg-[#07468f] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+              className={`inline-flex flex-wrap gap-2 items-center px-4 sm:px-6 md:px-5 py-2 md:py-3 border border-transparent text-sm md:text-base font-medium shadow-lg text-white bg-[#0c55a6] hover:bg-[#094182] transition duration-300 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${inter.className}`}
             >
-              <Phone size={16} className="mr-2" />
+              <span className="w-2 h-2 bg-white rounded-full"></span>
               Get A Quote
             </button>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               type="button"
               className="bg-gray-100 p-2 rounded-lg text-gray-700 hover:text-[#0c55a6] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#0c55a6]"
@@ -166,7 +164,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200" id="mobile-menu">
+        <div className="lg:hidden bg-white border-t border-gray-200" id="mobile-menu">
           <div className="px-4 pt-4 pb-6 space-y-2">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
@@ -176,8 +174,7 @@ const Navbar: React.FC = () => {
                   <div key={item.name}>
                     <button
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className={`${mobileLinkClasses} flex justify-between items-center w-full ${isActive ? "text-[#0c55a6]" : ""
-                        }`}
+                      className={`${mobileLinkClasses} flex justify-between items-center w-full ${isActive ? "text-[#0c55a6]" : ""}`}
                     >
                       {item.name}
                       <ChevronDown size={16} />
@@ -194,8 +191,7 @@ const Navbar: React.FC = () => {
                                 setIsMobileMenuOpen(false);
                                 router.push(service.href);
                               }}
-                              className={`block px-3 py-2 rounded-md text-left text-gray-700 hover:bg-gray-200 transition-colors duration-200 ${isServiceActive ? "text-[#0c55a6]" : ""
-                                }`}
+                              className={`block px-3 py-2 rounded-md text-left text-gray-700 hover:bg-gray-200 transition-colors duration-200 ${isServiceActive ? "text-[#0c55a6]" : ""}`}
                             >
                               <p className="font-semibold">{service.title}</p>
                               <p className="text-sm text-gray-500">{service.description}</p>

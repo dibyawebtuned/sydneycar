@@ -65,7 +65,7 @@ const JunkCarRemovalPage: React.FC = () => {
     <div className="w-full bg-gray-50">
 
       {/* Hero Section */}
-      <section className="relative bg-[#002043] text-white overflow-hidden min-h-[70vh] sm:min-h-[90vh] flex items-center">
+      <section className="relative bg-[#002043] text-white overflow-hidden min-h-[70vh] xl:min-h-[90vh] sm:min-h-[40vh] flex items-center">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <Image
@@ -125,7 +125,7 @@ const JunkCarRemovalPage: React.FC = () => {
           </motion.div>
           {/* Hero Image */}
           <motion.div
-            className="md:w-1/2 relative h-80 md:h-96 mb-8 md:mb-0 overflow-hidden rounded-2xl shadow-xl"
+            className="w-full md:w-1/2 relative h-64 sm:h-72 md:h-96 lg:h-[350px] overflow-hidden rounded-2xl shadow-xl"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.2 }}

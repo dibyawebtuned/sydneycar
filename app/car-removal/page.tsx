@@ -65,7 +65,7 @@ const CarRemovalPage: React.FC = () => {
     return (
         <div className="w-full bg-gray-50">
             {/* Hero Section */}
-            <section className="relative bg-[#002043] text-white overflow-hidden min-h-[70vh] sm:min-h-[90vh] flex items-center">
+            <section className="relative bg-[#002043] text-white overflow-hidden min-h-[70vh] xl:min-h-[90vh] sm:min-h-[40vh] flex items-center">
                 {/* Background Layers */}
                 <div className="absolute inset-0">
                     <div className="absolute inset-0 bg-black/40 z-10"></div>
@@ -119,7 +119,7 @@ const CarRemovalPage: React.FC = () => {
                             className={`inline-flex flex-wrap gap-2 items-center justify-center md:justify-start px-4 sm:px-6 py-2 border border-transparent text-sm sm:text-base font-medium shadow-lg text-[#121212] bg-[#FEC130] hover:bg-[#e6a200] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] ${inter.className}`}
                         >
                             <motion.div
-                            className="mr-2"
+                                className="mr-2"
                                 animate={{ x: [0, -1.5, 1.5, -1, 1, 0] }}
                                 transition={{ repeat: Infinity, repeatDelay: 2, duration: 0.3 }}
                             >
@@ -131,7 +131,7 @@ const CarRemovalPage: React.FC = () => {
 
                     {/* Hero Image */}
                     <motion.div
-                        className="w-full md:w-1/2 relative h-64 sm:h-72 md:h-96 lg:h-[420px] overflow-hidden rounded-2xl shadow-xl"
+                        className=" w-full md:w-1/2 relative h-64 sm:h-72 md:h-96 lg:h-[350px] overflow-hidden rounded-2xl shadow-xl"
                         initial={{ scale: 0.95, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 1.2 }}

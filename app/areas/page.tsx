@@ -69,21 +69,22 @@ const Areas: React.FC = () => {
     <div>
       <ServiceAreaSection />
 
-      <section className="py-16 bg-gray-50">
+      <section className=" bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-[#0c55a6] mb-3">
+          {/* <h2 className="text-3xl font-bold text-[#0c55a6] mb-3">
             Our Sydney Service Coverage
           </h2>
           <p className="text-gray-600 mb-8">
             We proudly serve customers across Sydney and nearby suburbs.
             Explore our service areas on the map below.
-          </p>
+          </p> */}
 
-          <div
-            id="serviceMap"
-            className="w-full h-[400px] sm:h-[450px] rounded-2xl shadow-lg border border-gray-200"
-          ></div>
+
         </div>
+        <div
+          id="serviceMap"
+          className="w-full h-[400px] sm:h-[450px] shadow-lg border border-gray-200"
+        ></div>
       </section>
     </div>
   );

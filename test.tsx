@@ -1,27 +1,26 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Phone, FileText, Truck } from "lucide-react";
 import { motion } from "framer-motion";
 
-const PRIMARY_BLUE = "#E2F0FF";
 const ACCENT_YELLOW = "#fdb813";
 const HEADING_COLOR = "#1e1e1e";
 const DARK_CONTRAST = "#0c55a6";
 
 const steps = [
-  { number: 1, title: "GET A QUOTE", description: "Call us or use the form to get an instant, non-obligatory quote.", icon: Phone },
-  { number: 2, title: "ACCEPT THE OFFER", description: "We agree on a price and schedule a free pickup time that suits you.", icon: FileText },
-  { number: 3, title: "WE TOW & PAY YOU", description: "Our team arrives, pays you cash on the spot, and tows your car away.", icon: Truck },
+  { number: 1, title: "Get a Quote", description: "Call us or use the form to get an instant, non-obligatory quote.", icon: Phone },
+  { number: 2, title: "Accept the Offer", description: "We agree on a price and schedule a free pickup time that suits you.", icon: FileText },
+  { number: 3, title: "We Tow & Pay You", description: "Our team arrives, pays you cash on the spot, and tows your car away.", icon: Truck },
 ];
 
 interface StepProps {
   step: typeof steps[0];
-  isLast: boolean;
   index: number;
 }
 
-const Step: React.FC<StepProps> = ({ step, isLast, index }) => {
+const Step: React.FC<StepProps> = ({ step, index }) => {
   const IconComponent = step.icon;
   const fromDirection = index % 2 === 0 ? -100 : 100;
 
@@ -31,79 +30,67 @@ const Step: React.FC<StepProps> = ({ step, isLast, index }) => {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className="relative flex-1 flex flex-col items-center z-20 min-w-[180px] sm:min-w-[200px]"
+      className="relative flex-1 flex flex-col items-center z-20 min-w-[120px] sm:min-w-[160px] md:min-w-[180px]"
     >
       {/* Circle and Icon */}
-      <div className="relative mb-6">
-        <div className="w-24 h-24 rounded-full flex items-center justify-center relative shadow-xl" style={{ backgroundColor: ACCENT_YELLOW }}>
-          <IconComponent size={36} style={{ color: DARK_CONTRAST }} />
-        </div>
-
+      <div className="relative mb-4">
         <div
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 w-8 h-8 rounded-full flex items-center justify-center text-sm font-extrabold shadow-md border-2 border-white"
-          style={{ backgroundColor: PRIMARY_BLUE, color: DARK_CONTRAST }}
+          className="w-[120px] sm:w-[160px] md:w-[180px] h-[120px] sm:h-[160px] md:h-[180px] border-[5px] border-[#044E9E] rounded-full flex items-center justify-center shadow-lg"
+          style={{ backgroundColor: ACCENT_YELLOW }}
         >
-          {step.number}
+          <IconComponent size={40} style={{ color: DARK_CONTRAST }} />
         </div>
       </div>
 
       {/* Content */}
-      <div className="text-center mt-2 max-w-[200px]">
-        <h4 className="text-xl font-bold uppercase mb-2" style={{ color: ACCENT_YELLOW }}>{step.title}</h4>
-        <p className="text-lg leading-relaxed" style={{ color: HEADING_COLOR }}>{step.description}</p>
+      <div className="text-center mt-2 max-w-[120px] sm:max-w-[160px] md:max-w-[180px]">
+        <h4 className="text-[18px] sm:text-[24px] md:text-[30px] font-bold mb-1 text-[#044E9E] font-cabinet">
+          {step.title}
+        </h4>
       </div>
-
-      {/* Connector */}
-      {!isLast && (
-        <div
-          className="absolute top-1/2 left-[50%] lg:top-12 lg:left-auto lg:right-0 w-[calc(100%-120px)] h-0.5 border-t-2 border-dashed z-10 hidden lg:block"
-          style={{ borderColor: ACCENT_YELLOW, marginRight: "-60px" }}
-        ></div>
-      )}
     </motion.div>
   );
 };
 
 const HowItWorksSection: React.FC = () => {
   return (
-    <section
-      className="py-15 relative overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url('/howImg.png')` }}
-    >
-      <div className="absolute inset-0 z-10" style={{ backgroundColor: "#E2F0FFE6" }}></div>
+    <section className="relative py-16 bg-cover bg-center bg-no-repeat min-h-[400px] sm:min-h-[500px] md:min-h-[600px]" style={{ backgroundImage: `url('/howImg.png')` }}>
+      {/* Overlay */}
+      <div className="absolute inset-0 z-10 bg-[#E2F0FFE6]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-24 w-[50%]">
-          <div className="flex items-center gap-2.5">
-            <h3
-              className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-widest relative pb-2 inline-block whitespace-nowrap font-cabinet"
-              style={{ color: DARK_CONTRAST }}
-            >
+        <div className="text-center mb-16 md:mb-24 md:w-[50%] mx-auto">
+          <div className="flex items-center gap-2.5 justify-center">
+            <h3 className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-widest relative pb-2 inline-block whitespace-nowrap font-cabinet" style={{ color: DARK_CONTRAST }}>
               HOW IT WORKS
-              {/* <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-16 h-0.5 z-10" style={{ backgroundColor: ACCENT_YELLOW }}></span> */}
             </h3>
-            <span className="w-full h-px bg-[#9F9F9F] mb-1.5"></span>
+            <span className="w-1/3 h-px bg-[#9F9F9F] mb-1.5"></span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold" style={{ color: HEADING_COLOR }}>
-            SIMPLE,{" "}
-            <span className="inline-block relative z-10 text-[#044E9E]">
-              FAST
-
-              <span
-                className="absolute left-0 right-0 -z-10"
-
-              ></span>
-            </span>{" "}
-            & STRESS-FREE
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold mt-4" style={{ color: HEADING_COLOR }}>
+            SIMPLE, <span className="inline-block relative z-10 text-[#044E9E]">FAST</span> & STRESS-FREE
           </h2>
         </div>
+      </div>
 
-        {/* Steps Container */}
-        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-10">
+      {/* Steps Container */}
+      <div className="relative w-full flex justify-center items-center">
+        {/* Road background - hidden on mobile */}
+        <div className="hidden sm:block relative w-full h-[200px] sm:h-[200px] md:h-[220px] z-10">
+          <Image
+            src="/road.png"
+            alt="road connector"
+            fill
+            style={{ objectFit: "contain", objectPosition: "center" }}
+            priority
+          />
+        </div>
+
+        {/* Steps */}
+        <div className="absolute inset-0 z-20 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-8 px-4 sm:px-8">
           {steps.map((step, index) => (
-            <Step key={step.number} step={step} isLast={index === steps.length - 1} index={index} />
+            <Step key={step.number} step={step} index={index} />
           ))}
         </div>
       </div>

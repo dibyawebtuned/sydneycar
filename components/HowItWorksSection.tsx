@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Phone, FileText, Truck } from "lucide-react";
 import { motion } from "framer-motion";
 
-const PRIMARY_BLUE = "#E2F0FF";
 const ACCENT_YELLOW = "#fdb813";
 const HEADING_COLOR = "#1e1e1e";
 const DARK_CONTRAST = "#0c55a6";
@@ -19,35 +18,44 @@ const steps = [
 interface StepProps {
   step: typeof steps[0];
   index: number;
+  mobile?: boolean;
 }
 
-const Step: React.FC<StepProps> = ({ step, index }) => {
+const Step: React.FC<StepProps> = ({ step, index, mobile = false }) => {
   const IconComponent = step.icon;
-  const fromDirection = index % 2 === 0 ? -100 : 100;
+
+  // Animation for desktop (x) or mobile (y)
+  const initialProps = mobile
+    ? { opacity: 0, y: 50 }
+    : { opacity: 0, x: index % 2 === 0 ? -100 : 100 };
+
+  const sizeProps = mobile
+    ? { circle: 120, icon: 36, maxWidth: 150, textSize: "text-lg" }
+    : { circle: 180, icon: 60, maxWidth: 180, textSize: "text-[30px]" };
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: fromDirection }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={initialProps}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className="relative flex-1 flex flex-col items-center z-20 min-w-40 sm:min-w-[180px]"
+      className={`relative flex-1 flex flex-col items-center z-20 min-w-[15px] sm:min-w-40 md:min-w-[180px] mt-14 md:mt-24`}
+      style={{ minWidth: `${sizeProps.maxWidth}px` }}
     >
       {/* Circle and Icon */}
-      <div className="relative mb-4">
-        <div
-          className="w-[180px] h-[180px] border-[5px] border-[#044E9E] rounded-full flex items-center justify-center shadow-lg"
-          style={{ backgroundColor: ACCENT_YELLOW }}
-        >
-          <IconComponent size={60} style={{ color: DARK_CONTRAST }} />
-        </div>
+      <div
+        className={`w-[${sizeProps.circle}px] h-[${sizeProps.circle}px] border-[5px] border-[#044E9E] rounded-full flex items-center justify-center shadow-lg mb-4`}
+        style={{ backgroundColor: ACCENT_YELLOW }}
+      >
+        <IconComponent size={sizeProps.icon} style={{ color: DARK_CONTRAST }} />
       </div>
 
       {/* Content */}
-      <div className="text-center mt-2 max-w-[180px]">
-        <h4 className="text-[30px] font-bold mb-1 text-[#044E9E] font-cabinet">
+      <div className="text-center mt-2" style={{ maxWidth: `${sizeProps.maxWidth}px` }}>
+        <h4 className={`${sizeProps.textSize} font-bold mb-1 text-[#044E9E] font-cabinet`}>
           {step.title}
         </h4>
+        {/* {mobile && <p className="text-gray-700 text-sm">{step.description}</p>} */}
       </div>
     </motion.div>
   );
@@ -55,43 +63,31 @@ const Step: React.FC<StepProps> = ({ step, index }) => {
 
 const HowItWorksSection: React.FC = () => {
   return (
-    <section
-      className="py-16 relative overflow-visible bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url('/howImg.png')` }}
-    >
-      <div className="absolute inset-0 z-10" style={{ backgroundColor: "#E2F0FFE6" }}></div>
+    <section className="relative py-15 bg-cover bg-center bg-no-repeat min-h-[400px] sm:min-h-[500px] md:min-h-[600px]" style={{ backgroundImage: `url('/howImg.png')` }}>
+      {/* Overlay */}
+      <div className="absolute inset-0 z-10 bg-[#E2F0FFE6]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
         {/* Header */}
-        <div className="text-center mb-16 md:mb-24 w-[50%]">
+        <div className="text-center md:w-[48%]">
           <div className="flex items-center gap-2.5">
-            <h3
-              className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-widest relative pb-2 inline-block whitespace-nowrap font-cabinet"
-              style={{ color: DARK_CONTRAST }}
-            >
+            <h3 className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-widest relative pb-2 inline-block whitespace-nowrap font-cabinet" style={{ color: DARK_CONTRAST }}>
               HOW IT WORKS
             </h3>
             <span className="w-full h-px bg-[#9F9F9F] mb-1.5"></span>
           </div>
 
-          <h2
-            className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold"
-            style={{ color: HEADING_COLOR }}
-          >
-            SIMPLE,{" "}
-            <span className="inline-block relative z-10 text-[#044E9E]">
-              FAST
-              <span className="absolute left-0 right-0 -z-10"></span>
-            </span>{" "}
-            & STRESS-FREE
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold"
+            style={{ color: HEADING_COLOR }}>
+            SIMPLE, {" "}
+            <span className="inline-block relative z-10 text-[#044E9E]">FAST</span> & STRESS-FREE
           </h2>
         </div>
       </div>
 
-      {/* Steps Container with road image */}
-      <div className="relative w-full flex justify-center items-center">
-        {/* Road background (with proper height & containment) */}
-        <div className="relative w-full h-[200px] z-10">
+      {/* Desktop Steps Container */}
+      {/* <div className="hidden sm:flex relative w-full justify-center items-center">
+        <div className="relative w-full h-[200px] sm:h-[200px] md:h-[220px] z-10">
           <Image
             src="/road.png"
             alt="road connector"
@@ -101,13 +97,41 @@ const HowItWorksSection: React.FC = () => {
           />
         </div>
 
-        {/* Steps floating above road */}
-        <div className="absolute inset-0 z-20 flex flex-col sm:flex-row justify-between items-center gap-12 px-4 sm:px-8">
+        <div className="absolute inset-0 z-20 flex flex-row justify-between items-center gap-8 px-8">
+          {steps.map((step, index) => (
+            <Step key={step.number} step={step} index={index} />
+          ))}
+        </div>
+      </div> */}
+
+      {/* Desktop Steps Container */}
+      <div className="hidden sm:flex relative w-full justify-center items-center">
+        {/* Road background - hidden on mobile */}
+        <div className="hidden sm:block relative w-full h-[200px] sm:h-[200px] md:h-[220px] z-10">
+          <Image
+            src="/road.png"
+            alt="road connector"
+            fill
+            style={{ objectFit: "contain", objectPosition: "center" }}
+            priority
+          />
+        </div>
+
+        {/* Steps */}
+        <div className="absolute inset-0 z-20 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-8 px-4 sm:px-8">
           {steps.map((step, index) => (
             <Step key={step.number} step={step} index={index} />
           ))}
         </div>
       </div>
+
+      {/* Mobile Steps Container */}
+      <div className="sm:hidden relative w-full flex flex-col items-center gap-2">
+        {steps.map((step, index) => (
+          <Step key={step.number} step={step} index={index} mobile />
+        ))}
+      </div>
+
     </section>
   );
 };

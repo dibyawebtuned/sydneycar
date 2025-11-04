@@ -40,9 +40,9 @@ const HEADING_COLOR = "#1e1e1e";
 // );
 
 const AboutUsSection: React.FC = () => {
-  const [hovered, setHovered] = useState(null);
+  const [hovered, setHovered] = useState<number | null>(null);
   return (
-    <section className="relative bg-white py-15 min-h-[75vh] overflow-visible">
+    <section className="relative bg-white py-15 lg:min-h-[75vh] overflow-visible">
 
       {/* Absolute form for LG/XL - Animated from right when in viewport */}
       <motion.div
@@ -104,14 +104,13 @@ const AboutUsSection: React.FC = () => {
 
               {/* Description */}
               <p className={`text-[#6A6A6A] text-[14px] sm:text-[16px] mb-5 mt-5 text-justify w-full ${inter.className}`}>
-                We’re a Sydney-based, family-run business dedicated to providing reliable,
+                We are a Sydney-based, family-run business dedicated to providing reliable,
                 eco-conscious, and fast car removal solutions. With years of experience, Sam and
                 Jay have helped thousands of Sydney residents clear space, earn cash, and recycle
                 responsibly.
               </p>
 
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
+              <div className="grid grid-cols-3 gap-5 w-full">
                 {/* Card 1 */}
                 <div
                   onMouseEnter={() => setHovered(1)}

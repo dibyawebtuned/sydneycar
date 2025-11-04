@@ -40,7 +40,7 @@ const WhyChooseUsSection: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2 flex justify-center"
           >
-            <div className="relative w-full max-w-lg sm:max-w-xl md:max-w-2xl aspect-4/3 overflow-hidden rounded-2xl">
+            <div className="relative w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[566px] aspect-4/3 overflow-hidden rounded-2xl ">
               <Image
                 src="/whyChoose.png"
                 alt="Tow truck loading a red car"
