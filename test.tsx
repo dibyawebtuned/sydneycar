@@ -1,139 +1,209 @@
-"use client";
+import React from 'react';
+import { Mail, MapPin, Phone, Clock } from 'lucide-react';
+import Image from 'next/image';
+import { Inter } from "next/font/google";
 
-import React from "react";
-import Image from "next/image";
-import { Phone, FileText, Truck } from "lucide-react";
-import { motion } from "framer-motion";
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+});
 
-const ACCENT_YELLOW = "#fdb813";
-const HEADING_COLOR = "#1e1e1e";
-const DARK_CONTRAST = "#0c55a6";
+// --- Assets ---
+import logoImg from '../public/logo.png';
+import whatsapp from '../public/footer/whatsapp.svg';
+import facebook from '../public/footer/facebook.svg';
+import instagram from '../public/footer/instagram.svg';
+import twitter from '../public/footer/twitter.svg';
 
-const steps = [
-  { number: 1, title: "Get a Quote", description: "Call us or use the form to get an instant, non-obligatory quote.", icon: Phone },
-  { number: 2, title: "Accept the Offer", description: "We agree on a price and schedule a free pickup time that suits you.", icon: FileText },
-  { number: 3, title: "We Tow & Pay You", description: "Our team arrives, pays you cash on the spot, and tows your car away.", icon: Truck },
+// --- Design Constants ---
+const ACCENT_YELLOW = '#fdb813';
+
+// --- Data ---
+const supportLinks = [
+  { name: "FAQ's", href: '#faq' },
+  { name: 'Services', href: '#services' },
+  { name: 'Pricing', href: '#pricing' },
+  { name: 'Contact', href: '#contact' },
+  { name: 'Privacy Policy', href: '#privacy' },
+  { name: 'Terms & Conditions', href: '#terms' },
 ];
 
-interface StepProps {
-  step: typeof steps[0];
-  index: number;
-  mobile?: boolean;
+const serviceLinks = [
+  { name: 'Car Towing', href: '#car-towing' },
+  { name: 'Tyre Replacement', href: '#tyre' },
+  { name: 'Motorcycle Towing', href: '#motorcycle-towing' },
+  { name: 'Luxury Car Towing', href: '#luxury-towing' },
+  { name: 'Roadside Assistance', href: '#roadside' },
+  { name: 'Battery Replacement', href: '#battery' },
+];
+
+// --- Social Icon Component ---
+interface SocialIconProps {
+  src: string;
+  alt: string;
+  href: string;
 }
 
-const Step: React.FC<StepProps> = ({ step, index, mobile = false }) => {
-  const IconComponent = step.icon;
+const SocialIcon: React.FC<SocialIconProps> = ({ src, alt, href }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+    style={{ backgroundColor: ACCENT_YELLOW }}
+  >
+    <Image src={src} alt={alt} width={18} height={18} className="object-contain" />
+  </a>
+);
 
-  // Animation for desktop (x) or mobile (y)
-  const initialProps = mobile
-    ? { opacity: 0, y: 50 }
-    : { opacity: 0, x: index % 2 === 0 ? -100 : 100 };
-
-  const sizeProps = mobile
-    ? { circle: 120, icon: 36, maxWidth: 150, textSize: "text-lg" }
-    : { circle: 180, icon: 60, maxWidth: 180, textSize: "text-[30px]" };
-
+// --- Main Footer Component ---
+const Footer: React.FC = () => {
   return (
-    <motion.div
-      initial={initialProps}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, delay: index * 0.2 }}
-      className={`relative flex-1 flex flex-col items-center z-20 min-w-[15px] sm:min-w-40 md:min-w-[180px] mt-14 md:mt-24`}
-      style={{ minWidth: `${sizeProps.maxWidth}px` }}
-    >
-      {/* Circle and Icon */}
-      <div
-        className={`w-[${sizeProps.circle}px] h-[${sizeProps.circle}px] border-[5px] border-[#044E9E] rounded-full flex items-center justify-center shadow-lg mb-4`}
-        style={{ backgroundColor: ACCENT_YELLOW }}
-      >
-        <IconComponent size={sizeProps.icon} style={{ color: DARK_CONTRAST }} />
+    <footer className="relative w-full overflow-hidden">
+      {/* Background Layer */}
+      <div className="absolute inset-0 -z-10">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('/aboutImg.png')`,
+            opacity: 0.3, // Image transparency
+          }}
+        ></div>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-[#101d2d]/50 mix-blend-multiply"></div>
       </div>
 
-      {/* Content */}
-      <div className="text-center mt-2" style={{ maxWidth: `${sizeProps.maxWidth}px` }}>
-        <h4 className={`${sizeProps.textSize} font-bold mb-1 text-[#044E9E] font-cabinet`}>
-          {step.title}
-        </h4>
-        {/* {mobile && <p className="text-gray-700 text-sm">{step.description}</p>} */}
-      </div>
-    </motion.div>
-  );
-};
+      {/* Top Section */}
+      <div className="relative py-15 z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8">
+            {/* Logo & Description */}
+            <div className="col-span-2 lg:col-span-1">
+              <div className="flex items-center mb-6">
+                <Image src={logoImg} alt="Sydney Car Removal Logo" className="h-[42px] w-[220px]" />
+              </div>
+              <p className={`text-base leading-relaxed mb-8 text-[#f0f4f8] ${inter.className}`}>
+                Old, junk, written-off, unregistered or not running—we’ll take it. We buy cars, SUVs, 4×4s, utes, vans and light trucks, plus offer cash for trucks and responsible car wrecking for end-of-life vehicles.
+              </p>
 
-const HowItWorksSection: React.FC = () => {
-  return (
-    <section className="relative py-15 bg-cover bg-center bg-no-repeat min-h-[400px] sm:min-h-[500px] md:min-h-[600px]" style={{ backgroundImage: `url('/howImg.png')` }}>
-      {/* Overlay */}
-      <div className="absolute inset-0 z-10 bg-[#E2F0FFE6]"></div>
+              {/* Social Icons */}
+              <div className="flex space-x-3">
+                <SocialIcon src={facebook} alt="Facebook" href="https://facebook.com" />
+                <SocialIcon src={instagram} alt="Instagram" href="https://instagram.com" />
+                <SocialIcon src={twitter} alt="Twitter" href="https://twitter.com" />
+                <SocialIcon src={whatsapp} alt="WhatsApp" href="https://wa.me/61450747474" />
+              </div>
+            </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-        {/* Header */}
-        <div className="text-center md:w-[48%]">
-          <div className="flex items-center gap-2.5">
-            <h3 className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-widest relative pb-2 inline-block whitespace-nowrap font-cabinet" style={{ color: DARK_CONTRAST }}>
-              HOW IT WORKS
-            </h3>
-            <span className="w-full h-px bg-[#9F9F9F] mb-1.5"></span>
+            {/* Support Links */}
+            <div>
+              <h4 className="text-[25px] font-extrabold mb-6 text-[#fdb813] font-cabinet">Support</h4>
+              <ul className="space-y-3">
+                {supportLinks.map((link) => (
+                  <li key={link.name} className="group relative w-fit">
+                    <a
+                      href={link.href}
+                      className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}
+                    >
+                      {link.name}
+                    </a>
+                    <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#fdb813] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Service Links */}
+            <div>
+              <h4 className="text-[25px] font-extrabold mb-6 text-[#fdb813] font-cabinet">Our Services</h4>
+              <ul className="space-y-3">
+                {serviceLinks.map((link) => (
+                  <li key={link.name} className="group relative w-fit">
+                    <a
+                      href={link.href}
+                      className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}
+                    >
+                      {link.name}
+                    </a>
+                    <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-[#fdb813] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <h4 className="text-[25px] font-extrabold mb-6 text-[#fdb813] font-cabinet">Contact</h4>
+              <ul className="space-y-4 mb-8 text-sm text-[#f0f4f8]">
+                <li className="flex items-start">
+                  <Clock size={18} className="mr-3 mt-1 text-[#fdb813]" />
+                  <span className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}>
+                    24 Hours
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Phone size={18} className="mr-3 mt-1 text-[#fdb813]" />
+                  <span className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}>
+                    +0402887766, +0450747474
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Mail size={18} className="mr-3 mt-1 text-[#fdb813]" />
+                  <span className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}>sydneycarremoval@gmail.com </span>
+                </li>
+                <li className="flex items-start">
+                  <MapPin size={18} className="mr-3 mt-1 text-[#fdb813]" />
+                  <span className={`text-base transition-colors duration-200 hover:text-white text-[#f0f4f8] ${inter.className}`}>Sydney, Australia </span>
+                </li>
+              </ul>
+
+              {/* Newsletter */}
+              <form className="flex mt-8">
+                <input
+                  type="email"
+                  placeholder="Your Email Address"
+                  className="w-full p-3 rounded-l-2xl border-none focus:ring-2 focus:ring-yellow-400 text-gray-800 placeholder-gray-500"
+                  style={{ backgroundColor: '#ffffff', outline: 'none' }}
+                />
+                <button
+                  type="submit"
+                  className="p-3 rounded-r-xl flex items-center justify-center transition-colors duration-200 hover:bg-yellow-400"
+                  style={{ backgroundColor: '#fdb813' }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-[#044E9E] transform rotate-45"
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+              </form>
+            </div>
           </div>
-
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold"
-            style={{ color: HEADING_COLOR }}>
-            SIMPLE, {" "}
-            <span className="inline-block relative z-10 text-[#044E9E]">FAST</span> & STRESS-FREE
-          </h2>
         </div>
       </div>
 
-      {/* Desktop Steps Container */}
-      {/* <div className="hidden sm:flex relative w-full justify-center items-center">
-        <div className="relative w-full h-[200px] sm:h-[200px] md:h-[220px] z-10">
-          <Image
-            src="/road.png"
-            alt="road connector"
-            fill
-            style={{ objectFit: "contain", objectPosition: "center" }}
-            priority
-          />
-        </div>
-
-        <div className="absolute inset-0 z-20 flex flex-row justify-between items-center gap-8 px-8">
-          {steps.map((step, index) => (
-            <Step key={step.number} step={step} index={index} />
-          ))}
-        </div>
-      </div> */}
-
-      {/* Desktop Steps Container */}
-      <div className="hidden sm:flex relative w-full justify-center items-center">
-        {/* Road background - hidden on mobile */}
-        <div className="hidden sm:block relative w-full h-[200px] sm:h-[200px] md:h-[220px] z-10">
-          <Image
-            src="/road.png"
-            alt="road connector"
-            fill
-            style={{ objectFit: "contain", objectPosition: "center" }}
-            priority
-          />
-        </div>
-
-        {/* Steps */}
-        <div className="absolute inset-0 z-20 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-8 px-4 sm:px-8">
-          {steps.map((step, index) => (
-            <Step key={step.number} step={step} index={index} />
-          ))}
-        </div>
+      {/* Bottom Section */}
+      <div className="py-4 text-center text-sm bg-[#0c55a6] text-[#f0f4f8]">
+        &copy; 2025 Sydney Car Removal and Towing Services. All Rights Reserved. Crafted by
+        <a href="https://murphystechnology.com/" className="ml-1 underline text-[#5eead4] transition-colors duration-200 hover:text-[#fdb813]">
+          Murphys Technology
+        </a>
       </div>
-
-      {/* Mobile Steps Container */}
-      <div className="sm:hidden relative w-full flex flex-col items-center gap-2">
-        {steps.map((step, index) => (
-          <Step key={step.number} step={step} index={index} mobile />
-        ))}
-      </div>
-
-    </section>
+    </footer>
   );
 };
 
-export default HowItWorksSection;
+export default Footer;
