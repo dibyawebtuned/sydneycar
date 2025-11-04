@@ -39,7 +39,8 @@ interface ServiceCardProps {
 // );
 
 const About: React.FC = () => {
-  const [hovered, setHovered] = useState(null);
+    const [hovered, setHovered] = useState<number | null>(null);
+
 
   return (
     <section className="relative bg-white">
