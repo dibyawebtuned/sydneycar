@@ -64,7 +64,6 @@ const Footer: React.FC = () => {
   return (
     <footer className="relative w-full overflow-hidden">
       {/* Background Image Layer */}
-      {/* Background Layer */}
       <div className="absolute inset-0 -z-10">
         {/* Background Image */}
         <div
@@ -80,15 +79,15 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Top Section */}
-      <div className="relative z-10 py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12">
+      <div className="relative z-10 py-15 sm:py-16 px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-10 sm:gap-12">
 
           {/* Logo & Description */}
-          <div className="flex flex-col">
+          <div className="flex-1 flex flex-col mb-10 lg:mb-0">
             <div className="mb-6">
               <Image src={logoImg} alt="Sydney Car Removal Logo" className="h-[42px] w-auto" />
             </div>
-            <p className={`text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 ${inter.className}`}>
+            <p className={`text-sm sm:text-base leading-relaxed mb-6 sm:mb-8 text-justify flex-wrap ${inter.className}`}>
               Old, junk, written-off, unregistered or not running—we’ll take it. We buy cars, SUVs, 4×4s, utes, vans and light trucks, plus offer cash for trucks and responsible car wrecking for end-of-life vehicles.
             </p>
             <div className="flex space-x-3">
@@ -100,7 +99,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Support Links */}
-          <div>
+          <div className="flex-1 lg:flex-none lg:w-1/6">
             <h4 className="text-xl sm:text-2xl font-extrabold mb-4 sm:mb-6 text-[#fdb813] font-cabinet">Support</h4>
             <ul className="space-y-2 sm:space-y-3">
               {supportLinks.map((link) => (
@@ -118,7 +117,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Service Links */}
-          <div>
+          <div className="flex-1 lg:flex-none lg:w-1/6">
             <h4 className="text-xl sm:text-2xl font-extrabold mb-4 sm:mb-6 text-[#fdb813] font-cabinet">Our Services</h4>
             <ul className="space-y-2 sm:space-y-3">
               {serviceLinks.map((link) => (
@@ -136,7 +135,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact & Newsletter */}
-          <div>
+          <div className="flex-1 lg:flex-none lg:w-1/4">
             <h4 className="text-xl sm:text-2xl font-extrabold mb-4 sm:mb-6 text-[#fdb813] font-cabinet">Contact</h4>
             <ul className="space-y-3 mb-6 text-sm sm:text-base">
               <li className="flex items-start"><Clock size={18} className="mr-2 mt-1 text-[#fdb813]" />24 Hours</li>
@@ -145,7 +144,6 @@ const Footer: React.FC = () => {
               <li className="flex items-start"><MapPin size={18} className="mr-2 mt-1 text-[#fdb813]" />Sydney, Australia</li>
             </ul>
 
-            {/* Newsletter */}
             <form className="flex mt-8">
               <input
                 type="email"
@@ -176,7 +174,9 @@ const Footer: React.FC = () => {
               </button>
             </form>
           </div>
+
         </div>
+
       </div>
 
       {/* Bottom Section */}
