@@ -31,7 +31,7 @@ const Step: React.FC<StepProps> = ({ step, index, mobile = false }) => {
 
   const sizeProps = mobile
     ? { circle: 120, icon: 36, maxWidth: 150, textSize: "text-lg" }
-    : { circle: 180, icon: 60, maxWidth: 180, textSize: "text-[30px]" };
+    : { circle: 200, icon: 60, maxWidth: 200, textSize: "text-[30px]" };
 
   return (
     <motion.div
@@ -107,7 +107,7 @@ const HowItWorksSection: React.FC = () => {
       {/* Desktop Steps Container */}
       <div className="hidden sm:flex relative w-full justify-center items-center">
         {/* Road background - hidden on mobile */}
-        <div className="hidden sm:block relative w-full h-[200px] sm:h-[200px] md:h-[220px] z-10">
+        <div className="hidden sm:block relative w-full sm:h-[200px] md:h-[220px] z-10">
           <Image
             src="/road.png"
             alt="road connector"
@@ -126,7 +126,7 @@ const HowItWorksSection: React.FC = () => {
       </div>
 
       {/* Mobile Steps Container */}
-      <div className="sm:hidden relative w-full flex flex-col items-center gap-2">
+      <div className="sm:hidden relative w-full flex flex-col items-center gap-2Z">
         {steps.map((step, index) => (
           <Step key={step.number} step={step} index={index} mobile />
         ))}
