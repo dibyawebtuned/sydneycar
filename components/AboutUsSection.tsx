@@ -48,7 +48,7 @@ const cards = [
 const AboutUsSection: React.FC = () => {
   const [hovered, setHovered] = useState<number | null>(null);
   return (
-    <section className="relative bg-white py-15 lg:min-h-[75vh] overflow-visible">
+    <section className="relative bg-white py-15 xl:min-h-[75vh] overflow-visible">
 
       {/* Absolute form for LG/XL - Animated from right when in viewport */}
       <motion.div
