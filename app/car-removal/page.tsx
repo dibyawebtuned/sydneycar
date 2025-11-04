@@ -101,15 +101,14 @@ const CarRemovalPage: React.FC = () => {
                     >
                         {/* Title */}
                         <h1 className="mb-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight md:leading-[1.15] text-[#f0f4f8] font-cabinet">
-                            Sydney Car Removal Services
+                            Car Removal Sydney
                         </h1>
 
                         {/* Sub-Title */}
                         <p
                             className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
                         >
-                            We offer 100% free car removal across Sydney, no matter the make or
-                            condition.
+                            Turn your unwanted car into instant cash with Sydney Car Removal and Towing Services.
                         </p>
 
                         <motion.a
@@ -148,7 +147,21 @@ const CarRemovalPage: React.FC = () => {
 
 
             {/* WhyChooseUsSection */}
-            <WhyChooseUsSection />
+            <WhyChooseUsSection
+                smallHeading="WHY CHOOSE US"
+                mainHeading={<>TRUSTED, <span className="text-[#1F4A93]">FAST</span> & HASSLE-FREE</>}
+                description="Whether your car is old, damaged, wrecked, or no longer running, we’ll take it off your hands for free. There are no hidden fees or towing charges — just quick service and cash in your hand starting from $200."
+                features={[
+                    "22+ years of experience",
+                    "Sydney-wide coverage",
+                    "24/7 availability",
+                    "Eco-friendly car disposal",
+                    "Instant cash payment",
+                    "Fully licensed",
+                ]}
+                imageSrc="/whyChoose.png"
+                imageAlt="Tow truck loading a red car"
+            />
 
             {/* OurCoreValuesSection */}
             <OurCoreValuesSection />

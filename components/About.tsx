@@ -114,7 +114,7 @@ const About: React.FC = () => {
               </p>
 
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
+              <div className="grid grid-cols-3 gap-5 w-full">
                 {/* Card 1 */}
                 <div
                   onMouseEnter={() => setHovered(1)}
