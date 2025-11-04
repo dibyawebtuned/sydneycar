@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import EcoFriendlySection from "@/components/EcoSection";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -106,9 +107,9 @@ const CarRemovalPage: React.FC = () => {
 
                         {/* Sub-Title */}
                         <p
-                            className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
+                            className={`text-[#DBDBDB] text-sm sm:text-base leading-normal  text-justify ${inter.className}`}
                         >
-                            Turn your unwanted car into instant cash with Sydney Car Removal and Towing Services.
+                            Turn your unwanted car into instant cash with Sydney Car Removal and Towing Services — the city’s trusted team for fast, free, and reliable vehicle removals. With over 22 years of experience, we make it simple to get rid of any car, in any condition, anywhere across Sydney.
                         </p>
 
                         <motion.a
@@ -166,6 +167,9 @@ const CarRemovalPage: React.FC = () => {
             {/* OurCoreValuesSection */}
             <OurCoreValuesSection />
 
+            {/* \EcoFriendlySection */}
+            {/* <EcoFriendlySection /> */}
+
             {/* HowItWorksSection */}
             <HowItWorksSection />
 
@@ -197,8 +201,7 @@ const CarRemovalPage: React.FC = () => {
                             </h2>
 
                             <p className={`text-[#6A6A6A] text-[14px] sm:text-[16px] mb-5 text-justify w-full font-medium ${inter.className}`}>
-                                We offer a range of professional and customizable car services
-                                designed to meet your unique needs and keep your vehicle in top condition.
+                                Ready to get rid of your unwanted car? Call us now for free car removal and instant cash payment anywhere in Sydney.
                             </p>
 
                             {/* Animated CTA */}
@@ -208,8 +211,15 @@ const CarRemovalPage: React.FC = () => {
                                 transition={{ repeat: Infinity, repeatDelay: 2, duration: 0.8 }}
                             >
                                 <Phone size={20} />
-                                <span>Ready to get our service?</span>
+
+                                <a
+                                    href="tel:+0402887766"
+                                    className="relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#0c55a6] after:transition-all after:duration-300 hover:after:w-full"
+                                >
+                                    Ready to get our service?
+                                </a>
                             </motion.div>
+
                         </motion.div>
                     </div>
 

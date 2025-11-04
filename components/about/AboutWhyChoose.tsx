@@ -16,12 +16,12 @@ const FEATURE_BUTTON_COLOR = "#2ec4b6";
 
 const AboutWhyChoose: React.FC = () => {
   const features = [
-    { title: "Instant Cash On The Spot", description: "Get paid immediately when we pick up your vehicle. No waiting, no hassle." },
-    { title: "Free Sydney-Wide Removal", description: "We offer free vehicle removal anywhere across Sydney, no hidden charges." },
-    { title: "Eco-Friendly Recycling", description: "All vehicles are recycled responsibly to minimize environmental impact." },
-    { title: "7 Days A Week Service", description: "Our team is available every day of the week to suit your schedule." },
-    { title: "Friendly Local Experts", description: "Our team is knowledgeable, approachable, and always ready to help." },
-    { title: "All Vehicles Accepted", description: "Cars, trucks, motorcycles – we accept all types of vehicles, working or not." },
+    { title: "Free car removal", description: "Regardless of condition (running, not running, damaged or not)" },
+    { title: "Instant cash in hand", description: "So you walk away with value, not hassle" },
+    { title: "Same-day or very rapid pickups", description: "Across all suburbs of Sydney" },
+    { title: "A service you can trust", description: "Transparent, friendly, and efficient" },
+    // { title: "Friendly Local Experts", description: "Our team is knowledgeable, approachable, and always ready to help." },
+    // { title: "All Vehicles Accepted", description: "Cars, trucks, motorcycles – we accept all types of vehicles, working or not." },
   ];
 
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -79,7 +79,7 @@ const AboutWhyChoose: React.FC = () => {
               </h2>
 
               <p className={`text-[#6A6A6A] text-[14px] sm:text-[16px] font-medium mb-5 mt-5 text-justify w-full ${inter.className}`}>
-                We aim to make vehicle removal as straightforward as possible. No complicated processes, no hidden fees, no waiting games.
+                We promise you straight talk and honest value. No fine print, no surprise fees, no dragging out the process. We’re here to free up space, clear clutter, and give you a fair cash offer — all while you sit back and watch it happen.
               </p>
             </div>
           </div>

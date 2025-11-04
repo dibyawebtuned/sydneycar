@@ -63,14 +63,13 @@ const ServiceAreaSection: React.FC = () => {
             <span className="w-full h-px bg-[#9F9F9F] mb-1.5"></span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold"
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl text-left lg:text-left font-cabinet font-extrabold"
             style={{ color: HEADING_COLOR }}>
             SERVING ALL REGIONS ACROSS {" "}
             <br className="lg:hidden" />
-            <span className="inline-block relative z-10 text-[#044E9E]">
-              SYDNEY{" "}
-
-              <span className="absolute left-0 right-0 -z-10"></span>
+            <span className="relative inline-block">
+              <span className="absolute left-0 bottom-0.5 w-full h-3 sm:h-3.5 bg-[#FEC130] z-0"></span>
+              <span className="relative text-[#1F4A93] font-extrabold">SYDNEY</span>
             </span>{" "}
           </h2>
         </div>

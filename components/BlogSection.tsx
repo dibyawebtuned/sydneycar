@@ -97,6 +97,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, index }) => {
   );
 };
 
+
 const BlogSection: React.FC = () => {
 
   return (
@@ -117,10 +118,9 @@ const BlogSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold"
             style={{ color: HEADING_COLOR }}>
             TIPS, INSIGHTS &{" "}
-            <span className="inline-block relative z-10 text-[#044E9E]">
-              ADVICE
-
-              <span className="absolute left-0 right-0 -z-10"></span>
+            <span className="relative inline-block">
+              <span className="absolute left-0 bottom-2 w-full h-3 sm:h-3.5 bg-[#FEC130] z-0"></span>
+              <span className="relative text-[#1F4A93] font-extrabold">ADVICE</span>
             </span>{" "}
           </h2>
         </div>

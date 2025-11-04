@@ -80,7 +80,11 @@ const HowItWorksSection: React.FC = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold"
             style={{ color: HEADING_COLOR }}>
             SIMPLE, {" "}
-            <span className="inline-block relative z-10 text-[#044E9E]">FAST</span> & STRESS-FREE
+            <span className="relative inline-block">
+              <span className="absolute left-0 bottom-2 w-full h-3 sm:h-3.5 bg-[#FEC130] z-0"></span>
+              <span className="relative text-[#1F4A93] font-extrabold">FAST</span>
+            </span> {" "}
+            & STRESS-FREE
           </h2>
         </div>
       </div>

@@ -113,11 +113,10 @@ const TestimonialsSection: React.FC = () => {
               >
                 WHAT OUR{" "}
                 <span
-                  className="inline-block relative text-[32px] sm:text-[40px] lg:text-[48px] leading-none"
-                  style={{ color: ACCENT_YELLOW }}
+                  className="relative inline-block"
                 >
-                  CLIENT
-                  <span className="absolute left-0 bottom-0.5 w-full h-3 sm:h-3.5 -z-10 bg-[#044E9E]"></span>
+                  <span className="absolute left-0 bottom-2 w-full h-3 sm:h-3.5 z-0 bg-[#1F4A93]"></span>
+                  <span className="relative text-[#FEC130] font-extrabold">CLIENT</span>
                 </span>{" "}
                 SAYS
               </h2>
@@ -149,7 +148,7 @@ const TestimonialsSection: React.FC = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
-                  className="w-30 h-30 fill-[#013A77]"
+                  className="w-40 h-30 fill-[#013A77]"
                 >
                   <path d="M464 32H336c-26.51 0-48 21.49-48 48v128c0 26.51 21.49 48 48 48h32v64c0 17.67-14.33 32-32 32h-16c-8.84 0-16 7.16-16 16v64c0 8.84 7.16 16 16 16h16c70.69 0 128-57.31 128-128V80c0-26.51-21.49-48-48-48zM176 32H48C21.49 32 0 53.49 0 80v128c0 26.51 21.49 48 48 48h32v64c0 17.67-14.33 32-32 32H32c-8.84 0-16 7.16-16 16v64c0 8.84 7.16 16 16 16h16c70.69 0 128-57.31 128-128V80c0-26.51-21.49-48-48-48z" />
                 </svg>

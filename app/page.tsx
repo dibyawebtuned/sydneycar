@@ -25,7 +25,16 @@ export default function Home() {
                   {/* WhyChooseUsSection */}
                   <WhyChooseUsSection
                         smallHeading="WHY CHOOSE US"
-                        mainHeading={<>TRUSTED, <span className="text-[#1F4A93]">FAST</span> & HASSLE-FREE</>}
+                        mainHeading=
+                        {<>
+                              TRUSTED,{" "}
+                              <span className="relative inline-block">
+                                    <span className="absolute left-0 bottom-2 w-full h-3 sm:h-3.5 bg-[#FEC130] z-0"></span>
+                                    <span className="relative text-[#1F4A93] font-extrabold">FAST</span>
+                              </span>{" "}
+                              & HASSLE-FREE
+                        </>
+                        }
                         description="We promise you straight talk and honest value. No fine print, no surprise fees, no dragging out the process. We’re here to free up space, clear clutter, and give you a fair cash offer — all while you sit back and watch it happen."
                         features={[
                               "22+ years of experience",
