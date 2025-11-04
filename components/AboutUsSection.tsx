@@ -113,8 +113,8 @@ const AboutUsSection: React.FC = () => {
               <div className="grid grid-cols-3 gap-5 w-full">
                 {/* Card 1 */}
                 <div
-                  onMouseEnter={() => setHovered(1)}
-                  onMouseLeave={() => setHovered(null)}
+                  onMouseEnter={() => setHovered(() => 1)}
+                  onMouseLeave={() => setHovered(() => null)}
                   className={`flex flex-col items-center justify-center p-5 sm:p-6 h-[125px] rounded-2xl shadow-sm transition-all duration-300 cursor-pointer hover:shadow-xl ${hovered === 1 ? "bg-[#fdb813]" : "bg-white"
                     }`}
                 >
@@ -133,8 +133,8 @@ const AboutUsSection: React.FC = () => {
 
                 {/* Card 2 (Initially Active) */}
                 <div
-                  onMouseEnter={() => setHovered(2)}
-                  onMouseLeave={() => setHovered(null)}
+                  onMouseEnter={() => setHovered(() => 2)}
+                  onMouseLeave={() => setHovered(() => null)}
                   className={`flex flex-col items-center justify-center p-5 sm:p-6 h-[125px] rounded-2xl  shadow-sm transition-all duration-300 cursor-pointer hover:shadow-xl ${hovered && hovered !== 2 ? "bg-white" : "bg-[#fdb813]"
                     }`}
                 >
@@ -153,8 +153,8 @@ const AboutUsSection: React.FC = () => {
 
                 {/* Card 3 */}
                 <div
-                  onMouseEnter={() => setHovered(3)}
-                  onMouseLeave={() => setHovered(null)}
+                  onMouseEnter={() => setHovered(() => 3)}
+                  onMouseLeave={() => setHovered(() => null)}
                   className={`flex flex-col items-center justify-center p-5 sm:p-6 h-[125px] rounded-2xl shadow-sm transition-all duration-300 cursor-pointer hover:shadow-xl ${hovered === 3 ? "bg-[#fdb813]" : "bg-white"
                     }`}
                 >
