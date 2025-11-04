@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
-import { Quote, Star } from "lucide-react";
+import { Quote } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { StarIcon as SolidStar } from "@heroicons/react/24/solid";
 
 const PRIMARY_BG = "#F9FAFB";
 const CARD_BG = "#FFFFFF";
@@ -61,19 +62,19 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, amount: 0.3 }}
-    whileHover={{ scale: 1.03, boxShadow: "0 10px 30px rgba(0,0,0,0.1)" }}
+    whileHover={{ scale: 1.03, boxShadow: "0 10px 30px rgba(4, 78, 158, 0.25)" }}
     transition={{ duration: 0.6 }}
     className="bg-white rounded-2xl p-8 shadow-md flex flex-col gap-4 relative"
   >
     <Quote size={32} className="text-[#044E9E] absolute -top-5 left-6 opacity-80" />
 
-    {/* Star Rating */}
+    {/* Solid Star Rating */}
     <div className="flex items-center gap-1">
       {Array.from({ length: 5 }).map((_, i) => (
-        <Star
+        <SolidStar
           key={i}
-          size={20}
-          className={i < rating ? "text-yellow-400" : "text-gray-300"}
+          className={`w-5 h-5 ${i < rating ? "text-yellow-400" : "text-gray-300"
+            }`}
         />
       ))}
     </div>
@@ -109,13 +110,9 @@ const TestimonialsPage: React.FC = () => {
               <span className="w-full h-px bg-[#9F9F9F] mb-1.5"></span>
             </div>
 
-            <h2
-              className="text-[#0A1931] text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold"
-            >
+            <h2 className="text-[#0A1931] text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold">
               WHAT OUR{" "}
-              <span
-                className="inline-block relative text-[32px] sm:text-[40px] lg:text-[48px] leading-none text-[#044E9E]"
-              >
+              <span className="inline-block relative text-[32px] sm:text-[40px] lg:text-[48px] leading-none text-[#044E9E]">
                 CLIENT
                 <span className="absolute left-0 bottom-0.5 w-full h-3 sm:h-3.5 -z-10 bg-[#044E9E]"></span>
               </span>{" "}

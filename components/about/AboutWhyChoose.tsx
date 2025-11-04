@@ -108,10 +108,10 @@ const AboutWhyChoose: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white flex flex-col gap-2.5 rounded-2xl shadow-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-1"
+                  className="bg-white flex flex-col gap-2 rounded-2xl shadow-lg p-6 hover:shadow-2xl transition transform hover:-translate-y-1"
                 >
                   <div>
-                    <div className="inline-flex items-center px-[15px] py-[7px] rounded-full text-white text-base font-medium transition duration-200 ease-in-out transform" style={{ backgroundColor: FEATURE_BUTTON_COLOR }}>
+                    <div className="inline-flex items-center px-[15px] py-[7px] rounded-full text-white text-sm font-medium transition duration-200 ease-in-out transform" style={{ backgroundColor: FEATURE_BUTTON_COLOR }}>
                       <svg className="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path
                           fillRule="evenodd"

@@ -143,7 +143,7 @@ const CarRemovalPage: React.FC = () => {
 
                                     <span
                                         className="absolute left-0 right-0 -z-10"
-                                       
+
                                     ></span>
                                 </span>
                             </h2>

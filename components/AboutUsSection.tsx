@@ -91,7 +91,7 @@ const AboutUsSection: React.FC = () => {
                   WE HAVE{" "}
                   <span className="inline-block relative text-[32px] sm:text-[40px] lg:text-[48px] leading-none" style={{ color: "#1F4A93" }}>
                     20 YEARS
-                    <span className="absolute left-0 bottom-0.5 w-full h-[12px] sm:h-[14px] -z-10" style={{ backgroundColor: '#FEC130' }}></span>
+                    <span className="absolute left-0 bottom-0.5 w-full h-3 sm:h-3.5 -z-10" style={{ backgroundColor: '#FEC130' }}></span>
                   </span>{" "}
                   OF
                   {" "}

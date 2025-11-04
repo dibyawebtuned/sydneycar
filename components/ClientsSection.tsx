@@ -47,7 +47,7 @@ const ClientsSection: React.FC = () => {
                 .animate-scroll:hover {
                     animation-play-state: paused;
                 }
-                    
+
             `}</style>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-10">

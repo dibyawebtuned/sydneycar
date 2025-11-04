@@ -3,6 +3,13 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+});
 
 const PRIMARY_BLUE = "#0c55a6";
 const HEADING_COLOR = "#1e1e1e";
@@ -19,7 +26,7 @@ const OurCoreValuesSection: React.FC = () => {
   ];
 
   return (
-    <section className="bg-white py-16 md:py-24 lg:py-32 relative overflow-hidden mb-1">
+    <section className="bg-[#F0EFEE] py-15 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-10 gap-12 lg:gap-16 items-center">
 
@@ -32,42 +39,40 @@ const OurCoreValuesSection: React.FC = () => {
             className="lg:col-span-6 lg:pr-8"
           >
             {/* Small Heading */}
-            <div>
+            <div className="flex items-center gap-2.5">
               <h3
                 className="text-[18px] sm:text-[20px] font-semibold uppercase tracking-widest relative pb-2 inline-block whitespace-nowrap font-cabinet"
                 style={{ color: PRIMARY_BLUE }}
               >
                 OUR CORE VALUES
               </h3>
-              <span className="w-full h-px bg-[#0c55a6] mb-1.5"></span>
+              <span className="w-full h-px bg-[#9F9F9F] mb-1.5"></span>
             </div>
 
             {/* Main Heading */}
             <h2
-              className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight mt-4 mb-6"
+              className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold"
               style={{ color: HEADING_COLOR }}
             >
               DRIVING EXCELLENCE IN
               <br />
-              <span className="inline-block relative z-10" style={{ color: PRIMARY_BLUE }}>
+              <span className="inline-block relative text-[32px] sm:text-[40px] lg:text-[48px] leading-none" style={{ color: PRIMARY_BLUE }}>
                 VEHICLE REMOVAL
                 <span
-                  className="absolute left-0 right-0 -z-10"
-
-                ></span>
+                  className="absolute left-0 bottom-0.5 w-full h-3 sm:h-3.5 -z-10"></span>
               </span>{" "}
               & TOWING
             </h2>
 
             {/* Description */}
-            <p className="text-gray-600 text-lg mb-8 max-w-prose text-justify">
+            {/* <p className="text-gray-600 text-lg mb-8 max-w-prose text-justify">
               At Sydney Car Removal & Towing, our core values define everything we do. We focus on
               providing fast, reliable, and eco-friendly services while maintaining the highest level
               of trust and integrity. Our customer-first approach ensures every vehicle is handled with care.
-            </p>
+            </p> */}
 
             {/* Core Values */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5">
               {coreValues.map((value, index) => (
                 <motion.div
                   key={index}
@@ -75,7 +80,7 @@ const OurCoreValuesSection: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.3 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium transition duration-200 ease-in-out transform hover:scale-105"
+                  className={`inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium transition duration-200 ease-in-out transform hover:scale-105 ${inter.className}`}
                   style={{ backgroundColor: FEATURE_BUTTON_COLOR }}
                 >
                   <svg className="h-4 w-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
