@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import AboutWhyChoose from "@/components/about/AboutWhyChoose";
+import ServicesSection from "@/components/ServiceSection";
 import BlogSection from "@/components/BlogSection";
 import ClientsSection from "@/components/ClientsSection";
 import OurCoreValuesSection from "@/components/OurCoreValuesSection";
@@ -10,6 +11,7 @@ const AboutPage: React.FC = () => {
         <>
             <About />
             <AboutWhyChoose />
+            <ServicesSection/>
             <TestimonialsSection />
             <OurCoreValuesSection />
             <ClientsSection />

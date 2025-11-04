@@ -11,6 +11,8 @@ import OurCoreValuesSection from "@/components/OurCoreValuesSection";
 import EcoFriendlySection from "@/components/EcoSection";
 import { Inter } from "next/font/google";
 
+import { Leaf } from "lucide-react";
+
 const inter = Inter({
     subsets: ["latin"],
     variable: "--font-inter",
@@ -130,7 +132,7 @@ const CarRemovalPage: React.FC = () => {
                     </motion.div>
 
                     {/* Hero Image */}
-                    <motion.div
+                    {/* <motion.div
                         className=" w-full md:w-1/2 relative h-64 sm:h-72 md:h-96 lg:h-[350px] overflow-hidden rounded-2xl shadow-xl"
                         initial={{ scale: 0.95, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
@@ -142,7 +144,51 @@ const CarRemovalPage: React.FC = () => {
                             fill
                             className="object-cover transform transition-transform duration-500 hover:scale-105 opacity-70"
                         />
+                    </motion.div> */}
+
+                    {/* Hero Image */}
+                    {/* Hero Image */}
+                    {/* Hero Image */}
+                    <motion.div
+                        className="w-full md:w-1/2 relative h-64 sm:h-72 md:h-96 lg:h-[350px] rounded-2xl shadow-xl"
+                        initial={{ scale: 0.95, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ duration: 1.2 }}
+                    >
+                        <Image
+                            src="/service/carRemoval.jpg"
+                            alt="Old Car Removal"
+                            fill
+                            className="object-cover transform transition-transform duration-500 rounded-2xl opacity-70"
+                        />
+
+                        {/* Floating Eco-Friendly Card */}
+                        <motion.div
+                            className="absolute -left-7 -bottom-8 max-w-xl bg-green-50/90 backdrop-blur-sm shadow-2xl rounded-2xl p-4 flex flex-col gap-2 border border-green-200 z-10"
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                        >
+                            {/* Icon + Title */}
+                            <div className="flex items-center gap-3">
+                                <div className="relative w-12 h-12 bg-green-800 rounded-full flex items-center justify-center shadow-md">
+                                    <Leaf className="w-6 h-6 text-white" />
+                                </div>
+
+
+                                <h4 className="text-green-800 font-semibold text-base sm:text-lg font-cabinet">
+                                    Environmentally Responsible
+                                </h4>
+                            </div>
+
+                            {/* Description */}
+                            <p className={`text-green-900 text-[12px] leading-snug font-normal ${inter.className}`}>
+                                At Sydney Car Removal and Towing Services, we don’t just collect unwanted cars — we make sure they’re handled the right way. All vehicles are dismantled and recycled through approved wrecking facilities, ensuring that reusable parts are salvaged and waste is minimized.
+                            </p>
+                        </motion.div>
                     </motion.div>
+
+
+
                 </div>
             </section>
 

@@ -8,6 +8,8 @@ import { useRouter } from "next/navigation";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import { Leaf } from "lucide-react";
+
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -98,8 +100,8 @@ const JunkCarRemovalPage: React.FC = () => {
             <h1 className="mb-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight md:leading-[1.15] text-[#f0f4f8] font-cabinet">
               Sydney Car Removal Services
             </h1>
-            <p 
-            className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
+            <p
+              className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
             >
               We offer 100% free car removal across Sydney, no matter the make
               or condition. Quick, safe, and hassle-free.
@@ -124,7 +126,7 @@ const JunkCarRemovalPage: React.FC = () => {
 
           </motion.div>
           {/* Hero Image */}
-          <motion.div
+          {/* <motion.div
             className="w-full md:w-1/2 relative h-64 sm:h-72 md:h-96 lg:h-[350px] overflow-hidden rounded-2xl shadow-xl"
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -136,26 +138,64 @@ const JunkCarRemovalPage: React.FC = () => {
               fill
               className="object-cover transform transition-transform duration-500 hover:scale-105 opacity-70"
             />
+          </motion.div> */}
+
+          <motion.div
+            className="w-full md:w-1/2 relative h-64 sm:h-72 md:h-96 lg:h-[350px] rounded-2xl shadow-xl"
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.2 }}
+          >
+            <Image
+              src="/service/junkCarRemoval.png"
+              alt="Old Car Removal"
+              fill
+              className="object-cover transform transition-transform duration-500 rounded-2xl opacity-70"
+            />
+
+            {/* Floating Eco-Friendly Card */}
+            <motion.div
+              className="absolute -left-7 -bottom-8 max-w-xl bg-green-50/90 backdrop-blur-sm shadow-2xl rounded-2xl p-4 flex flex-col gap-2 border border-green-200 z-10"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              {/* Icon + Title */}
+              <div className="flex items-center gap-3">
+                <div className="relative w-12 h-12 bg-green-800 rounded-full flex items-center justify-center shadow-md">
+                  <Leaf className="w-6 h-6 text-white" />
+                </div>
+
+
+                <h4 className="text-green-800 font-semibold text-base sm:text-lg font-cabinet">
+                  Eco-Friendly Recycling Process
+                </h4>
+              </div>
+
+              {/* Description */}
+              <p className={`text-green-900 text-[12px] leading-snug font-normal ${inter.className}`}>
+                When you choose us, your old vehicle won’t end up in a landfill. We work with authorized wreckers and recyclers to safely dismantle each car — salvaging reusable parts, recycling metal, and properly disposing of fluids and waste. It’s a clean, responsible way to say goodbye to your junk car.
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
 
       <WhyChooseUsSection
-                smallHeading="WHY CHOOSE US"
-                mainHeading={<>TRUSTED, <span className="text-[#1F4A93]">FAST</span> & HASSLE-FREE</>}
-                description="Whether your car is old, damaged, wrecked, or no longer running, we’ll take it off your hands for free. There are no hidden fees or towing charges — just quick service and cash in your hand starting from $200."
-                features={[
-                    "22+ years of experience",
-                    "Sydney-wide coverage",
-                    "24/7 availability",
-                    "Eco-friendly car disposal",
-                    "Instant cash payment",
-                    "Fully licensed",
-                ]}
-                imageSrc="/whyChoose.png"
-                imageAlt="Tow truck loading a red car"
-            />
+        smallHeading="WHY CHOOSE US"
+        mainHeading={<>TRUSTED, <span className="text-[#1F4A93]">FAST</span> & HASSLE-FREE</>}
+        description="Whether your car is old, damaged, wrecked, or no longer running, we’ll take it off your hands for free. There are no hidden fees or towing charges — just quick service and cash in your hand starting from $200."
+        features={[
+          "22+ years of experience",
+          "Sydney-wide coverage",
+          "24/7 availability",
+          "Eco-friendly car disposal",
+          "Instant cash payment",
+          "Fully licensed",
+        ]}
+        imageSrc="/whyChoose.png"
+        imageAlt="Tow truck loading a red car"
+      />
       <OurCoreValuesSection />
       <HowItWorksSection />
 

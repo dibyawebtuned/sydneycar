@@ -11,12 +11,14 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "framer-motion": "^12.23.24",
+    "jquery": "^3.7.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.548.0",
     "next": "16.0.0",
     "nodemailer": "^7.0.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-jvectormap": "^0.0.15",
     "react-modal": "^3.16.3",
     "react-simple-maps": "^3.0.0"
   },
