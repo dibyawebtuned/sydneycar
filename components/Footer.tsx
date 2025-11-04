@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
 
       {/* Top Section */}
       <div className="relative z-10 py-15 sm:py-16 px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-10 sm:gap-12">
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col lg:flex-row sm:gap-12">
 
           {/* Logo & Description */}
           <div className="flex-1 flex flex-col mb-10 lg:mb-0">
