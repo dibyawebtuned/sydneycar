@@ -30,7 +30,7 @@ const Step: React.FC<StepProps> = ({ step, index, mobile = false }) => {
     : { opacity: 0, x: index % 2 === 0 ? -100 : 100 };
 
   const sizeProps = mobile
-    ? { circle: 120, icon: 36, maxWidth: 150, textSize: "text-lg" }
+    ? { circle: 200, icon: 36, maxWidth: 200, textSize: "text-lg" }
     : { circle: 200, icon: 60, maxWidth: 200, textSize: "text-[30px]" };
 
   return (

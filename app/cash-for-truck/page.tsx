@@ -18,6 +18,7 @@ const inter = Inter({
 });
 
 
+
 const CashForTruckPage: React.FC = () => {
 
   const [current, setCurrent] = useState(0);
