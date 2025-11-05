@@ -38,7 +38,7 @@ const blogPosts = [
 ];
 
 // --- Animation Variants ---
-const fadeUpVariant:Variants = {
+const fadeUpVariant: Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: (i: number) => ({
     opacity: 1,
@@ -60,49 +60,49 @@ interface BlogCardProps {
 const BlogCard: React.FC<BlogCardProps> = ({ post, index }) => {
   return (
     <Link href="/blog-detail">
-    <motion.div
-      className="group rounded-2xl transition-shadow duration-300 overflow-hidden flex flex-col sm:flex-row border border-transparent hover:border-gray-100 hover:shadow-xl cursor-pointer bg-white "
-      variants={fadeUpVariant}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      custom={index}
-    >
-      {/* --- Image --- */}
-      <div className="relative w-full sm:w-1/2 lg:w-2/5 h-[250px] sm:min-h-full overflow-hidden rounded-2xl">
-        <Image
-          src={post.imagePath}
-          alt={post.title}
-          fill
-          sizes="(max-width: 640px) 100vw, 50vw"
-          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
+      <motion.div
+        className="group rounded-2xl transition-shadow duration-300 overflow-hidden flex flex-col sm:flex-row border border-transparent hover:border-gray-100 hover:shadow-xl cursor-pointer bg-white "
+        variants={fadeUpVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        custom={index}
+      >
+        {/* --- Image --- */}
+        <div className="relative w-full sm:w-1/2 lg:w-2/5 h-[250px] sm:min-h-full overflow-hidden rounded-2xl">
+          <Image
+            src={post.imagePath}
+            alt={post.title}
+            fill
+            sizes="(max-width: 640px) 100vw, 50vw"
+            className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
 
-      {/* --- Content --- */}
-      <div className="w-full sm:w-1/2 lg:w-3/5 p-6 sm:p-8 flex flex-col justify-center relative">
-        {/* Category Tag */}
-        <div className="absolute top-0 -right-3.5 transform -translate-y-1/2 -translate-x-4 sm:relative sm:transform-none">
-          <div
-            className="inline-flex items-center gap-2 text-sm font-medium tracking-wide px-3 py-1 rounded-full text-white font-cabinet"
-            style={{ backgroundColor: "#00B8A6" }}
-          >
-            <span className="w-2 h-2 bg-white rounded-full border border-white"></span>
-            {post.category}
+        {/* --- Content --- */}
+        <div className="w-full sm:w-1/2 lg:w-3/5 p-6 sm:p-8 flex flex-col justify-center relative">
+          {/* Category Tag */}
+          <div className="absolute top-0 -right-3.5 transform -translate-y-1/2 -translate-x-4 sm:relative sm:transform-none">
+            <div
+              className="inline-flex items-center gap-2 text-sm font-medium tracking-wide px-3 py-1 rounded-full text-white font-cabinet"
+              style={{ backgroundColor: "#00B8A6" }}
+            >
+              <span className="w-2 h-2 bg-white rounded-full border border-white"></span>
+              {post.category}
+            </div>
+          </div>
+
+          {/* Title + Description */}
+          <div className="mt-4 sm:mt-0 block">
+            <h3 className="text-2xl font-bold mb-2.5 leading-snug transition-colors duration-200 group-hover:text-[#044E9E] font-cabinet text-[#1e1e1e]">
+              {post.title}
+            </h3>
+            <p className={`text-[#6A6A6A] text-[14px] ${inter.className}`}>
+              {post.description}
+            </p>
           </div>
         </div>
-
-        {/* Title + Description */}
-        <div className="mt-4 sm:mt-0 block">
-          <h3 className="text-2xl font-bold mb-2.5 leading-snug transition-colors duration-200 group-hover:text-[#044E9E] font-cabinet text-[#1e1e1e]">
-            {post.title}
-          </h3>
-          <p className={`text-[#6A6A6A] text-[14px] ${inter.className}`}>
-            {post.description}
-          </p>
-        </div>
-      </div>
-    </motion.div>
+      </motion.div>
     </Link>
   );
 };

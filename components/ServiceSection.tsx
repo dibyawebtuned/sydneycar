@@ -2,11 +2,10 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Variants } from "framer-motion";
-import { Truck, Zap, RotateCw, Trash2, XCircle, Package } from "lucide-react";
+import Link from "next/link";
+import { motion, Variants } from "framer-motion";
+import { Truck, Zap, RotateCw, Trash2, DollarSign, Car } from "lucide-react";
 import { Inter } from "next/font/google";
-
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +21,7 @@ const containerVariants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // delays between cards for smooth flow
+      staggerChildren: 0.2,
     },
   },
 };
@@ -40,8 +39,8 @@ interface ServiceCardProps {
   title: string;
   description: string;
   icon: React.ReactNode;
+  link: string;
   isHighlighted?: boolean;
-  animationDirection?: "left" | "right";
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 }
@@ -50,6 +49,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
   icon: Icon,
+  link,
   isHighlighted = false,
   onMouseEnter,
   onMouseLeave,
@@ -66,7 +66,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       }
     `}
   >
-    {/* Icon, Title & Description */}
     <div className="flex flex-col items-center">
       {/* Icon */}
       <div
@@ -104,17 +103,16 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     </div>
 
     {/* READ MORE */}
-    <button
-      className={`
+    <Link href={link} className={`
         mt-6 px-4 py-2 rounded-full text-[16px] font-medium uppercase tracking-wider transition-all duration-300 ease-in-out cursor-pointer ${inter.className}
         ${isHighlighted
-          ? "border-[#0c55a6] text-[#333333] hover:bg-[#0c55a6] hover:text-white"
-          : "border-[#fdb813] text-[#fdb813] group-hover:border-[#0c55a6] group-hover:text-[#333333] hover:bg-[#fdb813] hover:text-[#333333]"
-        }
+        ? "border-[#0c55a6] text-[#333333] hover:bg-[#0c55a6] hover:text-white"
+        : "border-[#fdb813] text-[#fdb813] group-hover:border-[#0c55a6] group-hover:text-[#333333] hover:bg-[#fdb813] hover:text-[#333333]"
+      }
       `}
     >
       READ MORE
-    </button>
+    </Link>
   </motion.div>
 );
 
@@ -127,42 +125,47 @@ const ServicesSection: React.FC = () => {
       description:
         "Turn your unwanted car into instant cash with Sydney Car Removal and Towing Services — the city’s trusted team for fast, free, and reliable.",
       iconSrc: <Truck className="w-[70px] h-20" />,
+      link: "/car-removal",
     },
     {
       title: "Car Towing",
       description:
         "Need fast and reliable car towing in Sydney? At Sydney Car Removal and Towing Services, we provide 24/7 towing for all types of vehicles",
       iconSrc: <Zap className="w-[70px] h-20" />,
+      link: "/car-towing",
     },
     {
       title: "Old Car Removal",
       description:
         "If your old car has been sitting unused, collecting dust or rust, it’s time to turn it into cash.",
       iconSrc: <RotateCw className="w-[70px] h-20" />,
+      link: "/old-car-removal",
     },
     {
       title: "Junk Car Removal",
       description:
         "Got a car that’s beyond repair? Maybe it’s been sitting in the driveway, collecting rust and taking up space.",
       iconSrc: <Trash2 className="w-[70px] h-20" />,
+      link: "/junk-car-removal",
     },
     {
-      title: "Unwanted Cars",
+      title: "Cash for Truck",
       description:
         "Have an old or unwanted truck taking up space? Whether it’s damaged, unregistered, or no longer worth repairing, Sydney Car Removal and Towing",
-      iconSrc: <XCircle className="w-[70px] h-20" />,
+      iconSrc: <DollarSign className="w-[70px] h-20" />,
+      link: "/cash-for-truck",
     },
     {
-      title: "Used Car",
+      title: "Car Wreckers",
       description:
         "When it’s time to say goodbye to your old or damaged car, trust Sydney Car Removal and Towing Services",
-      iconSrc: <Package className="w-[70px] h-20" />,
+      iconSrc: <Car className="w-[70px] h-20" />,
+      link: "/car-wreckers",
     },
   ];
 
   return (
     <section className="relative w-full py-15 overflow-hidden">
-      {/* Background Image */}
       <div className="absolute inset-0">
         <Image
           src="/serviceImg.png"
@@ -178,9 +181,7 @@ const ServicesSection: React.FC = () => {
         ></div>
       </div>
 
-      {/* Services Main Content */}
       <div className="relative z-20 container mx-auto flex flex-col gap-5 px-4 sm:px-6 lg:px-8 text-white">
-        {/* Title & Sub-Titles */}
         <div className="flex flex-col gap-0 items-center text-center px-4 sm:px-6 lg:px-0">
           <div className="flex w-full max-w-[400px] sm:max-w-[500px] md:max-w-[600px] items-center gap-2.5">
             <span className="flex-1 h-[1.5px] bg-[#F3EFEB]"></span>
@@ -194,7 +195,6 @@ const ServicesSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Animated Service Cards Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -208,6 +208,7 @@ const ServicesSection: React.FC = () => {
               title={service.title}
               description={service.description}
               icon={service.iconSrc}
+              link={service.link}
               isHighlighted={hovered === index || (hovered === null && index === 0)}
               onMouseEnter={() => setHovered(index)}
               onMouseLeave={() => setHovered(null)}

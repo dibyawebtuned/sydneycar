@@ -23,21 +23,20 @@ const ACCENT_YELLOW = '#fdb813';
 
 // --- Data ---
 const supportLinks = [
-  { name: "FAQ's", href: '#faq' },
-  { name: 'Services', href: '#services' },
-  { name: 'Pricing', href: '#pricing' },
-  { name: 'Contact', href: '#contact' },
-  { name: 'Privacy Policy', href: '#privacy' },
-  { name: 'Terms & Conditions', href: '#terms' },
+  { name: "FAQ's", href: '/faq' },
+  { name: 'Services', href: '/ServiceSection.tsx' },
+  { name: 'About', href: '/about' },
+  { name: 'Service Areas', href: '/areas' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const serviceLinks = [
-  { name: 'Car Towing', href: '#car-towing' },
-  { name: 'Tyre Replacement', href: '#tyre' },
-  { name: 'Motorcycle Towing', href: '#motorcycle-towing' },
-  { name: 'Luxury Car Towing', href: '#luxury-towing' },
-  { name: 'Roadside Assistance', href: '#roadside' },
-  { name: 'Battery Replacement', href: '#battery' },
+  { name: 'Car Towing', href: '/car-towing' },
+  { name: 'Old Car Removal', href: '/old-car-removal' },
+  { name: 'Junk Car Removal', href: '/junk-car-removal' },
+  { name: 'Cash for Truck', href: '/cash-for-truck' },
+  { name: 'Car Wreckers', href: '/car-wreckers' },
+  // { name: 'Battery Replacement', href: '/app/car-towing' },
 ];
 
 // --- Social Icon Component ---
@@ -139,8 +138,11 @@ const Footer: React.FC = () => {
             <h4 className="text-xl sm:text-2xl font-extrabold mb-4 sm:mb-6 text-[#fdb813] font-cabinet">Contact</h4>
             <ul className="space-y-3 mb-6 text-sm sm:text-base">
               <li className="flex items-start"><Clock size={18} className="mr-2 mt-1 text-[#fdb813]" />24 Hours</li>
-              <li className="flex items-start"><Phone size={18} className="mr-2 mt-1 text-[#fdb813]" />+0402887766, +0450747474</li>
-              <li className="flex items-start"><Mail size={18} className="mr-2 mt-1 text-[#fdb813]" />sydneycarremoval@gmail.com</li>
+              <li className="flex items-start"><Phone size={18} className="mr-2 mt-1 text-[#fdb813]" />
+                <a className='hover:text-[#fdb813]' href="tel:+0402887766">+0402887766,</a> <a className='hover:text-[#fdb813]' href="tel:+0450747474">+0450747474</a></li>
+              <li className="flex items-start"><Mail size={18} className="mr-2 mt-1 text-[#fdb813]" />
+                <a href="mailto:sydneycarremoval@gmail.com" className="hover:text-[#fdb813] hover:underline">sydneycarremoval@gmail.com</a>
+              </li>
               <li className="flex items-start"><MapPin size={18} className="mr-2 mt-1 text-[#fdb813]" />Sydney, Australia</li>
             </ul>
 

@@ -12,27 +12,27 @@ const SECTION_BG = "#F0EFEE";
 const faqs = [
   {
     id: 1,
-    question: "Do I have to pay for towing?",
+    question: "Is your car removal service really free?",
     answer:
-      "Not at all! Our towing and car removal services are completely free throughout Sydney. You won't have to worry about any hidden fees or call-out charges. Whether your car is parked in your driveway, garage, or roadside, our professional team handles the entire removal process at no cost to you.",
+      "Yes! Our car removal service is completely free — we cover towing, paperwork, and pickup costs. You’ll only pay nothing; in fact, you’ll receive instant cash for your vehicle starting from $200, depending on its condition.",
   },
   {
     id: 2,
-    question: "How much cash can I get?",
+    question: "How quickly can you pick up my vehicle?",
     answer:
-      "We offer instant cash payments ranging from $200 up to $9,999, depending on your vehicle's make, model, age, and condition. Even if your car is old, damaged, or no longer running, we guarantee the best possible offer in the market and pay you on the spot during pickup.",
+      "We provide same-day or very rapid pickups across all Sydney suburbs. Once you call or message us, we’ll give you an instant quote and schedule a pickup time convenient for you.",
   },
   {
     id: 3,
-    question: "What documents do I need?",
+    question: "Do you offer cash payment on the spot?",
     answer:
-      "You'll only need a valid ID (such as a driver's license) and proof of vehicle ownership (like registration papers). Once those are verified, our team takes care of the rest — from paperwork to towing. We make the process smooth, fast, and hassle-free, from paperwork to towing. We make the process smooth, fast, and hassle-free.",
+      "Absolutely. We provide instant cash payments at the time of pickup. There’s no waiting, no bank transfers, and no hidden conditions — just cash in your hand for your unwanted vehicle.",
   },
   {
     id: 4,
-    question: "How soon can you pick up my car?",
+    question: "Do you recycle or dispose of vehicles responsibly?",
     answer:
-      "In most Sydney suburbs, we can arrange same-day car removal — often within just a few hours of your call. Our team operates 7 days a week, including weekends, to ensure maximum convenience. You choose the pickup time, and we'll be there right on schedule.",
+      "Absolutely. We operate with licensed and approved wreckers to recycle and salvage vehicles responsibly. Usable parts are salvaged, metals recycled, and harmful fluids disposed of safely — keeping Sydney cleaner and greener.",
   },
 ];
 
