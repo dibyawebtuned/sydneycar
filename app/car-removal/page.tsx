@@ -10,6 +10,8 @@ import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import CoreValuesSection from "@/components/OurCoreValuesSection";
 import EcoFriendlySection from "@/components/EcoSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
+import { Car, Battery, AlertTriangle, Wrench } from "lucide-react";
+
 import { Inter } from "next/font/google";
 
 import { Leaf } from "lucide-react";
@@ -21,10 +23,30 @@ const inter = Inter({
 });
 
 const sydneyAreas = [
-  "Manly", "South Sydney", "Willoughby", "Kogarah", "Hunters Hill",
-  "Canterbury", "Rockdale", "Parramatta", "Liverpool", "Penrith",
-  "Blacktown", "Gosford", "Northern Beaches", "Western Sydney",
-  "Eastern Suburbs", "Inner West",
+    "Manly", "South Sydney", "Willoughby", "Kogarah", "Hunters Hill",
+    "Canterbury", "Rockdale", "Parramatta", "Liverpool", "Penrith",
+    "Blacktown", "Gosford", "Northern Beaches", "Western Sydney",
+    "Eastern Suburbs", "Inner West",
+];
+
+import TruckConditionSection from "@/components/TruckConditionSection";
+const carConditions = [
+    {
+        icon: <Car size={40} />,
+        title: "Request a Quote",
+        description: "Call or message us with your vehicle details.",
+    },
+    {
+        icon: <Battery size={40} />,
+        title: "Get an Offer",
+        description: "We’ll provide an upfront cash quote with no obligations.",
+    },
+    {
+        icon: <AlertTriangle size={40} />,
+        title: "Free Pickup & Payment",
+        description: "We come to you anywhere in Sydney, pay you instantly, and tow for free.",
+    },
+
 ];
 
 
@@ -225,6 +247,15 @@ const CarRemovalPage: React.FC = () => {
                 imageSrc="/car_tow_one.png"
                 imageAlt="Tow truck loading a red car"
             />
+
+            {/* TruckConditionSection */}
+            {/* <TruckConditionSection
+                sectionTitle="Process"
+                subtitle="Fast Hassle-Free"
+                highlightText="Process"
+                conditions={carConditions}
+                backgroundColor="#F3F6FB"
+            /> */}
 
             {/* OurCoreValuesSection */}
             <CoreValuesSection

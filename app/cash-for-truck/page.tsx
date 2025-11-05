@@ -5,10 +5,10 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Phone, Truck } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { Car, Battery, AlertTriangle, Wrench } from "lucide-react";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import CoreValuesSection from "@/components/OurCoreValuesSection";
-import TruckConditionSection from "@/components/TruckConditionSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Leaf } from "lucide-react";
 import { Inter } from "next/font/google";
@@ -25,6 +25,30 @@ const inter = Inter({
   variable: "--font-inter",
   weight: ["400", "500", "600", "700"],
 });
+
+import TruckConditionSection from "@/components/TruckConditionSection";
+const carConditions = [
+  {
+    icon: <Car size={40} />,
+    title: "Old or Scrap Cars",
+    description: "Even if your car is too old or not working — we’ll still buy it.",
+  },
+  {
+    icon: <Battery size={40} />,
+    title: "Dead Battery or Engine Failure",
+    description: "No need to fix it — we handle cars with any kind of failure.",
+  },
+  {
+    icon: <AlertTriangle size={40} />,
+    title: "Accident or Hail Damaged",
+    description: "We accept all kinds of damaged vehicles with instant cash offers.",
+  },
+  {
+    icon: <Wrench size={40} />,
+    title: "Non-Running Vehicles",
+    description: "No matter the issue — if it’s not running, we’ll tow it for free.",
+  },
+];
 
 
 
@@ -207,7 +231,14 @@ const CashForTruckPage: React.FC = () => {
       />
 
       {/* TruckConditionSection */}
-      <TruckConditionSection />
+      <TruckConditionSection
+        sectionTitle="We Buy Cars in Any Condition"
+        subtitle="Your Car Doesn’t Need to Be"
+        highlightText="Perfect to Sell"
+        conditions={carConditions}
+        backgroundColor="#F3F6FB"
+      />
+
 
       <CoreValuesSection
         smallHeading="OUR CORE VALUES"
