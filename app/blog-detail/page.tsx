@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaCar, FaTruck, FaRecycle, FaClock, FaCashRegister, FaCheck } from "react-icons/fa";
+import { Lightbulb } from "lucide-react";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import { Inter } from "next/font/google";
 
@@ -25,13 +26,15 @@ const BlogDetailPage = () => {
         {/* Featured Image */}
         <div className="relative w-full h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl mb-12">
           <Image
-            src="/blog/blog1.png"
+            src="/blog/car_tow.jpeg"
             alt="Blog Featured"
             fill
             quality={100}
             priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px"
             style={{ objectFit: "cover", objectPosition: "center" }}
           />
+
           <span
             className="absolute top-6 left-6 text-sm font-semibold px-4 py-1 rounded-full shadow-lg"
             style={{ backgroundColor: FEATURE_BUTTON_COLOR, color: "white" }}
@@ -46,15 +49,8 @@ const BlogDetailPage = () => {
           >
             How to Get the Best Cash for Your Old Car in Sydney
           </h1>
-          <div className="flex items-center justify-center sm:justify-start gap-3 text-gray-600 text-sm mt-2">
-            <Image
-              src="/avatars/dibya.png"
-              alt="Author"
-              width={40}
-              height={40}
-              className="rounded-full object-cover"
-            />
-            <span className={`${inter.className}`}>By <span className="font-medium">Dibya Maharjan</span></span>
+          <div className="flex items-center sm:justify-start gap-3 text-gray-600 text-sm mt-2">
+            <span className={`${inter.className}`}>By <span className="font-medium">John Doe</span></span>
             <span className={`${inter.className}`}>— November 5, 2025</span>
           </div>
         </header>
@@ -67,7 +63,7 @@ const BlogDetailPage = () => {
         </section>
 
         {/* Why Choose Services */}
-        <section className="mb-12">
+        <section className="mb-5">
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <FaCheck className="mt-1 text-[#2ec4b6]" />
@@ -92,6 +88,46 @@ const BlogDetailPage = () => {
             </li>
           </ul>
         </section>
+
+        {/*  */}
+        <section>
+          <div className="flex items-center gap-3 border-2 border-blue-800 rounded-xl p-4 max-w-full mb-5
+                  transform transition-transform duration-200 hover:shadow-md hover:shadow-blue-400/40">
+            <Lightbulb className="w-6 h-6 text-blue-800 flex-shrink-0" />
+            <p className="text-blue-900 text-base">
+              Try <span className="font-bold underline">Sydney Car Removal Service</span> for a quick look at how different towing options or distances could affect the total cost of towing your vehicle.
+            </p>
+          </div>
+        </section>
+
+
+
+        {/*  */}
+        <section className="flex flex-col md:flex-row sm:gap-10 items-center">
+          {/* Text Section */}
+          <div className="flex-2">
+            <div>
+              <p className={`text-gray-600 font-normal text-[14px] sm:text-[16px] mb-5 text-justify w-full ${inter.className}`}>
+                Turn your unwanted car into instant cash with Sydney Car Removal and Towing Services — the city’s trusted team for fast, free, and reliable vehicle removals. With over 22 years of experience, we make it simple to get rid of any car, in any condition, anywhere across Sydney.
+                Need fast and reliable car towing in Sydney? At Sydney Car Removal and Towing Services, we provide 24/7 towing for all types of vehicles — from small cars and utes to vans and light trucks. With more than 22 years of experience, we’ve built a reputation for safe, affordable, and hassle-free towing across every suburb of Sydney.
+              </p>
+            </div>
+          </div>
+
+          {/* Image Section */}
+          <div className="flex-1 w-full rounded-2xl overflow-hidden">
+            <div className="relative w-full" style={{ height: '250px', minHeight: '250px' }}>
+              <Image
+                src="/aboutImg.png"
+                alt="About Us Image"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+        </section>
+
+
 
         {/* Steps Section */}
         {/* <section className="mb-12">
@@ -118,7 +154,7 @@ const BlogDetailPage = () => {
         </section> */}
 
         {/* Types of Cars */}
-        <section className="">
+        {/* <section className="">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-6 font-cabinet text-[#0c55a6]">
             Types of Cars We Accept
           </h2>
@@ -152,7 +188,7 @@ const BlogDetailPage = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
 
 
