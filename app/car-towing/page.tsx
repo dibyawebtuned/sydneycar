@@ -7,7 +7,7 @@ import { Phone } from "lucide-react";
 import { useRouter } from "next/navigation";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import CoreValuesSection from "@/components/OurCoreValuesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Inter } from "next/font/google";
 
@@ -16,6 +16,13 @@ const inter = Inter({
   variable: "--font-inter",
   weight: ["400", "500", "600", "700"],
 });
+
+const sydneyAreas = [
+  "Manly", "South Sydney", "Willoughby", "Kogarah", "Hunters Hill",
+  "Canterbury", "Rockdale", "Parramatta", "Liverpool", "Penrith",
+  "Blacktown", "Gosford", "Northern Beaches", "Western Sydney",
+  "Eastern Suburbs", "Inner West",
+];
 
 const CarTowingPage: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -140,21 +147,36 @@ const CarTowingPage: React.FC = () => {
       </section>
 
       <WhyChooseUsSection
-                smallHeading="WHY CHOOSE US"
-                mainHeading={<>TRUSTED, <span className="text-[#1F4A93]">FAST</span> & HASSLE-FREE</>}
-                description="Whether your car is old, damaged, wrecked, or no longer running, we’ll take it off your hands for free. There are no hidden fees or towing charges — just quick service and cash in your hand starting from $200."
-                features={[
-                    "22+ years of experience",
-                    "Sydney-wide coverage",
-                    "24/7 availability",
-                    "Eco-friendly car disposal",
-                    "Instant cash payment",
-                    "Fully licensed",
-                ]}
-                imageSrc="/whyChoose.png"
-                imageAlt="Tow truck loading a red car"
-            />
-      <OurCoreValuesSection />
+        smallHeading="WHY CHOOSE US"
+        mainHeading={<span className="uppercase">24/7 Car <span className="text-[#1F4A93]">Towing</span> Service You Can Count On</span>}
+        description="Breakdowns, accidents, or unexpected car troubles can happen anytime. That’s why we’re available day and night, 7 days a week, offering quick response times and professional towing for vehicles in any condition. Whether your car has stopped on the roadside, needs transporting to a mechanic, or simply won’t start at home — we’ll get it where it needs to go, safely."
+        features={[
+          "22+ years of experience",
+          "Sydney-wide coverage",
+          "24/7 availability",
+          "Eco-friendly car disposal",
+          "Instant cash payment",
+          "Fully licensed",
+        ]}
+        imageSrc="/service/car_tow/one.png"
+        imageAlt="Tow truck loading a red car"
+      />
+      <CoreValuesSection
+        smallHeading="OUR CORE VALUES"
+        mainHeadingLine1="WHAT"
+        highlightedText="WE"
+        mainHeadingLine2="TOW"
+        description="Every tow is carried out by trained drivers using modern tilt-tray trucks and proper securing gear — so your vehicle stays protected from pickup to drop-off."
+        coreValues={[
+          "Cars, SUVs, utes, and 4WDs",
+          "Small trucks and vans",
+          "Accident-damaged",
+          "Broken-down vehicles",
+          "Abandoned or unregistered cars",
+          "Machinery or trade vehicles",
+        ]}
+        imageSrc="/service/car_tow/two.png"
+      />
 
       <HowItWorksSection />
 
@@ -258,7 +280,7 @@ const CarTowingPage: React.FC = () => {
         </div>
       </section>
 
-      <ServiceAreaSection/>
+      <ServiceAreaSection data={sydneyAreas} />
 
 
     </div>

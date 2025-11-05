@@ -7,7 +7,7 @@ import { Phone } from "lucide-react";
 import { useRouter } from "next/navigation";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
-import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import CoreValuesSection from "@/components/OurCoreValuesSection";
 import EcoFriendlySection from "@/components/EcoSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Inter } from "next/font/google";
@@ -19,6 +19,13 @@ const inter = Inter({
     variable: "--font-inter",
     weight: ["400", "500", "600", "700"],
 });
+
+const sydneyAreas = [
+  "Manly", "South Sydney", "Willoughby", "Kogarah", "Hunters Hill",
+  "Canterbury", "Rockdale", "Parramatta", "Liverpool", "Penrith",
+  "Blacktown", "Gosford", "Northern Beaches", "Western Sydney",
+  "Eastern Suburbs", "Inner West",
+];
 
 
 const services = [
@@ -196,23 +203,46 @@ const CarRemovalPage: React.FC = () => {
 
             {/* WhyChooseUsSection */}
             <WhyChooseUsSection
-                smallHeading="WHY CHOOSE US"
-                mainHeading={<>TRUSTED, <span className="text-[#1F4A93]">FAST</span> & HASSLE-FREE</>}
+                smallHeading="OUR CORE"
+                mainHeading={
+                    <span className="uppercase">Free, {" "}
+                        <span className="relative inline-block">
+                            <span className="absolute left-0 bottom-2 w-full h-3 sm:h-3.5 bg-[#FEC130] z-0"></span>
+                            <span className="relative text-[#1F4A93] font-extrabold">
+                                CAR
+                            </span> {" "}
+                        </span>{" "}
+                        Removal
+                    </span>}
                 description="Whether your car is old, damaged, wrecked, or no longer running, we’ll take it off your hands for free. There are no hidden fees or towing charges — just quick service and cash in your hand starting from $200."
                 features={[
-                    "22+ years of experience",
-                    "Sydney-wide coverage",
-                    "24/7 availability",
-                    "Eco-friendly car disposal",
-                    "Instant cash payment",
-                    "Fully licensed",
+                    "Sedan, hatchback, SUVs, & utes",
+                    "4WDs, vans, and small trucks",
+                    "Scrap or rusted vehicles",
+                    "Accident-damaged",
+                    "Non-running cars",
                 ]}
-                imageSrc="/whyChoose.png"
+                imageSrc="/car_tow_one.png"
                 imageAlt="Tow truck loading a red car"
             />
 
             {/* OurCoreValuesSection */}
-            <OurCoreValuesSection />
+            <CoreValuesSection
+                smallHeading="WHY CHOOSE US"
+                mainHeadingLine1="DRIVING EXCELLENCE IN"
+                highlightedText="VEHICLE REMOVAL"
+                mainHeadingLine2="& TOWING"
+                description="At Sydney Car Removal & Towing, we’re driven by trust, reliability, and sustainability."
+                coreValues={[
+                    "22+ years of local experience",
+                    "Sydney-wide coverage",
+                    "24/7 availability",
+                    "Eco-friendly car disposal",
+                    "Instant cash payment",
+                    "Fully licensed team",
+                ]}
+                imageSrc="/car_tow_two.png"
+            />
 
             {/* \EcoFriendlySection */}
             {/* <EcoFriendlySection /> */}
@@ -366,7 +396,7 @@ const CarRemovalPage: React.FC = () => {
                 </div>
             </section> */}
 
-            <ServiceAreaSection />
+            {/* <ServiceAreaSection data={sydneyAreas} /> */}
         </div>
     );
 };

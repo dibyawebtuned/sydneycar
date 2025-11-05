@@ -10,6 +10,13 @@ import ServicesSection from "@/components/ServiceSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 
+const sydneyAreas = [
+  "Manly", "South Sydney", "Willoughby", "Kogarah", "Hunters Hill",
+  "Canterbury", "Rockdale", "Parramatta", "Liverpool", "Penrith",
+  "Blacktown", "Gosford", "Northern Beaches", "Western Sydney",
+  "Eastern Suburbs", "Inner West",
+];
+
 export default function Home() {
       return (
             <div className="bg-zinc-50 font-medium text-black">
@@ -61,7 +68,7 @@ export default function Home() {
                   <BlogSection />
 
                   {/* ServiceAreaSection */}
-                  <ServiceAreaSection />
+                  <ServiceAreaSection data={sydneyAreas} />
 
                   {/* FaqSection */}
                   <FaqSection />

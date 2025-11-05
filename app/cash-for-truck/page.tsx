@@ -7,10 +7,17 @@ import { Phone, Truck } from "lucide-react";
 import { useRouter } from "next/navigation";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import CoreValuesSection from "@/components/OurCoreValuesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Leaf } from "lucide-react";
 import { Inter } from "next/font/google";
+
+const sydneyAreas = [
+  "Manly", "South Sydney", "Willoughby", "Kogarah", "Hunters Hill",
+  "Canterbury", "Rockdale", "Parramatta", "Liverpool", "Penrith",
+  "Blacktown", "Gosford", "Northern Beaches", "Western Sydney",
+  "Eastern Suburbs", "Inner West",
+];
 
 const inter = Inter({
   subsets: ["latin"],
@@ -186,17 +193,34 @@ const CashForTruckPage: React.FC = () => {
         mainHeading={<>TRUSTED, <span className="text-[#1F4A93]">FAST</span> & HASSLE-FREE</>}
         description="Whether your car is old, damaged, wrecked, or no longer running, we’ll take it off your hands for free. There are no hidden fees or towing charges — just quick service and cash in your hand starting from $200."
         features={[
-          "22+ years of experience",
-          "Sydney-wide coverage",
-          "24/7 availability",
-          "Eco-friendly car disposal",
+          "Top cash offers",
           "Instant cash payment",
-          "Fully licensed",
+          "Free truck removal",
+          "Licensed and insured",
+          "Eco-friendly truck recycling",
+          "24/7 service",
+          "Over 22 years of trusted local experience",
         ]}
-        imageSrc="/whyChoose.png"
+        imageSrc="/cash_for_truck_one.png"
         imageAlt="Tow truck loading a red car"
       />
-      <OurCoreValuesSection />
+
+      <CoreValuesSection
+        smallHeading="OUR CORE VALUES"
+        mainHeadingLine1="GET"
+        highlightedText="PAID"
+        mainHeadingLine2="INSTANTLY FOR YOUR TRUCK"
+        description="Selling a used or scrap truck doesn’t have to be complicated. With over 22 years in the vehicle removal industry, we’ve streamlined the process — no advertising, no waiting for buyers, and no towing costs. Just call, get a quote, and we’ll handle the rest."
+        coreValues={[
+          "Small and medium commercial trucks",
+          "Utes, vans, and delivery vehicles",
+          "Damaged or accident-written trucks",
+          "Non-running, deregistered, or old trucks",
+          "Fleet or worksite vehicles you no longer use",
+        ]}
+        imageSrc="/cash_for_truck_two.png"
+      />
+
       <HowItWorksSection />
 
 
@@ -300,7 +324,7 @@ const CashForTruckPage: React.FC = () => {
         </div>
       </section>
 
-      <ServiceAreaSection />
+      {/* <ServiceAreaSection data={sydneyAreas} /> */}
 
     </div>
   );

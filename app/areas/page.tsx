@@ -4,6 +4,13 @@ import React, { useEffect } from "react";
 import dynamic from "next/dynamic";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 
+const sydneyAreas = [
+  "Manly", "South Sydney", "Willoughby", "Kogarah", "Hunters Hill",
+  "Canterbury", "Rockdale", "Parramatta", "Liverpool", "Penrith",
+  "Blacktown", "Gosford", "Northern Beaches", "Western Sydney",
+  "Eastern Suburbs", "Inner West",
+];
+
 declare global {
   interface Window {
     _leafletMap?: L.Map;
@@ -67,7 +74,7 @@ const Areas: React.FC = () => {
 
   return (
     <div>
-      <ServiceAreaSection />
+      <ServiceAreaSection data={sydneyAreas} />
 
       <section className=" bg-gray-50">
         <div className="max-w-6xl mx-auto px-6 text-center">

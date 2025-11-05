@@ -7,7 +7,7 @@ import { Phone, Truck } from "lucide-react";
 import { useRouter } from "next/navigation";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import CoreValuesSection from "@/components/OurCoreValuesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Leaf } from "lucide-react";
 import { Inter } from "next/font/google";
@@ -17,6 +17,11 @@ const inter = Inter({
   variable: "--font-inter",
   weight: ["400", "500", "600", "700"],
 });
+
+const sydneyAreas = [
+  "Sydney", "Inner West", "Western Sydney", "Northern Beaches", "Eastern Suburbs",
+  "Greater Metropolitan areas"
+];
 
 
 const CarWreckersPage: React.FC = () => {
@@ -179,22 +184,37 @@ const CarWreckersPage: React.FC = () => {
         </div>
       </section>
 
+      <CoreValuesSection
+        smallHeading="OUR CORE VALUES"
+        mainHeadingLine1="SYDENY'S"
+        highlightedText="TRUSTED"
+        mainHeadingLine2="CAR WRECKING EXPERTS"
+        description="We’re not just car removers — we’re full-service car wreckers committed to safe and eco-friendly recycling. Our licensed wrecking team carefully dismantles vehicles, salvages usable parts, and recycles metal and materials to reduce waste. Every car is handled in compliance with NSW environmental standards, giving you peace of mind that it’s being disposed of the right way."
+        coreValues={[
+          "Sedans, hatchbacks, SUVs, utes, and vans",
+          "4WDs, small trucks, and commercial vehicles",
+          "Damaged, accident-written-off, or rusted cars",
+          "Old, unregistered, or non-running vehicles",
+        ]}
+        imageSrc="/car_wrekers_one.png"
+      />
+
       <WhyChooseUsSection
         smallHeading="WHY CHOOSE US"
         mainHeading={<>TRUSTED, <span className="text-[#1F4A93]">FAST</span> & HASSLE-FREE</>}
         description="Whether your car is old, damaged, wrecked, or no longer running, we’ll take it off your hands for free. There are no hidden fees or towing charges — just quick service and cash in your hand starting from $200."
         features={[
-          "22+ years of experience",
-          "Sydney-wide coverage",
-          "24/7 availability",
-          "Eco-friendly car disposal",
-          "Instant cash payment",
-          "Fully licensed",
+          "Instant cash payments",
+          "Free towing Sydney-wide",
+          "Licensed and insured wreckers",
+          "Eco-friendly vehicle recycling",
+          "Same-day car removal",
+          "All makes and models accepted",
         ]}
-        imageSrc="/whyChoose.png"
+        imageSrc="/car_wreaker_two.png"
         imageAlt="Tow truck loading a red car"
       />
-      <OurCoreValuesSection />
+
       <HowItWorksSection />
 
 
@@ -298,7 +318,7 @@ const CarWreckersPage: React.FC = () => {
         </div>
       </section>
 
-      <ServiceAreaSection />
+      <ServiceAreaSection data={sydneyAreas} />
     </div>
   );
 };

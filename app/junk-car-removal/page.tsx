@@ -7,7 +7,7 @@ import { Phone } from "lucide-react";
 import { useRouter } from "next/navigation";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import CoreValuesSection from "@/components/OurCoreValuesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Leaf } from "lucide-react";
 
@@ -18,6 +18,10 @@ const inter = Inter({
   variable: "--font-inter",
   weight: ["400", "500", "600", "700"],
 });
+
+const sydneyAreas = [
+  "Penrith", "Parramatta", "Liverpool", "Northern Beaches"
+];
 
 
 const JunkCarRemovalPage: React.FC = () => {
@@ -180,23 +184,39 @@ const JunkCarRemovalPage: React.FC = () => {
         </div>
       </section>
 
+      <CoreValuesSection
+        smallHeading="OUR CORE VALUES"
+        mainHeadingLine1="SYDENY'S "
+        highlightedText="RELIABLE"
+        mainHeadingLine2="JUNK CAR REMOVAL EXPERTS"
+        description="For over 22 years, we’ve helped Sydney locals clear out old, broken, and scrap vehicles safely and efficiently. Whether your car’s been in an accident, failed inspection, or is simply too costly to fix, we’ll remove it for free — and pay you on the spot. No stress, no hidden fees, no long waits."
+        coreValues={[
+          "Wrecked, rusted, or stripped vehicles",
+          "Cars missing engines, wheels, or parts",
+          "Accident-damaged or written-off cars",
+          "Non-running and unwanted vehicles",
+          "Unregistered or end-of-life vehicles",
+        ]}
+        imageSrc="/junk_car_removal_one.png"
+      />
 
       <WhyChooseUsSection
         smallHeading="WHY CHOOSE US"
         mainHeading={<>TRUSTED, <span className="text-[#1F4A93]">FAST</span> & HASSLE-FREE</>}
         description="Whether your car is old, damaged, wrecked, or no longer running, we’ll take it off your hands for free. There are no hidden fees or towing charges — just quick service and cash in your hand starting from $200."
         features={[
-          "22+ years of experience",
-          "Sydney-wide coverage",
-          "24/7 availability",
-          "Eco-friendly car disposal",
+          "Free towing Sydney-wide",
           "Instant cash payment",
-          "Fully licensed",
+          "Available 24/7",
+          "Eco-friendly car disposal",
+          "Quick, same-day removals",
         ]}
-        imageSrc="/whyChoose.png"
+        imageSrc="/junk_car_removal_two.png"
         imageAlt="Tow truck loading a red car"
       />
-      <OurCoreValuesSection />
+
+
+
       <HowItWorksSection />
 
 
@@ -300,7 +320,7 @@ const JunkCarRemovalPage: React.FC = () => {
         </div>
       </section>
 
-      <ServiceAreaSection/>
+      <ServiceAreaSection data={sydneyAreas} />
 
     </div>
   );

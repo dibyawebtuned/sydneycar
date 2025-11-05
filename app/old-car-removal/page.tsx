@@ -7,7 +7,7 @@ import { Phone, Truck } from "lucide-react";
 import { useRouter } from "next/navigation";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import CoreValuesSection from "@/components/OurCoreValuesSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Leaf } from "lucide-react";
 
@@ -19,6 +19,10 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
+const sydneyAreas = [
+  "Parramatta", "Blacktown", "Liverpool", "Campbelltown", "Penrith",
+  "Bankstown", "Hills District", "Inner West", "Northern Beaches", "Eastern Suburbs"
+];
 
 
 const OldCarRemovalPage: React.FC = () => {
@@ -184,17 +188,31 @@ const OldCarRemovalPage: React.FC = () => {
         mainHeading={<>TRUSTED, <span className="text-[#1F4A93]">FAST</span> & HASSLE-FREE</>}
         description="Whether your car is old, damaged, wrecked, or no longer running, we’ll take it off your hands for free. There are no hidden fees or towing charges — just quick service and cash in your hand starting from $200."
         features={[
-          "22+ years of experience",
-          "Sydney-wide coverage",
-          "24/7 availability",
-          "Eco-friendly car disposal",
-          "Instant cash payment",
-          "Fully licensed",
+          "Free towing",
+          "Instant cash paid",
+          "Same-day pickup",
+          "Licensed and insured",
+          "Environmentally responsible disposal",
+          "Friendly, reliable service",
         ]}
-        imageSrc="/whyChoose.png"
+        imageSrc="/old_car_removal_one.png"
         imageAlt="Tow truck loading a red car"
       />
-      <OurCoreValuesSection />
+      <CoreValuesSection
+        smallHeading="OUR CORE VALUES"
+        mainHeadingLine1="SYDNEY'S"
+        highlightedText="TRUESTED"
+        mainHeadingLine2="EXPERTS"
+        description="With 22 years in the business, we’ve helped thousands of Sydney homeowners and businesses clear space by removing unwanted, aged, or unroadworthy vehicles. Our process is simple: you call, we quote, we pay, and we tow — all on the same day. No towing fees, no hidden charges, and no waiting."
+        coreValues={[
+          "Rusted or non-running cars",
+          "Vehicles with missing parts / flat tyres",
+          "Accident-damaged / written-off cars",
+          "Old project cars you no longer plan to fix",
+          "Cars without registration / roadworthy certificate",
+        ]}
+        imageSrc="/old_car_removal_two.png"
+      />
 
       <HowItWorksSection />
 
@@ -298,7 +316,7 @@ const OldCarRemovalPage: React.FC = () => {
         </div>
       </section>
 
-      <ServiceAreaSection />
+                        <ServiceAreaSection data={sydneyAreas} />
 
 
     </div>

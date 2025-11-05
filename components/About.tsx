@@ -45,7 +45,7 @@ const About: React.FC = () => {
   return (
     <section className="relative bg-white">
       {/* Background Hero Image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0">  
         <Image
           src="/howImg.png"
           alt="About background"
