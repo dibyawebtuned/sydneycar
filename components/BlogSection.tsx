@@ -45,11 +45,11 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, index }) => {
   const fromDirection = index % 2 === 0 ? -100 : 100; // alternate left/right
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: fromDirection }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, delay: index * 0.2 }}
+    <div
+      // initial={{ opacity: 0, x: fromDirection }}
+      // whileInView={{ opacity: 1, x: 0 }}
+      // viewport={{ once: true, amount: 0.3 }}
+      // transition={{ duration: 0.8, delay: index * 0.2 }}
       className="group rounded-2xl transition-shadow duration-300 overflow-hidden flex flex-col sm:flex-row border border-transparent hover:border-gray-100 hover:shadow-xl cursor-pointer"
     >
       {/* Image */}
@@ -92,7 +92,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post, index }) => {
           </a> */}
         </div>
       </div>
-    </motion.div>
+    </div>
 
   );
 };

@@ -129,7 +129,7 @@ const TestimonialsSection: React.FC = () => {
           </motion.div>
 
           {/* --- Right Column: Carousel --- */}
-          <motion.div
+          <div
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -207,7 +207,7 @@ const TestimonialsSection: React.FC = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

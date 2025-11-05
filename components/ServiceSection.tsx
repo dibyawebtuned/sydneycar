@@ -35,7 +35,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   onMouseEnter,
   onMouseLeave,
 }) => (
-  <motion.div
+  <div
     initial={{ opacity: 0, x: animationDirection === "left" ? -100 : 100 }}
     whileInView={{ opacity: 1, x: 0 }}
     viewport={{ once: true, amount: 0.2 }}
@@ -91,7 +91,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     `}>
       READ MORE
     </button>
-  </motion.div>
+  </div>
 );
 
 const ServicesSection: React.FC = () => {
