@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Leaf } from "lucide-react";
 
 import { Inter } from "next/font/google";
@@ -71,7 +72,7 @@ const JunkCarRemovalPage: React.FC = () => {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <Image
-            src="/service/junkCarRemoval.png"
+            src="/junk_car_removal.jpg"
             alt="Junk Car Removal"
             fill
             className="object-cover z-0"
@@ -98,16 +99,15 @@ const JunkCarRemovalPage: React.FC = () => {
             transition={{ duration: 1 }}
           >
             <h1 className="mb-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight md:leading-[1.15] text-[#f0f4f8] font-cabinet">
-              Sydney Car Removal Services
+              Junk Car Removal Sydney
             </h1>
             <p
               className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
             >
-              We offer 100% free car removal across Sydney, no matter the make
-              or condition. Quick, safe, and hassle-free.
+              Got a car that’s beyond repair? Maybe it’s been sitting in the driveway, collecting rust and taking up space. At Sydney Car Removal and Towing Services, we specialise in junk car removal across Sydney, offering free towing and instant cash payments starting from $200 for vehicles in any condition.
             </p>
             <motion.a
-              href="#contact"
+              href="tel:+0450747474"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`inline-flex flex-wrap gap-2 items-center justify-center md:justify-start px-4 sm:px-6 py-2 border border-transparent text-sm sm:text-base font-medium shadow-lg text-[#121212] bg-[#FEC130] hover:bg-[#e6a200] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] ${inter.className}`}
@@ -147,7 +147,7 @@ const JunkCarRemovalPage: React.FC = () => {
             transition={{ duration: 1.2 }}
           >
             <Image
-              src="/service/junkCarRemoval.png"
+              src="/junk_car_removal.jpg"
               alt="Old Car Removal"
               fill
               className="object-cover transform transition-transform duration-500 rounded-2xl opacity-70"
@@ -299,6 +299,8 @@ const JunkCarRemovalPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <ServiceAreaSection/>
 
     </div>
   );

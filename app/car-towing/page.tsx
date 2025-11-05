@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -67,7 +68,7 @@ const CarTowingPage: React.FC = () => {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <Image
-            src="/service/carTowing.jpg"
+            src="/car_towing.jpg"
             alt="Car Towing"
             fill
             className="object-cover z-0"
@@ -95,16 +96,15 @@ const CarTowingPage: React.FC = () => {
             transition={{ duration: 1 }}
           >
             <h1 className="mb-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight md:leading-[1.15] text-[#f0f4f8] font-cabinet">
-              Sydney Car Removal Services
+              Car Towing Sydney
             </h1>
             <p
               className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
             >
-              We offer 100% free car removal across Sydney, no matter the make
-              or condition. Quick, safe, and hassle-free.
+              Need fast and reliable car towing in Sydney? At Sydney Car Removal and Towing Services, we provide 24/7 towing for all types of vehicles — from small cars and utes to vans and light trucks. With more than 22 years of experience, we’ve built a reputation for safe, affordable, and hassle-free towing across every suburb of Sydney.
             </p>
             <motion.a
-              href="#contact"
+              href="tel:+0450747474"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`inline-flex flex-wrap gap-2 items-center justify-center md:justify-start px-4 sm:px-6 py-2 border border-transparent text-sm sm:text-base font-medium shadow-lg text-[#121212] bg-[#FEC130] hover:bg-[#e6a200] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] ${inter.className}`}
@@ -130,7 +130,7 @@ const CarTowingPage: React.FC = () => {
             transition={{ duration: 1.2 }}
           >
             <Image
-              src="/service/carTowing.jpg"
+              src="/car_towing.jpg"
               alt="Old Car Removal"
               fill
               className="object-cover transform transition-transform duration-500 hover:scale-105 opacity-70"
@@ -257,6 +257,8 @@ const CarTowingPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <ServiceAreaSection/>
 
 
     </div>

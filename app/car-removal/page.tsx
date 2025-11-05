@@ -9,6 +9,7 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import OurCoreValuesSection from "@/components/OurCoreValuesSection";
 import EcoFriendlySection from "@/components/EcoSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Inter } from "next/font/google";
 
 import { Leaf } from "lucide-react";
@@ -75,7 +76,7 @@ const CarRemovalPage: React.FC = () => {
 
                     {/* Background Image */}
                     <Image
-                        src="/service/carRemoval.jpg"
+                        src="/car_removal.jpg"
                         alt="Car Removal"
                         fill
                         className="object-cover z-0"
@@ -115,7 +116,7 @@ const CarRemovalPage: React.FC = () => {
                         </p>
 
                         <motion.a
-                            href="#contact"
+                            href="tel:+0450747474"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className={`inline-flex flex-wrap gap-2 items-center justify-center md:justify-start px-4 sm:px-6 py-2 border border-transparent text-sm sm:text-base font-medium shadow-lg text-[#121212] bg-[#FEC130] hover:bg-[#e6a200] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] ${inter.className}`}
@@ -156,7 +157,7 @@ const CarRemovalPage: React.FC = () => {
                         transition={{ duration: 1.2 }}
                     >
                         <Image
-                            src="/service/carRemoval.jpg"
+                            src="/car_removal.jpg"
                             alt="Old Car Removal"
                             fill
                             className="object-cover transform transition-transform duration-500 rounded-2xl opacity-70"
@@ -364,6 +365,8 @@ const CarRemovalPage: React.FC = () => {
                     </motion.a>
                 </div>
             </section> */}
+
+            <ServiceAreaSection />
         </div>
     );
 };

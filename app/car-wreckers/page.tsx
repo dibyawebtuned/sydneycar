@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import OurCoreValuesSection from "@/components/OurCoreValuesSection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Leaf } from "lucide-react";
 import { Inter } from "next/font/google";
 
@@ -69,7 +70,7 @@ const CarWreckersPage: React.FC = () => {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <Image
-            src="/service/carWreckers.png"
+            src="/car_wreckers.webp"
             alt="Car Wreckers"
             fill
             className="object-cover z-0"
@@ -97,16 +98,15 @@ const CarWreckersPage: React.FC = () => {
             transition={{ duration: 1 }}
           >
             <h1 className="mb-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight md:leading-[1.15] text-[#f0f4f8] font-cabinet">
-              Sydney Car Removal Services
+              Car Wreckers Sydney
             </h1>
             <p
               className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
             >
-              We offer 100% free car removal across Sydney, no matter the make
-              or condition. Quick, safe, and hassle-free.
+              When it’s time to say goodbye to your old or damaged car, trust Sydney Car Removal and Towing Services — the experienced car wreckers Sydney drivers have relied on for over 22 years.
             </p>
             <motion.a
-              href="#contact"
+              href="tel:+0450747474"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`inline-flex flex-wrap gap-2 items-center justify-center md:justify-start px-4 sm:px-6 py-2 border border-transparent text-sm sm:text-base font-medium shadow-lg text-[#121212] bg-[#FEC130] hover:bg-[#e6a200] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] ${inter.className}`}
@@ -146,7 +146,7 @@ const CarWreckersPage: React.FC = () => {
             transition={{ duration: 1.2 }}
           >
             <Image
-              src="/service/carWreckers.png"
+              src="/car_wreckers.webp"
               alt="Old Car Removal"
               fill
               className="object-cover transform transition-transform duration-500 rounded-2xl opacity-70"
@@ -297,6 +297,8 @@ const CarWreckersPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <ServiceAreaSection />
     </div>
   );
 };
