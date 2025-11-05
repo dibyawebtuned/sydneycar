@@ -68,7 +68,7 @@ const CarRemovalPage: React.FC = () => {
     return (
         <div className="w-full bg-gray-50">
             {/* Hero Section */}
-            <section className="relative bg-[#002043] text-white overflow-hidden min-h-[70vh] xl:min-h-[90vh] sm:min-h-[40vh] flex items-center">
+            <section className="relative bg-[#002043] text-white overflow-hidden min-h-screen xl:min-h-[90vh] sm:min-h-[60vh] flex items-center">
                 {/* Background Layers */}
                 <div className="absolute inset-0">
                     <div className="absolute inset-0 bg-black/40 z-10"></div>
