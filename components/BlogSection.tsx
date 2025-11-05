@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import { Variants } from "framer-motion";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,7 +38,7 @@ const blogPosts = [
 ];
 
 // --- Animation Variants ---
-const fadeUpVariant = {
+const fadeUpVariant:Variants = {
   hidden: { opacity: 0, y: 50 },
   visible: (i: number) => ({
     opacity: 1,

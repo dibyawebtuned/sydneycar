@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
 import { Truck, Zap, RotateCw, Trash2, XCircle, Package } from "lucide-react";
 import { Inter } from "next/font/google";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,7 +27,7 @@ const containerVariants = {
   },
 };
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 50 },
   show: {
     opacity: 1,
