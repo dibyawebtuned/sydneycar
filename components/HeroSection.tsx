@@ -74,7 +74,7 @@ const HeroSection: React.FC = () => {
                     <div>
                         <button
                             onClick={openModal}
-                            className={`inline-flex flex-wrap gap-2 items-center px-4 sm:px-6 py-2 border border-transparent text-sm sm:text-base font-medium shadow-lg text-[#121212] bg-[#FEC130] hover:bg-[#e6a200] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] ${inter.className}`}
+                            className={`inline-flex flex-wrap gap-2 items-center px-4 sm:px-6 py-2 border border-transparent text-sm sm:text-base font-medium shadow-lg text-[#121212] bg-[#FEC130] hover:bg-[#e6a200] transition duration-200 transform hover:scale-[1.02] active:scale-[0.98] cursor-pointer ${inter.className}`}
                         >
                             <span className="w-2 h-2 bg-[#000000] rounded-full"></span>
                             <span>Get Instant Quote</span>
