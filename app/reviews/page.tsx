@@ -17,8 +17,8 @@ const testimonials = [
   {
     id: 1,
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    name: "Sophie Moore",
+      "Super quick and professional service! They arrived within an hour and paid cash on the spot. Made getting rid of my old car stress-free.",
+    name: "Jessica M., Parramatta",
     title: "Designer at Brix Templates",
     avatar: "/avatar_one.jpg",
     rating: 5,
@@ -26,17 +26,26 @@ const testimonials = [
   {
     id: 2,
     quote:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    name: "John Carter",
+      "Highly recommend! The team was friendly, efficient, and offered a great price for my old truck.",
+    name: "Michael T., Sydney",
     title: "Marketing Lead",
     avatar: "/avatar_two.jpg",
-    rating: 4,
+    rating: 5,
   },
   {
     id: 3,
     quote:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    name: "Michael Chen",
+      "Excellent service! Called them in the morning and by afternoon my car was gone and I had cash in hand.",
+    name: "Priya K., Liverpool",
+    title: "VP of Design",
+    avatar: "/avatar_three.jpg",
+    rating: 5,
+  },
+  {
+    id: 4,
+    quote:
+      "Very easy process and fast response. Definitely the best car removal service I’ve used.",
+    name: "Daniel W., Blacktown",
     title: "VP of Design",
     avatar: "/avatar_three.jpg",
     rating: 5,
