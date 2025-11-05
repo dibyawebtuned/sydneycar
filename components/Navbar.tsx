@@ -230,14 +230,12 @@ const Navbar: React.FC = () => {
 
             {/* Contact Button (Mobile) */}
             <button
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                router.push("/contact");
-              }}
-              className="mt-4 inline-flex items-center justify-center w-full px-4 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#0c55a6] hover:bg-[#07468f] transition duration-200"
+              onClick={openModal}
+              className={`mt-4 inline-flex items-center justify-center w-full px-4 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-[#0c55a6] hover:bg-[#07468f] transition duration-200 ${inter.className}`}
             >
-              <Phone size={18} className="mr-2" />
-              Contact
+              {/* <Phone size={18} className="mr-2" /> */}
+              <span className="w-2 h-2 bg-white rounded-full mr-2"></span>
+              Get A Quote
             </button>
           </div>
         </div>
