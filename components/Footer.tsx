@@ -68,13 +68,13 @@ const Footer: React.FC = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('/aboutImg.png')`,
+            backgroundImage: `url('/Footer_one.png')`,
             opacity: 0.3,
           }}
         ></div>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#0C2039]/50 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-[#0A1931]/50 mix-blend-multiply"></div>
       </div>
 
       {/* Top Section */}
