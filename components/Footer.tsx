@@ -74,7 +74,7 @@ const Footer: React.FC = () => {
         ></div>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-[#101d2d]/50 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-[#0C2039]/50 mix-blend-multiply"></div>
       </div>
 
       {/* Top Section */}
