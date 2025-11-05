@@ -66,7 +66,7 @@ const CarWreckersPage: React.FC = () => {
     <div className="w-full bg-gray-50">
 
       {/* Hero Section */}
-      <section className="relative bg-[#002043] text-white overflow-hidden min-h-[70vh] xl:min-h-[90vh] sm:min-h-[40vh] flex items-center">
+      <section className="relative bg-[#002043] text-white overflow-hidden min-h-screen xl:min-h-[90vh] sm:min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <Image
@@ -101,7 +101,7 @@ const CarWreckersPage: React.FC = () => {
               Car Wreckers Sydney
             </h1>
             <p
-              className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
+              className={`text-[#DBDBDB] text-sm sm:text-base leading-normal  text-justify ${inter.className}`}
             >
               When it’s time to say goodbye to your old or damaged car, trust Sydney Car Removal and Towing Services — the experienced car wreckers Sydney drivers have relied on for over 22 years.
             </p>

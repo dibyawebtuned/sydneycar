@@ -68,7 +68,7 @@ const CashForTruckPage: React.FC = () => {
     <div className="w-full bg-gray-50">
 
       {/* Hero Section */}
-      <section className="relative bg-[#002043] text-white overflow-hidden min-h-[70vh] xl:min-h-[90vh] sm:min-h-[40vh] flex items-center">
+      <section className="relative bg-[#002043] text-white overflow-hidden min-h-screen xl:min-h-[90vh] sm:min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <Image
@@ -103,7 +103,7 @@ const CashForTruckPage: React.FC = () => {
               Cash for Trucks Sydney
             </h1>
             <p
-              className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
+              className={`text-[#DBDBDB] text-sm sm:text-base leading-normal  text-justify ${inter.className}`}
             >
               Have an old or unwanted truck taking up space? Whether it’s damaged, unregistered, or no longer worth repairing, Sydney Car Removal and Towing Services will buy it — fast. We offer instant cash for trucks in Sydney, with free towing, same-day pickup, and payments starting from $200
             </p>

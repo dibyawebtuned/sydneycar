@@ -64,7 +64,7 @@ const CarTowingPage: React.FC = () => {
   return (
     <div className="w-full bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-[#002043] text-white overflow-hidden min-h-[70vh] xl:min-h-[90vh] sm:min-h-[40vh] flex items-center">
+      <section className="relative bg-[#002043] text-white overflow-hidden min-h-screen xl:min-h-[90vh] sm:min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <Image
@@ -99,7 +99,7 @@ const CarTowingPage: React.FC = () => {
               Car Towing Sydney
             </h1>
             <p
-              className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
+              className={`text-[#DBDBDB] text-sm sm:text-base leading-normal  text-justify ${inter.className}`}
             >
               Need fast and reliable car towing in Sydney? At Sydney Car Removal and Towing Services, we provide 24/7 towing for all types of vehicles — from small cars and utes to vans and light trucks. With more than 22 years of experience, we’ve built a reputation for safe, affordable, and hassle-free towing across every suburb of Sydney.
             </p>

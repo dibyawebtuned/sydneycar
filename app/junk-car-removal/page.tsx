@@ -68,7 +68,7 @@ const JunkCarRemovalPage: React.FC = () => {
     <div className="w-full bg-gray-50">
 
       {/* Hero Section */}
-      <section className="relative bg-[#002043] text-white overflow-hidden min-h-[70vh] xl:min-h-[90vh] sm:min-h-[40vh] flex items-center">
+      <section className="relative bg-[#002043] text-white overflow-hidden min-h-screen xl:min-h-[90vh] sm:min-h-[60vh] flex items-center">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <Image
@@ -102,7 +102,7 @@ const JunkCarRemovalPage: React.FC = () => {
               Junk Car Removal Sydney
             </h1>
             <p
-              className={`text-[#DBDBDB] text-sm sm:text-base md:text-lg leading-normal max-w-md md:max-w-lg ${inter.className}`}
+              className={`text-[#DBDBDB] text-sm sm:text-base leading-normal  text-justify ${inter.className}`}
             >
               Got a car that’s beyond repair? Maybe it’s been sitting in the driveway, collecting rust and taking up space. At Sydney Car Removal and Towing Services, we specialise in junk car removal across Sydney, offering free towing and instant cash payments starting from $200 for vehicles in any condition.
             </p>
