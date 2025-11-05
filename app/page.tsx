@@ -11,10 +11,10 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 
 const sydneyAreas = [
-  "Manly", "South Sydney", "Willoughby", "Kogarah", "Hunters Hill",
-  "Canterbury", "Rockdale", "Parramatta", "Liverpool", "Penrith",
-  "Blacktown", "Gosford", "Northern Beaches", "Western Sydney",
-  "Eastern Suburbs", "Inner West",
+      "Manly", "South Sydney", "Willoughby", "Kogarah", "Hunters Hill",
+      "Canterbury", "Rockdale", "Parramatta", "Liverpool", "Penrith",
+      "Blacktown", "Gosford", "Northern Beaches", "Western Sydney",
+      "Eastern Suburbs", "Inner West",
 ];
 
 export default function Home() {

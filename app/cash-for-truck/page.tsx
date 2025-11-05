@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import CoreValuesSection from "@/components/OurCoreValuesSection";
+import TruckConditionSection from "@/components/TruckConditionSection";
 import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { Leaf } from "lucide-react";
 import { Inter } from "next/font/google";
@@ -204,6 +205,9 @@ const CashForTruckPage: React.FC = () => {
         imageSrc="/cash_for_truck_one.png"
         imageAlt="Tow truck loading a red car"
       />
+
+      {/* TruckConditionSection */}
+      <TruckConditionSection />
 
       <CoreValuesSection
         smallHeading="OUR CORE VALUES"
