@@ -95,13 +95,13 @@ export default function QuiltedImageList() {
                         <span className="w-full h-px bg-[#9F9F9F] mb-1.5"></span>
                     </div>
                     <h1 className="uppercase text-[#1e1e1e] text-3xl sm:text-4xl lg:text-5xl font-cabinet font-extrabold mt-2">
-                        Experience{" "}
+                        Experience,{" "}
                         <span className="relative inline-block">
                             <span className="absolute left-0 bottom-0.5 w-full h-3 sm:h-3.5 bg-[#FEC130] z-0"></span>
                             <span className="relative text-[#1F4A93] font-extrabold">dedication</span>
                         </span>{" "}
-                        OF <br className="lg:hidden" />
-                        and service excellence captured in moments.
+                         <br className="lg:hidden" />
+                        and service OF excellence captured in moments.
                     </h1>
                 </div>
 
