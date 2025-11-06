@@ -30,6 +30,7 @@ const navigation: NavLink[] = [
   { name: "Home", href: "/" },
   { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
+  { name: "Gallery", href: "/gallery" },
   { name: "Service areas", href: "/areas" },
   { name: "Reviews", href: "/reviews" },
   { name: "FAQ", href: "/faq" },
