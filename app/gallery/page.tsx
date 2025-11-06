@@ -100,7 +100,7 @@ export default function QuiltedImageList() {
                             <span className="absolute left-0 bottom-0.5 w-full h-3 sm:h-3.5 bg-[#FEC130] z-0"></span>
                             <span className="relative text-[#1F4A93] font-extrabold">dedication</span>
                         </span>{" "}
-                         <br className="lg:hidden" />
+                        <br className="lg:hidden" />
                         and service OF excellence captured in moments.
                     </h1>
                 </div>
