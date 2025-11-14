@@ -120,7 +120,7 @@ const CoreValuesSection: React.FC<CoreValuesSectionProps> = ({
             transition={{ duration: 0.8 }}
             className="lg:col-span-4 flex justify-center"
           >
-            <div className="relative w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[566px] aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="relative w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-[566px] aspect-4/3 overflow-hidden rounded-2xl">
               <Image
                 src={imageSrc}
                 alt={imageAlt}

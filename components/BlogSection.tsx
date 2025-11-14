@@ -19,7 +19,7 @@ const HEADING_COLOR = "#1e1e1e";
 const blogPosts = [
   {
     id: 1,
-    imagePath: "/blog/car_tow.jpeg",
+    imagePath: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.16 PM (1).jpeg",
     category: "Cash For Cars",
     title: "How to Get the Best Cash for Your Old Car in Sydney",
     description:
@@ -28,7 +28,7 @@ const blogPosts = [
   },
   {
     id: 2,
-    imagePath: "/blog/car_tow_two.avif",
+    imagePath: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.17 PM (1).jpeg",
     category: "Cash For Cars",
     title: "Top Tips to Sell Your Scrap Car Fast in Sydney",
     description:

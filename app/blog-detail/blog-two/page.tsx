@@ -9,9 +9,9 @@ import HowItWorksSection from "@/components/HowItWorksSection";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
-    subsets: ["latin"],
-    variable: "--font-inter",
-    weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
 });
 
 const PRIMARY_BLUE = "#0c55a6";
@@ -19,118 +19,118 @@ const HEADING_COLOR = "#1e1e1e";
 const FEATURE_BUTTON_COLOR = "#2ec4b6";
 
 const BlogDetailPage = () => {
-    return (
-        <div className="bg-gray-50 min-h-screen">
-            <main className={`${inter.className} container mx-auto px-4 sm:px-6 py-15`}>
+  return (
+    <div className="bg-gray-50 min-h-screen">
+      <main className={`${inter.className} container mx-auto px-4 sm:px-6 py-15`}>
 
-                {/* Featured Image */}
-                <div className="relative w-full h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl mb-12">
-                    <Image
-                        src="/blog/car_tow_two.avif"
-                        alt="Blog Featured"
-                        fill
-                        quality={100}
-                        priority
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px"
-                        style={{ objectFit: "cover", objectPosition: "center" }}
-                    />
+        {/* Featured Image */}
+        <div className="relative w-full h-[450px] sm:h-[550px] rounded-3xl overflow-hidden shadow-2xl mb-12">
+          <Image
+            src="/scrat_images/WhatsApp Image 2025-08-25 at 1.34.17 PM (1).jpeg"
+            alt="Blog Featured"
+            fill
+            quality={100}
+            priority
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
 
-                    <span
-                        className="absolute top-6 left-6 text-sm font-semibold px-4 py-1 rounded-full shadow-lg"
-                        style={{ backgroundColor: FEATURE_BUTTON_COLOR, color: "white" }}
-                    >
-                        Cash For Cars
-                    </span>
-                </div>
+          <span
+            className="absolute top-6 left-6 text-sm font-semibold px-4 py-1 rounded-full shadow-lg"
+            style={{ backgroundColor: FEATURE_BUTTON_COLOR, color: "white" }}
+          >
+            Cash For Cars
+          </span>
+        </div>
 
-                {/* Title & Author */}
-                <header className=" text-center sm:text-left">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold text-[#0c55a6]"
-                    >
-                        Top Tips to Sell Your Scrap Car Fast in Sydney
-                    </h1>
-                    <div className="flex items-center sm:justify-start gap-3 text-gray-600 text-sm mt-2">
-                        <span className={`${inter.className}`}>By <span className="font-medium">John Doe</span></span>
-                        <span className={`${inter.className}`}>— November 5, 2025</span>
-                    </div>
-                </header>
+        {/* Title & Author */}
+        <header className=" text-center sm:text-left">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight text-left lg:text-left font-cabinet font-extrabold text-[#0c55a6]"
+          >
+            Top Tips to Sell Your Scrap Car Fast in Sydney
+          </h1>
+          <div className="flex items-center sm:justify-start gap-3 text-gray-600 text-sm mt-2">
+            <span className={`${inter.className}`}>By <span className="font-medium">John Doe</span></span>
+            <span className={`${inter.className}`}>— November 5, 2025</span>
+          </div>
+        </header>
 
-                {/* Introduction */}
-                <section className="">
-                    <p className={`text-gray-600 font-normal text-[14px] sm:text-[16px] mb-5 mt-5 text-justify w-full ${inter.className}`}>
-                        Learn expert strategies to prepare your scrap car and attract the best offers — saving time and earning more cash. Selling an old or unwanted car in Sydney doesn’t have to be stressful or time-consuming. Many car owners face difficulties finding a buyer who offers a fair price, especially when the vehicle is damaged, no longer running, or has been sitting idle for years. At Sydney Car Removal and Towing Services, we make the process simple, fast, and reliable. With over 22 years of experience, our team helps Sydney residents get instant cash for any type of vehicle — from small sedans and hatchbacks to SUVs, utes, vans, and even old trucks. We provide free same-day vehicle removal, no-obligation quotes, and environmentally responsible disposal, ensuring every car is handled safely and efficiently. By choosing our services, you save time, avoid the hassle of private selling, and maximize the value of your car while contributing to responsible recycling and waste reduction in Sydney.
-                    </p>
-                </section>
+        {/* Introduction */}
+        <section className="">
+          <p className={`text-gray-600 font-normal text-[14px] sm:text-[16px] mb-5 mt-5 text-justify w-full ${inter.className}`}>
+            Learn expert strategies to prepare your scrap car and attract the best offers — saving time and earning more cash. Selling an old or unwanted car in Sydney doesn’t have to be stressful or time-consuming. Many car owners face difficulties finding a buyer who offers a fair price, especially when the vehicle is damaged, no longer running, or has been sitting idle for years. At Sydney Car Removal and Towing Services, we make the process simple, fast, and reliable. With over 22 years of experience, our team helps Sydney residents get instant cash for any type of vehicle — from small sedans and hatchbacks to SUVs, utes, vans, and even old trucks. We provide free same-day vehicle removal, no-obligation quotes, and environmentally responsible disposal, ensuring every car is handled safely and efficiently. By choosing our services, you save time, avoid the hassle of private selling, and maximize the value of your car while contributing to responsible recycling and waste reduction in Sydney.
+          </p>
+        </section>
 
-                {/* Why Choose Services */}
-                <section className="mb-5">
-                    <ul className="space-y-4">
-                        <li className="flex items-start gap-3">
-                            <FaCheck className="mt-1 text-[#2ec4b6]" />
-                            <div>
-                                <h3 className="text-lg font-semibold font-cabinet text-[#0c55a6]" >Instant Cash</h3>
-                                <p className={`text-gray-700 text-sm ${inter.className}`}>Get paid immediately — no waiting, no bank transfers.</p>
-                            </div>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <FaCheck className="mt-1 text-[#2ec4b6]" />
-                            <div>
-                                <h3 className="text-lg font-semibold font-cabinet text-[#0c55a6]" >Free Pickup</h3>
-                                <p className={`text-gray-700 text-sm ${inter.className}`}>Same-day vehicle removal across all Sydney suburbs.</p>
-                            </div>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <FaCheck className="mt-1 text-[#2ec4b6]" />
-                            <div>
-                                <h3 className="text-lg font-semibold font-cabinet text-[#0c55a6]" >Eco-Friendly</h3>
-                                <p className={`text-gray-700 text-sm ${inter.className}`}>Responsible recycling and disposal for every vehicle.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </section>
+        {/* Why Choose Services */}
+        <section className="mb-5">
+          <ul className="space-y-4">
+            <li className="flex items-start gap-3">
+              <FaCheck className="mt-1 text-[#2ec4b6]" />
+              <div>
+                <h3 className="text-lg font-semibold font-cabinet text-[#0c55a6]" >Instant Cash</h3>
+                <p className={`text-gray-700 text-sm ${inter.className}`}>Get paid immediately — no waiting, no bank transfers.</p>
+              </div>
+            </li>
+            <li className="flex items-start gap-3">
+              <FaCheck className="mt-1 text-[#2ec4b6]" />
+              <div>
+                <h3 className="text-lg font-semibold font-cabinet text-[#0c55a6]" >Free Pickup</h3>
+                <p className={`text-gray-700 text-sm ${inter.className}`}>Same-day vehicle removal across all Sydney suburbs.</p>
+              </div>
+            </li>
+            <li className="flex items-start gap-3">
+              <FaCheck className="mt-1 text-[#2ec4b6]" />
+              <div>
+                <h3 className="text-lg font-semibold font-cabinet text-[#0c55a6]" >Eco-Friendly</h3>
+                <p className={`text-gray-700 text-sm ${inter.className}`}>Responsible recycling and disposal for every vehicle.</p>
+              </div>
+            </li>
+          </ul>
+        </section>
 
-                {/*  */}
-                <section>
-                    <div className="flex items-center gap-3 border-2 border-blue-800 rounded-xl p-4 max-w-full mb-5
+        {/*  */}
+        <section>
+          <div className="flex items-center gap-3 border-2 border-blue-800 rounded-xl p-4 max-w-full mb-5
                   transform transition-transform duration-200 hover:shadow-md hover:shadow-blue-400/40">
-                        <Lightbulb className="w-6 h-6 text-blue-800 flex-shrink-0" />
-                        <p className="text-blue-900 text-base">
-                            Try <span className="font-bold underline">Sydney Car Removal Service</span> for a quick look at how different towing options or distances could affect the total cost of towing your vehicle.
-                        </p>
-                    </div>
-                </section>
+            <Lightbulb className="w-6 h-6 text-blue-800 flex-shrink-0" />
+            <p className="text-blue-900 text-base">
+              Try <span className="font-bold underline">Sydney Car Removal Service</span> for a quick look at how different towing options or distances could affect the total cost of towing your vehicle.
+            </p>
+          </div>
+        </section>
 
 
 
-                {/*  */}
-                <section className="flex flex-col md:flex-row sm:gap-10 items-center">
-                    {/* Text Section */}
-                    <div className="flex-2">
-                        <div>
-                            <p className={`text-gray-600 font-normal text-[14px] sm:text-[16px] mb-5 text-justify w-full ${inter.className}`}>
-                                Turn your unwanted car into instant cash with Sydney Car Removal and Towing Services — the city’s trusted team for fast, free, and reliable vehicle removals. With over 22 years of experience, we make it simple to get rid of any car, in any condition, anywhere across Sydney.
-                                Need fast and reliable car towing in Sydney? At Sydney Car Removal and Towing Services, we provide 24/7 towing for all types of vehicles — from small cars and utes to vans and light trucks. With more than 22 years of experience, we’ve built a reputation for safe, affordable, and hassle-free towing across every suburb of Sydney.
-                            </p>
-                        </div>
-                    </div>
+        {/*  */}
+        <section className="flex flex-col md:flex-row sm:gap-10 items-center">
+          {/* Text Section */}
+          <div className="flex-2">
+            <div>
+              <p className={`text-gray-600 font-normal text-[14px] sm:text-[16px] mb-5 text-justify w-full ${inter.className}`}>
+                Turn your unwanted car into instant cash with Sydney Car Removal and Towing Services — the city’s trusted team for fast, free, and reliable vehicle removals. With over 22 years of experience, we make it simple to get rid of any car, in any condition, anywhere across Sydney.
+                Need fast and reliable car towing in Sydney? At Sydney Car Removal and Towing Services, we provide 24/7 towing for all types of vehicles — from small cars and utes to vans and light trucks. With more than 22 years of experience, we’ve built a reputation for safe, affordable, and hassle-free towing across every suburb of Sydney.
+              </p>
+            </div>
+          </div>
 
-                    {/* Image Section */}
-                    <div className="flex-1 w-full rounded-2xl overflow-hidden">
-                        <div className="relative w-full" style={{ height: '250px', minHeight: '250px' }}>
-                            <Image
-                                src="/aboutImg.png"
-                                alt="About Us Image"
-                                fill
-                                style={{ objectFit: "cover" }}
-                            />
-                        </div>
-                    </div>
-                </section>
+          {/* Image Section */}
+          <div className="flex-1 w-full rounded-2xl overflow-hidden">
+            <div className="relative w-full" style={{ height: '250px', minHeight: '250px' }}>
+              <Image
+                src="/scrat_images/WhatsApp Image 2025-08-25 at 1.34.18 PM (1).jpeg"
+                alt="About Us Image"
+                fill
+                style={{ objectFit: "cover" }}
+              />
+            </div>
+          </div>
+        </section>
 
 
 
-                {/* Steps Section */}
-                {/* <section className="mb-12">
+        {/* Steps Section */}
+        {/* <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-6 text-center" style={{ color: HEADING_COLOR }}>
             3 Easy Steps to Sell Your Car
           </h2>
@@ -153,8 +153,8 @@ const BlogDetailPage = () => {
           </div>
         </section> */}
 
-                {/* Types of Cars */}
-                {/* <section className="">
+        {/* Types of Cars */}
+        {/* <section className="">
           <h2 className="text-2xl sm:text-3xl font-semibold mb-6 font-cabinet text-[#0c55a6]">
             Types of Cars We Accept
           </h2>
@@ -192,8 +192,8 @@ const BlogDetailPage = () => {
 
 
 
-                {/* Call-to-action Card */}
-                {/* <div className="p-10 rounded-3xl shadow-xl text-center mb-12 transition hover:shadow-2xl"
+        {/* Call-to-action Card */}
+        {/* <div className="p-10 rounded-3xl shadow-xl text-center mb-12 transition hover:shadow-2xl"
           style={{ backgroundColor: FEATURE_BUTTON_COLOR, color: "white" }}>
           <h3 className="text-2xl sm:text-3xl font-semibold mb-4">Ready to Sell Your Car?</h3>
           <p className="mb-6 sm:text-lg">
@@ -208,11 +208,11 @@ const BlogDetailPage = () => {
           </Link>
         </div> */}
 
-            </main>
-            <HowItWorksSection />
+      </main>
+      <HowItWorksSection />
 
-        </div>
-    );
+    </div>
+  );
 };
 
 export default BlogDetailPage;

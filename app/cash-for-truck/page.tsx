@@ -68,31 +68,31 @@ const CashForTruckPage: React.FC = () => {
     {
       title: "Car Removal",
       desc: "Fast and safe car towing service across Sydney at competitive rates.",
-      img: "/service/carRemoval.jpg",
+      img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.18 PM (2).jpeg",
       link: "/car-removal",
     },
     {
       title: "Cash for Trucks",
       desc: "We pay top cash for trucks of all models and conditions.",
-      img: "/service/cashTruck.jpg",
+      img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.16 PM (1).jpeg",
       link: "/cash-for-truck",
     },
     {
       title: "Old Car Removal",
       desc: "Free pickup and instant cash for your old or unwanted vehicles.",
-      img: "/service/oldCarRemoval.png",
+      img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.17 PM (2).jpeg",
       link: "/old-car-removal",
     },
     {
       title: "Car Wreckers",
       desc: "Eco-friendly car dismantling and recycling services in Sydney.",
-      img: "/service/carWreckers.png",
+      img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.17 PM.jpeg",
       link: "/car-wreckers",
     },
     {
       title: "Junk Car Removal",
       desc: "Quick and hassle-free removal of junk or damaged cars for free.",
-      img: "/service/junkCarRemoval.png",
+      img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.18 PM (1).jpeg",
       link: "/junk-car-removal",
     },
   ];
@@ -104,7 +104,7 @@ const CashForTruckPage: React.FC = () => {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <Image
-            src="/cash_for_truck.jpg"
+            src="/scrat_images/WhatsApp Image 2025-08-25 at 1.34.16 PM (1).jpeg"
             alt="Cash for Truck"
             fill
             className="object-cover z-0"
@@ -180,7 +180,7 @@ const CashForTruckPage: React.FC = () => {
             transition={{ duration: 1.2 }}
           >
             <Image
-              src="/cash_for_truck.jpg"
+              src="/scrat_images/WhatsApp Image 2025-08-25 at 1.34.16 PM (1).jpeg"
               alt="Old Car Removal"
               fill
               className="object-cover transform transition-transform duration-500 rounded-2xl opacity-70"

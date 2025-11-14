@@ -118,7 +118,7 @@ const BlogDetailPage = () => {
           <div className="flex-1 w-full rounded-2xl overflow-hidden">
             <div className="relative w-full" style={{ height: '250px', minHeight: '250px' }}>
               <Image
-                src="/aboutImg.png"
+                src="/scrat_images/WhatsApp Image 2025-08-25 at 1.34.17 PM (2).jpeg"
                 alt="About Us Image"
                 fill
                 style={{ objectFit: "cover" }}

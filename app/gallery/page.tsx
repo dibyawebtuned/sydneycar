@@ -17,8 +17,10 @@ type ItemData = {
 };
 
 const itemData: ItemData[] = [
-    { img: "/galleryimages/SCR Hero.jpeg", title: "SCR Hero", rows: 2, cols: 2 },
+    { video: "/added_one.mp4", title: "SCR Hero", rows: 2, cols: 2 },
+    { img: "/galleryimages/SCR Hero.jpeg", title: "SRC About" },
     { img: "/galleryimages/SRC About.jpeg", title: "SRC About" },
+    { img: "/scrat_images/WhatsApp Image 2025-11-14 at 8.15.59 AM.jpeg", title: "SRC About" },
     { img: "/galleryimages/WhatsApp Image 2025-11-06 at 9.52.35 AM.jpeg", title: "SRC About" },
     { video: "/galleryimages/WhatsApp Video 2025-11-06 at 9.53.16 AM.mp4", title: "Workshop Video", cols: 2 },
     { img: "/galleryimages/WhatsApp Image 2025-08-25 at 1.34.19 PM (1).jpeg", title: "Workshop 2", cols: 2 },
@@ -27,6 +29,38 @@ const itemData: ItemData[] = [
     { img: "/galleryimages/WhatsApp Image 2025-11-06 at 9.52.09 AM.jpeg", title: "Office" },
     { img: "/galleryimages/WhatsApp Image 2025-08-25 at 1.34.17 PM (2).jpeg", title: "Office" },
     { video: "/galleryimages/WhatsApp Video 2025-11-06 at 9.51.54 AM.mp4", title: "Office Tour", cols: 2 },
+    { img: "/scrat_images/WhatsApp Image 2025-11-14 at 8.15.59 AM (2).jpeg", title: "SRC About" },
+    { img: "/scrat_images/WhatsApp Image 2025-11-14 at 8.15.59 AM (1).jpeg", title: "SRC About" },
+    { img: "/scrat_images/WhatsApp Image 2025-11-07 at 8.23.00 AM.jpeg", title: "SCR Hero", rows: 2, cols: 2 },
+    { img: "/scrat_images/WhatsApp Image 2025-11-06 at 6.26.29 AM.jpeg", title: "SRC About" },
+    { img: "/scrat_images/WhatsApp Image 2025-11-06 at 6.26.15 AM.jpeg", title: "SRC About" },
+    { img: "/scrat_images/WhatsApp Image 2025-10-27 at 8.01.16 AM.jpeg", title: "SRC About" },
+    { img: "/scrat_images/WhatsApp Image 2025-10-27 at 8.01.16 AM (1).jpeg", title: "SRC About" },
+
+    { img: "/scrat_images/WhatsApp Image 2025-10-27 at 8.01.15 AM (1).jpeg", title: "Office" },
+    { img: "/scrat_images/WhatsApp Image 2025-10-27 at 8.01.14 AM.jpeg", title: "Office" },
+    { img: "/scrat_images/WhatsApp Image 2025-10-27 at 8.01.14 AM (2).jpeg", title: "Team", rows: 2, cols: 2 },
+    { img: "/scrat_images/WhatsApp Image 2025-10-27 at 8.01.14 AM (1).jpeg", title: "Office" },
+    { img: "/scrat_images/WhatsApp Image 2025-10-27 at 8.01.13 AM.jpeg", title: "Office" },
+
+    { img: "/scrat_images/WhatsApp Image 2025-10-27 at 8.01.13 AM (1).jpeg", title: "Office Tour", cols: 2 },
+    { img: "/scrat_images/WhatsApp Image 2025-10-27 at 8.01.12 AM.jpeg", title: "Team", cols: 2 },
+
+    { img: "/scrat_images/WhatsApp Image 2025-10-27 at 8.01.12 AM (1).jpeg", title: "Office" },
+    { img: "/scrat_images/WhatsApp Image 2025-10-10 at 7.47.44 AM.jpeg", title: "Office" },
+    { img: "/scrat_images/WhatsApp Image 2025-10-10 at 7.47.44 AM (1).jpeg", title: "Office" },
+    { img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.19 PM.jpeg", title: "Office" },
+
+    { img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.19 PM (1).jpeg", title: "Team", rows: 2, cols: 2 },
+    { img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.18 PM (2).jpeg", title: "Office" },
+    { img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.18 PM (1).jpeg", title: "Office" },
+    { img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.17 PM.jpeg", title: "Office" },
+    // { img: "/public/scrat_images/", title: "Office" },
+
+    // { img: "/galleryimages/WhatsApp Image 2025-08-25 at 1.34.18 PM (1).jpeg", title: "Team", cols: 2 },
+
+
+
 ];
 
 export default function QuiltedImageList() {

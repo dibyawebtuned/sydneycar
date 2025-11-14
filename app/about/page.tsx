@@ -26,7 +26,7 @@ const AboutPage: React.FC = () => {
                     "Local Expertise",
                     "All Vehicle Types Accepted",
                 ]}
-                imageSrc="/service/car_tow/two.png"
+                imageSrc="/scrat_images/ONE.png"
             />
             <TestimonialsSection />
 

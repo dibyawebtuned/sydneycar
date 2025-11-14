@@ -51,7 +51,7 @@ export default function Home() {
                               "Instant cash payment",
                               "Fully licensed",
                         ]}
-                        imageSrc="/whyChoose.png"
+                        imageSrc="/updated_why_one.png"
                         imageAlt="Tow truck loading a red car"
                   />
 

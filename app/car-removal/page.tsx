@@ -54,31 +54,31 @@ const services = [
     {
         title: "Car Towing",
         desc: "Fast and safe car towing service across Sydney at competitive rates.",
-        img: "/service/carTowing.jpg",
+        img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.17 PM (1).jpeg",
         link: "/car-towing",
     },
     {
         title: "Cash for Trucks",
         desc: "We pay top cash for trucks of all models and conditions.",
-        img: "/service/cashTruck.jpg",
+        img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.16 PM (1).jpeg",
         link: "/cash-for-truck",
     },
     {
         title: "Old Car Removal",
         desc: "Free pickup and instant cash for your old or unwanted vehicles.",
-        img: "/service/oldCarRemoval.png",
+        img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.17 PM (2).jpeg",
         link: "/old-car-removal",
     },
     {
         title: "Car Wreckers",
         desc: "Eco-friendly car dismantling and recycling services in Sydney.",
-        img: "/service/carWreckers.png",
+        img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.17 PM.jpeg",
         link: "/car-wreckers",
     },
     {
         title: "Junk Car Removal",
         desc: "Quick and hassle-free removal of junk or damaged cars for free.",
-        img: "/service/junkCarRemoval.png",
+        img: "/scrat_images/WhatsApp Image 2025-08-25 at 1.34.18 PM (1).jpeg",
         link: "/junk-car-removal",
     },
 ];
@@ -105,7 +105,7 @@ const CarRemovalPage: React.FC = () => {
 
                     {/* Background Image */}
                     <Image
-                        src="/car_removal.jpg"
+                        src="/scrat_images/WhatsApp Image 2025-08-25 at 1.34.18 PM (2).jpeg"
                         alt="Car Removal"
                         fill
                         className="object-cover z-0"
@@ -161,23 +161,7 @@ const CarRemovalPage: React.FC = () => {
                         </motion.a>
                     </motion.div>
 
-                    {/* Hero Image */}
-                    {/* <motion.div
-                        className=" w-full md:w-1/2 relative h-64 sm:h-72 md:h-96 lg:h-[350px] overflow-hidden rounded-2xl shadow-xl"
-                        initial={{ scale: 0.95, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 1.2 }}
-                    >
-                        <Image
-                            src="/service/carRemoval.jpg"
-                            alt="Old Car Removal"
-                            fill
-                            className="object-cover transform transition-transform duration-500 hover:scale-105 opacity-70"
-                        />
-                    </motion.div> */}
 
-                    {/* Hero Image */}
-                    {/* Hero Image */}
                     {/* Hero Image */}
                     <motion.div
                         className="w-full md:w-1/2 relative h-64 sm:h-72 md:h-96 lg:h-[350px] rounded-2xl shadow-xl"
@@ -186,7 +170,7 @@ const CarRemovalPage: React.FC = () => {
                         transition={{ duration: 1.2 }}
                     >
                         <Image
-                            src="/car_removal.jpg"
+                            src="/scrat_images/WhatsApp Image 2025-08-25 at 1.34.18 PM (2).jpeg"
                             alt="Old Car Removal"
                             fill
                             className="object-cover transform transition-transform duration-500 rounded-2xl opacity-70"
@@ -248,15 +232,6 @@ const CarRemovalPage: React.FC = () => {
                 imageAlt="Tow truck loading a red car"
             />
 
-            {/* TruckConditionSection */}
-            {/* <TruckConditionSection
-                sectionTitle="Process"
-                subtitle="Fast Hassle-Free"
-                highlightText="Process"
-                conditions={carConditions}
-                backgroundColor="#F3F6FB"
-            /> */}
-
             {/* OurCoreValuesSection */}
             <CoreValuesSection
                 smallHeading="WHY CHOOSE US"
@@ -274,9 +249,6 @@ const CarRemovalPage: React.FC = () => {
                 ]}
                 imageSrc="/car_tow_two.png"
             />
-
-            {/* \EcoFriendlySection */}
-            {/* <EcoFriendlySection /> */}
 
             {/* HowItWorksSection */}
             <HowItWorksSection />
@@ -387,47 +359,6 @@ const CarRemovalPage: React.FC = () => {
                 </div>
             </section>
 
-
-
-
-
-
-
-            {/* Contact CTA Section */}
-            {/* <section id="contact" className="py-20 bg-[#0c55a6] text-white">
-                <div className="max-w-3xl mx-auto text-center px-4">
-                    <motion.h2
-                        className="text-3xl font-bold mb-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        Ready to Remove Your Car?
-                    </motion.h2>
-                    <motion.p
-                        className="mb-6"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        Call us now or fill out the online form and get your car removed
-                        quickly and hassle-free.
-                    </motion.p>
-                    <motion.a
-                        href="tel:+0402887766"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="inline-flex items-center px-6 py-3 rounded-4xl bg-yellow-400 text-black font-medium hover:bg-yellow-300 transition duration-200"
-                    >
-                        <Phone size={18} className="mr-2" />
-                        Call Now
-                    </motion.a>
-                </div>
-            </section> */}
-
-            {/* <ServiceAreaSection data={sydneyAreas} /> */}
         </div>
     );
 };
